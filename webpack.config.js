@@ -1,17 +1,26 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
-
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: path.resolve(__dirname, './src/index.html'),
-  filename: path.resolve(__dirname, './index.html'),
-});
-console.log(__dirname);
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+  devtool: 'eval',
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+    port: 3333,
+    compress: true,
+  },
+
   entry: path.resolve(__dirname, './src/index.jsx'),
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].[hash].js',
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+
   module: {
     rules: [
       {
@@ -46,5 +55,28 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlPlugin],
+
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebPackPlugin({
+      template: 'src/index.html',
+      filename: 'index.html',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
+  ],
+
+  // cashing
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
 };
