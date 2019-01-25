@@ -1,0 +1,43 @@
+$menu-height-padding: 1.5rem;
+$menu-top-margin: 0rem;
+$menu_navigation-items-padding: 1.2rem;
+$content-padding-desktop: 4rem;
+
+.menu-wrapper {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: $menu-top-margin $content-padding-desktop 0 $content-padding-desktop;
+
+  font-family: 'Courier New';
+  font-weight: bold;
+
+  /* border-bottom: .5px solid rgba(0,0,0, 0.2); */
+
+  .logo {
+    display: flex;
+    padding: $menu-height-padding 1rem;
+
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    /* padding: $menu-height-padding .5rem; */
+    align-items: center;
+
+    &__item {
+      padding: $menu-height-padding $menu_navigation-items-padding;
+
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  display: flex;
+
+  height: 70vh;
+  min-height: 300px;
+
+
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Oswald', 'Raleway', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+}
+
+.image {
+  position: absolute;
+  /* top: 0; */
+  height: 100%;
+  z-index: -1;
+}
