@@ -6,16 +6,15 @@ import './App.css';
 import { Menu } from './dummy/Menu';
 import { Title } from './dummy/Title';
 import { Image } from './dummy/Image';
+import ImageSlider from './smart/ImageSlider';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Menu siteName="techcatch." />
-        <Image src="main1.jpg" />
-        <Image src="separated.png" />
-        <Title title="text Title" />
-        <Title title="text Title" />
+
+        <ImageSlider />
       </div>
     );
   }
