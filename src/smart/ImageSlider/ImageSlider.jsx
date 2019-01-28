@@ -3,16 +3,22 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { changeSlider } from './redux/actions';
+import './ImageSlider.css';
 
 import { ImageBigAtCenter } from '../../dummy/ImageBigAtCenter';
 import { ImagesInRow } from '../../dummy/ImagesInRow';
+import { Price } from '../../dummy/Price';
 
 class ImageSlider extends Component {
   render() {
     return (
       <div>
         <ImageBigAtCenter src={this.props.currentImageName} />
-        <ImagesInRow imageNames={this.props.imageNames} />
+
+        <div className="product-info">
+          <ImagesInRow imageNames={this.props.imageNames} />
+          <Price />
+        </div>
         <button onClick={this.props.actions}>Change</button>
       </div>
     );
