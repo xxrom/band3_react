@@ -4,18 +4,15 @@ import { bindActionCreators } from 'redux';
 
 import { changeSlider } from './redux/actions';
 
-import { Image } from '../../dummy/Image';
+import { ImageBigAtCenter } from '../../dummy/ImageBigAtCenter';
+import { ImagesInRow } from '../../dummy/ImagesInRow';
 
 class ImageSlider extends Component {
   render() {
-    const { image } = this.props;
-    console.log(image);
-    console.log('this.props', this.props);
-    console.log(`currentImageName = ${this.props.currentImageName}`);
     return (
       <div>
-        <h1>ImageSlider</h1>
-        <Image src={this.props.currentImageName} />
+        <ImageBigAtCenter src={this.props.currentImageName} />
+        <ImagesInRow imageNames={this.props.imageNames} />
         <button onClick={this.props.actions}>Change</button>
       </div>
     );
@@ -26,6 +23,7 @@ const mapStateToProps = (state) => {
   console.log('state', state);
   const { imageNames, currentImageIndex } = state.imageSlider;
   return {
+    imageNames,
     currentImageName: imageNames[currentImageIndex],
   };
 };

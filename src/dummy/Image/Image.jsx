@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import './Image.css';
 
-const Image = ({ src }) => (
-  <div className="wrapper">
-    <img className="image" src={require(`./assets/${src}`)} />
-  </div>
-);
+class Image extends PureComponent {
+  render() {
+    const { src, width, height } = this.props;
+
+    return (
+      <img
+        style={{ width, height }}
+        className="image"
+        src={require(`../../assets/${src}`)}
+      />
+    );
+  }
+}
 
 export { Image };

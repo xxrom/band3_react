@@ -1,6 +1,7 @@
 body {
   margin: 0;
+  background: linear-gradient(110deg, #fff 60%, #ffed4b 60%);
 }
-* {
+/* * {
   box-sizing: border-box;
-}
+} */

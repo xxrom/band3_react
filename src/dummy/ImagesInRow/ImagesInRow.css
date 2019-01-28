@@ -1,0 +1,37 @@
+.image-in-row__wrapper {
+  position: relative;
+  display: flex;
+
+  height: 10vh;
+  width: 35vw;
+  margin: auto;
+  min-height: 80px;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  box-sizing: border-box;
+
+  &_image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    height: 100%;
+
+    min-width: 50px;
+
+    margin: 0 5px;
+
+    /* TODO: del */
+    border: 1px solid red;
+
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+  }
+}
