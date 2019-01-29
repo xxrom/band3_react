@@ -1,0 +1,31 @@
+$buy-btn_light: #ffed4b;
+$buy-btn_dark: #fae100;
+
+.buy-btn {
+  height: 4rem;
+  width: 70%;
+
+  margin-left: 1rem;
+
+  /* color: white; */
+
+  /* border: 0; */
+  border: 2px solid $buy-btn_dark;
+  border-radius: 8px;
+
+  background-color: $buy-btn_light;
+  background: linear-gradient($buy-btn_light, $buy-btn_dark);
+
+  outline: none;
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.buy-btn:hover {
+  background: linear-gradient($buy-btn_light, $buy-btn_light);
+}
+.buy-btn:active {
+  background: linear-gradient($buy-btn_dark, $buy-btn_dark);
+}

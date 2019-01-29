@@ -8,16 +8,18 @@ import './ImageSlider.css';
 import { ImageBigAtCenter } from '../../dummy/ImageBigAtCenter';
 import { ImagesInRow } from '../../dummy/ImagesInRow';
 import { Price } from '../../dummy/Price';
+import { Buy } from '../../dummy/Buy';
 
 class ImageSlider extends Component {
   render() {
     return (
       <div>
-        <ImageBigAtCenter src={this.props.currentImageName} />
-
         <div className="product-info">
           <ImagesInRow imageNames={this.props.imageNames} />
-          <Price />
+          <div>
+            <Price />
+            <Buy />
+          </div>
         </div>
         <button onClick={this.props.actions}>Change</button>
       </div>
@@ -26,7 +28,6 @@ class ImageSlider extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
   const { imageNames, currentImageIndex } = state.imageSlider;
   return {
     imageNames,
@@ -39,12 +40,6 @@ const mapDispatchToProps = (dispatch) => {
     actions: bindActionCreators(changeSlider, dispatch),
   };
 };
-
-// const mapDispatchToProps = (dispatch) => ({
-//   onClick: () => {
-//     dispatch(honk(id)); // <-- control the dispatch
-//   },
-// });
 
 export default connect(
   mapStateToProps,

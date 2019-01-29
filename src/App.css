@@ -1,7 +1,35 @@
 body {
   margin: 0;
-  background: linear-gradient(100deg, #fff 60%, #ffed4b 60%);
+
+  /* overflow: hidden; */
 }
-/* * {
+.background_gradient {
+  position: absolute;
+  height: 200vh;
+  width: 100vw;
+  /* right: 20vh; */
+  top: -60vh;
+  /* right: 0; */
+
+  background:
+    linear-gradient(40deg, rgba(1,1,1,0) 60%, #ffed4b 60%),
+    linear-gradient(45deg, rgba(1,1,1,0) 65%, #fae83da3 65%),
+    linear-gradient(50deg, rgba(1,1,1,0) 70%, #fae10089 70%);
+    background-blend-mode: darken;
+  /* background:
+    linear-gradient(40deg, rgba(1,1,1,0) 60%, #ffed4b 60%),
+    linear-gradient(45deg, rgba(1,1,1,0) 60%, #fae83da3 60%),
+    linear-gradient(50deg, rgba(1,1,1,0) 60%, #fae10089 60%);
+    background-blend-mode: darken; */
+  /* background:
+    linear-gradient(40deg, rgba(1,1,1,0) 64%, #ffed4b 64%),
+    linear-gradient(40deg, rgba(1,1,1,0) 62%, #fae83da3 62%),
+    linear-gradient(40deg, rgba(1,1,1,0) 60%, #fae10089 60%);
+  background-blend-mode: lighten; */
+
+  z-index: -1;
+}
+
+* {
   box-sizing: border-box;
-} */
+}

@@ -1,6 +1,10 @@
 .product-info {
   display: flex;
 
+  height: 10vh;
+
   flex-direction: row;
   align-items: center;
+
+  box-sizing: border-box;
 }
