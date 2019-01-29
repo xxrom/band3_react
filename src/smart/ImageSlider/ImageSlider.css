@@ -7,4 +7,9 @@
   align-items: center;
 
   box-sizing: border-box;
+
+  .empty-block {
+    display: flex;
+    flex: 1 1;
+  }
 }

@@ -8,9 +8,8 @@ $important: #e41d94;
   justify-content: center;
 
   padding: 1rem;
+  margin-top: -50%; /* Выносим нижнюю часть блока - в центр */
 
-  /* height: 10vh; */
-  /* font-family: 'Andale Mono', 'monospace'; */
   font-size: 1.2rem;
   font-family: 'Helvetica', 'sans-serif';
 

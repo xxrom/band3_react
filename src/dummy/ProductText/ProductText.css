@@ -1,0 +1,16 @@
+.product-text {
+  &__wrapper {
+    position: absolute;
+
+    top: 0rem;
+    left: 5rem;
+
+    border: 1px solid blue;
+  }
+
+  &__header {
+    font-family: 'Courier New';
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}

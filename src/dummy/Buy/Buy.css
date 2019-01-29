@@ -11,7 +11,7 @@ $buy-btn_dark: #fae100;
 
   /* border: 0; */
   border: 2px solid $buy-btn_dark;
-  border-radius: 8px;
+  border-radius: 4px;
 
   background-color: $buy-btn_light;
   background: linear-gradient($buy-btn_light, $buy-btn_dark);
