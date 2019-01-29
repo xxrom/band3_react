@@ -1,3 +1,5 @@
+$important: #e41d94;
+
 .price {
   display: flex;
 
@@ -10,8 +12,10 @@
   padding: 1rem;
 
   height: 10vh;
-  font-family: 'Courier New';
+  /* font-family: 'Andale Mono', 'monospace'; */
+  font-family: 'Helvetica', 'sans-serif';
 
+  /* background-color: rgba(1, 1, 1, 0.1); */
 
   &_old {
     text-decoration-line: line-through;
@@ -19,15 +23,27 @@
   }
 
   &_new {
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
 
-    margin: 0.5rem 0;
+    margin: 0.1rem 0;
 
     /* border-bottom: 2px solid black; */
   }
 
   &_discount {
     color: red;
+  }
+
+  &_benefit {
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    color: $important;
+    border: 1px solid $important;
+  }
+
+  &_currency {
+    font-size: 1rem;
   }
 }
