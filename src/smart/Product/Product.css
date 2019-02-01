@@ -4,6 +4,17 @@
   display: flex;
   flex-flow: row;
 
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
+
+  /* border: 2px solid blue; */
+}
+
+.product__right {
+  position: relative;
+  display: flex;
+
+  flex: 1 1;
+  flex-direction: column;
+  align-self: flex-end;
 }

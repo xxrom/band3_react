@@ -111,6 +111,7 @@ module.exports = {
     }),
     // new ImageminPlugin({ test: /\.(png|jpg|gif)$/ }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     // new webpack.HashedModuleIdsPlugin(),
   ],
 

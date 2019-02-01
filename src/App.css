@@ -1,21 +1,42 @@
 body {
   margin: 0;
-
-  /* overflow: hidden; */
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
+
+:root {
+  --important: #e41d94;
+
+  --main-color_light: #df504d;
+  --main-color_dark: #b55552;
+
+  --fontSize_info-header: calc(24px + (54 - 24) * (100vw - 800px) / (1600 - 800));
+  --fontSize_info-main-intro: calc(15px + (30 - 15) * (100vw - 800px) / (1600 - 800));
+  --fontSize_info-plus-intro: calc(15px + (25 - 15) * (100vw - 800px) / (1600 - 800));
+}
+/* font-family: 'Oswald', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+/* apple site "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; */
+
+/* test BG */
+$grayBG: #ededed;
+
 .background_gradient {
   position: absolute;
   height: 200vh;
   width: 100vw;
   /* right: 20vh; */
-  top: -60vh;
+  top: -30vh;
   /* right: 0; */
 
-  background:
+  background: linear-gradient(
+    40deg,
+    rgba(1,1,1,0) 60%, $grayBG 60%
+  );
+
+  /* background:
     linear-gradient(40deg, rgba(1,1,1,0) 60%, #ffed4b 60%),
     linear-gradient(45deg, rgba(1,1,1,0) 65%, #fae83da3 65%),
     linear-gradient(50deg, rgba(1,1,1,0) 70%, #fae10089 70%);
-    background-blend-mode: darken;
+    background-blend-mode: darken; */
   /* background:
     linear-gradient(40deg, rgba(1,1,1,0) 60%, #ffed4b 60%),
     linear-gradient(45deg, rgba(1,1,1,0) 60%, #fae83da3 60%),

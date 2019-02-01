@@ -1,16 +1,43 @@
 .product-text {
   &__wrapper {
-    position: absolute;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
 
-    top: 0rem;
-    left: 5rem;
+    padding:0 2rem 0 5rem;
 
-    border: 1px solid blue;
+    /* border: 1px solid blue;  */
+    /* TODO: del */
+
+    /* font-family: 'Arial'; */
   }
 
   &__header {
-    font-family: 'Courier New';
     font-weight: bold;
-    font-size: 2rem;
+    font-size: var(--fontSize_info-header);
+  }
+
+  &__main-intro {
+    padding: 1rem 0;
+
+    font-size: var(--fontSize_info-main-intro);
+  }
+
+  &__plus {
+    &-intro {
+      padding-bottom: 1rem;
+
+      font-size: var(--fontSize_info-plus-intro);
+    }
+
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_item {
+      padding-left: 0.5rem;
+      /* border: 1px solid red; */
+    }
   }
 }

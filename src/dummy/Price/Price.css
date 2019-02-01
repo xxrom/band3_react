@@ -1,21 +1,22 @@
-$important: #e41d94;
+$important: var(--important);
 
 .price {
+  position: relative;
   display: flex;
-  flex: 1 1;
+  /* flex: 1 1; */
 
   flex-direction: column;
   justify-content: center;
 
   padding: 1rem;
-  margin-top: -50%; /* Выносим нижнюю часть блока - в центр */
+  /* margin-top: -50%; Выносим нижнюю часть блока - в центр */
 
   font-size: 1.2rem;
   font-family: 'Helvetica', 'sans-serif';
 
   white-space: nowrap; /* не переносить слова */
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   z-index: 1;
 
@@ -50,6 +51,7 @@ $important: #e41d94;
     padding: 0 1rem;
 
     color: $important;
+    border-radius: 1rem;
     border: 1px solid $important;
 
     background-color: white;

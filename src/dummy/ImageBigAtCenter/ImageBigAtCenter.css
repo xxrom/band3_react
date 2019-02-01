@@ -2,16 +2,16 @@
   position: relative;
   display: flex;
 
+  /* Соотношение сторон  должно быть одинаковое у главной
+  картинки, поэтому w = h = 70vh */
+  width: 70vh;
+  min-width: 280px;
+  max-width: 600px;
+
   height: 70vh;
   min-height: 200px;
   max-height: 600px;
 
-
-  overflow: hidden;
-
   justify-content: center;
   align-items: center;
-
-  /* font-family: 'Oswald', 'Raleway', 'Helvetica Neue', Helvetica, Arial,
-    sans-serif; */
 }

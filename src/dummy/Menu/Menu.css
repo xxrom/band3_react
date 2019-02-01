@@ -1,7 +1,7 @@
 $menu-height-padding: 1.5rem;
 $menu-top-margin: 0rem;
 $menu_navigation-items-padding: 1.2rem;
-$content-padding-desktop: 4rem;
+$content-padding-desktop: 4rem; /* width */
 
 .menu-wrapper {
   display: flex;
@@ -21,7 +21,7 @@ $content-padding-desktop: 4rem;
     display: flex;
     padding: $menu-height-padding 1rem;
 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
   }
 
@@ -34,7 +34,7 @@ $content-padding-desktop: 4rem;
     &__item {
       padding: $menu-height-padding $menu_navigation-items-padding;
 
-      font-size: 0.8rem;
+      font-size: 1.1rem;
       text-transform: uppercase;
       cursor: pointer;
 

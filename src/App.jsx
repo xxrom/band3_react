@@ -14,7 +14,7 @@ class App extends Component {
         <div className="background_gradient"> </div>
         <Menu siteName="techcatch." />
         <Product />
-        <ImageSlider />
+        {/* <ImageSlider /> */}
       </div>
     );
   }
