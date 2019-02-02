@@ -26,7 +26,7 @@ class ProductText extends Component {
 
     const plusItemsElements = plusItems.map((text) => (
       <div style={styles.plusItems.wrapper}>
-        <PlusElement />
+        <PlusElement static />
         <div className="product-text__plus_item">{text}</div>
       </div>
     ));

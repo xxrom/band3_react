@@ -2,18 +2,6 @@ import React, { Component } from 'react';
 
 import './PlusElement.css';
 
-/*
-
- var plus = document.getElementById('plus');
-
- function plusToggle() {
-    plus.classList.toggle('plus--active');
-}
-
-plus.addEventListener('click', plusToggle);
-
-*/
-
 class PlusElement extends Component {
   constructor(props) {
     super(props);
@@ -23,13 +11,22 @@ class PlusElement extends Component {
       active: false,
     };
 
-    this.onClick = this.onClick.bind(this);
+    console.log('props', props);
+
+    if (!props.static) {
+      this.onClick = this.onClick.bind(this);
+    } else {
+      this.onClick = () => {};
+    }
   }
   render() {
-    const showPopUp = this.state.active ? this.state.activeClassName : '';
+    const { style } = this.props;
+    const { active, activeClassName } = this.state;
+
+    const showPopUp = active ? activeClassName : '';
 
     return (
-      <div class={`plus ${showPopUp}`} onClick={this.onClick}>
+      <div class={`plus ${showPopUp}`} onClick={this.onClick} style={style}>
         <div class="plus__line plus__line--v">
           <div href="#" class="plus__link">
             Большой Экран!

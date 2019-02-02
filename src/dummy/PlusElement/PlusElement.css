@@ -28,11 +28,16 @@ $activeFontSize: var(--fontSize_info-main-intro);
   &__line {
     width: $lineWidth;
     height: $lineLength;
-    background: #000;
+    /* background: #000; */
+
+    background: white;
     border-radius: $lineWidth;
+
     position: absolute;
+
     left: calc(50% - ($lineWidth / 2));
     top: calc(50% - ($height - $lineLength) / 2);
+
     &--h {
       transform: rotate(90deg);
     }
@@ -46,7 +51,7 @@ $activeFontSize: var(--fontSize_info-main-intro);
   }
 
   &__link {
-    color: #fff;
+    /* color: #fff; */
     font-size: $activeFontSize;
     opacity: 0;
     visibility: hidden;

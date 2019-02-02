@@ -6,6 +6,8 @@
 
     padding:0 2rem 0 5rem;
 
+    min-width: var(--block_min-width);
+
     /* border: 1px solid blue;  */
     /* TODO: del */
 

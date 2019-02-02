@@ -5,7 +5,7 @@
   /* Соотношение сторон  должно быть одинаковое у главной
   картинки, поэтому w = h = 70vh */
   width: 70vh;
-  min-width: 280px;
+  min-width: var(--block_min-width);
   max-width: 600px;
 
   height: 70vh;

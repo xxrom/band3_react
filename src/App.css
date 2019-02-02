@@ -4,10 +4,14 @@ body {
 }
 
 :root {
-  --important: #e41d94;
+  /* --important: #e41d94; */
+  --important: #df504d;
 
   --main-color_light: #df504d;
   --main-color_dark: #b55552;
+
+  /* минимальная ширина блоков, для Product */
+  --block_min-width: 430px;
 
   --fontSize_info-header: calc(24px + (54 - 24) * (100vw - 800px) / (1600 - 800));
   --fontSize_info-main-intro: calc(15px + (30 - 15) * (100vw - 800px) / (1600 - 800));

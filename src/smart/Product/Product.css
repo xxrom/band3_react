@@ -4,6 +4,8 @@
   display: flex;
   flex-flow: row;
 
+  flex-wrap: wrap;
+
   align-items: stretch;
   justify-content: center;
 
@@ -13,8 +15,18 @@
 .product__right {
   position: relative;
   display: flex;
+  flex: 1;
 
-  flex: 1 1;
+  margin-left: 4rem;
+
   flex-direction: column;
   align-self: flex-end;
+}
+
+@media screen and (max-width: 1300px) {
+  .product__right {
+    margin-left: 0;
+
+    align-items: center;
+  }
 }

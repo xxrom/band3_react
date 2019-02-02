@@ -5,9 +5,9 @@ $buy-btn_dark: var(--main-color_dark);
   height: 3rem;
   width: 12rem;
 
-  margin-left: 1rem;
-
   color: white;
+
+  margin: 0 1rem;
 
   border: 2px solid $buy-btn_dark;
   /* border: 2px solid var(--important);; */
