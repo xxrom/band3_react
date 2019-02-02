@@ -4,7 +4,7 @@
     flex: 1 1;
     flex-direction: column;
 
-    padding:0 2rem 0 5rem;
+    padding:0 1rem;
 
     min-width: var(--block_min-width);
 
@@ -39,6 +39,7 @@
 
     &_item {
       padding-left: 0.5rem;
+      font-size: var(--fontSize_info-plus-item);
       /* border: 1px solid red; */
     }
   }

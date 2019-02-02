@@ -10,7 +10,6 @@ $buy-btn_dark: var(--main-color_dark);
   margin: 0 1rem;
 
   border: 2px solid $buy-btn_dark;
-  /* border: 2px solid var(--important);; */
   border-radius: 2rem;
 
   background-color: $buy-btn_light;
@@ -21,6 +20,13 @@ $buy-btn_dark: var(--main-color_dark);
 
   font-weight: bold;
   font-size: 1.8rem;
+
+  &_mini {
+    height: 2rem;
+    width: 8rem;
+
+    font-size: 1.2rem;
+  }
 }
 
 .buy-btn:hover {

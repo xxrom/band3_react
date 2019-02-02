@@ -12,8 +12,12 @@ class Product extends Component {
   render() {
     return (
       <div className="product__wrapper">
-        <ProductText />
-        <ImageBigAtCenter src={this.props.currentImageName} />
+        <div className="product__text">
+          <ProductText />
+        </div>
+        <div className="product__image">
+          <ImageBigAtCenter src={this.props.currentImageName} />
+        </div>
         <div className="product__right">
           <Price />
           <Buy />

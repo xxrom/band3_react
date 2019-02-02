@@ -8,7 +8,7 @@ $width: $height;
 $lineWidth: calc($height * 0.05);
 $lineLength: calc($height / 2);
 
-$activeFontSize: var(--fontSize_info-main-intro);
+$activeFontSize: var(--fontSize_info-plus-item);
 
 .plus {
   width: $width;
@@ -24,7 +24,6 @@ $activeFontSize: var(--fontSize_info-main-intro);
   display: flex;
   position: relative;
 
-
   &__line {
     width: $lineWidth;
     height: $lineLength;
@@ -32,6 +31,7 @@ $activeFontSize: var(--fontSize_info-main-intro);
 
     background: white;
     border-radius: $lineWidth;
+
 
     position: absolute;
 
@@ -46,7 +46,7 @@ $activeFontSize: var(--fontSize_info-main-intro);
       align-items: center;
       justify-content: space-around;
       overflow: hidden;
-       transition: all .4s ease 0s;
+      transition: all .4s ease 0s;
     }
   }
 
@@ -65,11 +65,17 @@ $activeFontSize: var(--fontSize_info-main-intro);
     .plus__line--v {
       height: calc(2 * $activeFontSize);
       top: calc(-3 * $lineLength);
-      padding: 0 5px;
+      padding: 0 0.5rem;
       box-sizing: border-box;
       width: 220px;
+      /* width: auto; */
+
+      /* white-space: nowrap; */
+
       border-radius: 60px;
-      left: calc(50% - 110px);
+      border: 1px solid $important;
+
+      left: calc(50% - 110px );
     }
     .plus__link{
       opacity: 1;
