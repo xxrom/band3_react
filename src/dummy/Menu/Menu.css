@@ -4,6 +4,7 @@ $menu_navigation-items-padding: 1.2rem;
 $content-padding-desktop: 4rem; /* width */
 
 .menu-wrapper {
+  position: relative;
   display: flex;
 
   flex-direction: row;
@@ -15,15 +16,30 @@ $content-padding-desktop: 4rem; /* width */
   font-family: 'Courier New';
   font-weight: bold;
 
-  /* border-bottom: .5px solid rgba(0,0,0, 0.2); */
-  /* background: linear-gradient(100deg, #fff 60%, #ffed4b 60%); */
+  z-index: 1;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(130deg, rgba(255, 237, 75, 0.98) 30%, rgba(255, 255, 255, 0.98) 30%);
+
+    z-index: -1;
+  }
 
   .logo {
     display: flex;
+    align-items: center;
     padding: $menu-height-padding 1rem;
 
     font-size: 1.5rem;
     cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
   }
 
   .navigation {
@@ -31,7 +47,6 @@ $content-padding-desktop: 4rem; /* width */
     flex: 1 10;
     flex-direction: row;
     justify-content: flex-end;
-    /* padding: $menu-height-padding .5rem; */
     align-items: center;
 
     &__item {
@@ -41,6 +56,28 @@ $content-padding-desktop: 4rem; /* width */
       cursor: pointer;
       font-size: 1.1rem;
       white-space: nowrap;
+
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__mobile {
+      display: none;
+      flex: 1;
+
+      align-content: center;
+
+      &_arrow {
+        cursor: pointer;
+      }
+
+      &_list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100vw;
+        background-color: red;
+      }
     }
   }
 
@@ -56,16 +93,24 @@ $content-padding-desktop: 4rem; /* width */
   @media screen and (max-width: 768px) {
     padding: $menu-top-margin 1rem 0 1rem;
 
-    .navigation {
-      &__item {
-        display: none;
-      }
+    .navigation > .navigation__item {
+      display: none;
+    }
 
-      &__mobile {
-        display: block;
-      }
+    .navigation__mobile {
+      display: flex;
+    }
+  }
 
+  &_static {
+    position: sticky;
 
+    top: -40px;
+
+    .navigation__item,
+    .logo {
+      padding-top: 3.8rem;
+      padding-bottom: 1.2rem;
     }
   }
 }

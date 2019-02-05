@@ -24,8 +24,8 @@ class ProductText extends Component {
   render() {
     const { header, mainIntro, plusIntro, plusItems } = this.state;
 
-    const plusItemsElements = plusItems.map((text) => (
-      <div style={styles.plusItems.wrapper}>
+    const plusItemsElements = plusItems.map((text, index) => (
+      <div key={`productText ${index}`} style={styles.plusItems.wrapper}>
         <PlusElement static />
         <div className="product-text__plus_item">{text}</div>
       </div>

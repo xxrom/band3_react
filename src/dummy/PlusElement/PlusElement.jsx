@@ -26,13 +26,13 @@ class PlusElement extends Component {
     const showPopUp = active ? activeClassName : '';
 
     return (
-      <div class={`plus ${showPopUp}`} onClick={this.onClick} style={style}>
-        <div class="plus__line plus__line--v">
-          <div href="#" class="plus__link">
+      <div className={`plus ${showPopUp}`} onClick={this.onClick} style={style}>
+        <div className="plus__line plus__line--v">
+          <div href="#" className="plus__link">
             Большой Экран!
           </div>
         </div>
-        <div class="plus__line plus__line--h" />
+        <div className="plus__line plus__line--h" />
       </div>
     );
   }

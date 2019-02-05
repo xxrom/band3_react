@@ -16,7 +16,7 @@ $important: var(--important);
 
   /* border: 1px solid red; */
 
-  z-index: 1;
+  /* z-index: 1; */
 
   &-old__wrapper {
     display: flex;
