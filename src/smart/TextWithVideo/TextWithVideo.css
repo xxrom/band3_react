@@ -4,13 +4,12 @@
   align-items: center;
   justify-content: center;
 
-  height: 50vh;
+  height: 50vw;
   width: 100vw;
   min-height: 400px;
   max-height: 800px;
   object-fit: cover;
 
-  /* background-color: rgba(255, 0, 0, 0.043); */
   border: 1px solid red;
 
   &__wrapper {
