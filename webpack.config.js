@@ -72,21 +72,18 @@ module.exports = {
           },
         ],
       },
-      // { // так тоже работает, но тут нет инлайн картинок тогда
-      //   test: /\.(jpe?g|png)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[ext]',
-      //         context: '',
-      //         // useRelativePath: true,
-      //         // outputPath: 'images',
-      //         // publicPath: '',
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        // так тоже работает, но тут нет инлайн картинок тогда
+        test: /\.(mp4|webm)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
       // {
       //   // нужно для преобразования изображений всех в маленькие
       //   test: /\.(png|jpg|gif)$/,

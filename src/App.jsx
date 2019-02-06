@@ -6,6 +6,7 @@ import './App.css';
 import { Menu } from './dummy/Menu';
 import ImageSlider from './smart/ImageSlider';
 import Product from './smart/Product';
+import TextWithVideo from './smart/TextWithVideo';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <div className="background_gradient"> </div>
         <Menu siteName="techcatch." />
         <Product />
+        <TextWithVideo />
         {/* <ImageSlider /> */}
       </div>
     );

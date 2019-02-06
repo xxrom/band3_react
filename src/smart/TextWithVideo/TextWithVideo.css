@@ -1,0 +1,52 @@
+.text-with-video {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 50vh;
+  width: 100vw;
+  min-height: 400px;
+  max-height: 800px;
+  object-fit: cover;
+
+  /* background-color: rgba(255, 0, 0, 0.043); */
+  border: 1px solid red;
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__video {
+    position: absolute;
+    display: flex;
+
+    top: 0;
+    left: 0;
+
+    background-color: blue;
+  }
+
+  &__text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    background-color: rgba(0,0,0, 0.3);
+
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__text {
+      font-size: var(--fontSize_info-main-intro);
+    }
+  }
+}

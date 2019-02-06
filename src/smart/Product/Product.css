@@ -4,11 +4,12 @@
 
     display: flex;
     flex-flow: row;
-
     flex-wrap: nowrap;
 
     align-items: center;
     justify-content: center;
+
+    padding: 3rem 0;
 
     border: 1px solid blue;
   }
