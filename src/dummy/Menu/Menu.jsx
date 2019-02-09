@@ -10,6 +10,7 @@ class Menu extends Component {
 
     this.state = {
       menuStatic: false,
+      showMobileMenu: false,
       activateMenuStatic: -40,
       navigationItems: [
         {
@@ -54,7 +55,7 @@ class Menu extends Component {
   };
 
   render() {
-    const { navigationItems, menuStatic } = this.state;
+    const { navigationItems, menuStatic, showMobileMenu } = this.state;
 
     const navigationItemsElements = navigationItems.map((item, index) => (
       <div
@@ -77,13 +78,29 @@ class Menu extends Component {
         </div>
         <div className="navigation">{navigationItemsElements}</div>
         <div className="navigation__mobile">
-          <div className="navigation__mobile_arrow">arrow</div>
+          <div
+            className={`navigation__mobile_arrow arrow-${
+              showMobileMenu ? 'down' : 'up'
+            }`}
+            onClick={this.onClickMobileMenu}
+          >
+            ->
+          </div>
 
-          <div className="navigation__mobile_list">
-            <li>hello</li>
-            <li>hello</li>
-            <li>hello</li>
-            <li>hello</li>
+          <div className="navigation__mobile_wrapper">
+            <div
+              className={`mobile-menu__list mobile-menu__list${
+                showMobileMenu ? '' : '_hide'
+              }`}
+            >
+              {navigationItemsElements}
+            </div>
+            <div
+              className={`mobile-menu__list__background${
+                showMobileMenu ? '' : '_hide'
+              }`}
+              onClick={this.onClickMobileMenu}
+            />
           </div>
         </div>
         <div className="navigation__item">
@@ -92,6 +109,13 @@ class Menu extends Component {
       </div>
     );
   }
+
+  onClickMobileMenu = (e) => {
+    console.log('mobile menu clicked');
+    this.setState({
+      showMobileMenu: !this.state.showMobileMenu,
+    });
+  };
 }
 
 export { Menu };

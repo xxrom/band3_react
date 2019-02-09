@@ -13,6 +13,7 @@ module.exports = {
   },
 
   devtool: 'eval',
+  // devtool: 'hidden-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
@@ -73,7 +74,6 @@ module.exports = {
         ],
       },
       {
-        // так тоже работает, но тут нет инлайн картинок тогда
         test: /\.(mp4|webm)$/,
         use: [
           {
