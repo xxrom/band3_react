@@ -8,24 +8,35 @@ class Menu extends Component {
   constructor(props) {
     super(props);
 
+    const navigationItems = [
+      {
+        class: 'product',
+        title: 'Mi Band 3',
+      },
+      {
+        class: 'about',
+        title: 'О нас',
+      },
+      {
+        class: 'contact',
+        title: 'Контакты',
+      },
+    ];
+
+    const menuItems = navigationItems.map((item, index) => (
+      <div
+        key={`menu ${index}`}
+        className={`navigation__item navigation__${item.class}`}
+      >
+        {item.title}
+      </div>
+    ));
+
     this.state = {
+      menuItems,
       menuStatic: false,
-      showMobileMenu: false,
+      showMobileMenu: true, // default - false
       activateMenuStatic: -40,
-      navigationItems: [
-        {
-          class: 'product',
-          title: 'Mi Band 3',
-        },
-        {
-          class: 'about',
-          title: 'О нас',
-        },
-        {
-          class: 'contact',
-          title: 'Контакты',
-        },
-      ],
     };
 
     window.addEventListener('scroll', () => {
@@ -55,16 +66,11 @@ class Menu extends Component {
   };
 
   render() {
-    const { navigationItems, menuStatic, showMobileMenu } = this.state;
+    const { showMobileMenu, menuItems, menuStatic } = this.state;
 
-    const navigationItemsElements = navigationItems.map((item, index) => (
-      <div
-        key={`menu ${index}`}
-        className={`navigation__item navigation__${item.class}`}
-      >
-        {item.title}
-      </div>
-    ));
+    console.log('showMobileMenu', showMobileMenu);
+    console.log('menuItems', menuItems);
+    console.log('menuStatic', menuStatic);
 
     return (
       <div
@@ -72,43 +78,54 @@ class Menu extends Component {
         ref={(el) => (this.menuWrapper = el)}
         onScroll={() => console.log('scroll')}
       >
-        <div className="background" />
-        <div className="logo" ref={(el) => (this.logo = el)}>
-          {this.props.siteName}
-        </div>
-        <div className="navigation">{navigationItemsElements}</div>
-        <div className="navigation__mobile">
-          <div
-            className={`navigation__mobile_arrow arrow-${
-              showMobileMenu ? 'down' : 'up'
-            }`}
-            onClick={this.onClickMobileMenu}
-          >
-            ->
-          </div>
-
-          <div className="navigation__mobile_wrapper">
-            <div
-              className={`mobile-menu__list mobile-menu__list${
-                showMobileMenu ? '' : '_hide'
-              }`}
-            >
-              {navigationItemsElements}
-            </div>
-            <div
-              className={`mobile-menu__list__background${
-                showMobileMenu ? '' : '_hide'
-              }`}
-              onClick={this.onClickMobileMenu}
-            />
-          </div>
-        </div>
-        <div className="navigation__item">
-          <Buy mini />
-        </div>
+        {this.templateMenu(menuItems, showMobileMenu)}
+        {this.templateMobileMenu(menuItems, showMobileMenu)}
       </div>
     );
   }
+
+  templateMenu = (menuItems, showMobileMenu) => {
+    return [
+      <div className="background" />,
+      <div className="logo" ref={(el) => (this.logo = el)}>
+        {this.props.siteName}
+      </div>,
+      <div className="navigation">{menuItems}</div>,
+      <div
+        className={`navigation__mobile_arrow arrow-${
+          showMobileMenu ? 'down' : 'up'
+        }`}
+        onClick={this.onClickMobileMenu}
+      >
+        >
+      </div>,
+      <div className="navigation__item">
+        <Buy mini />
+      </div>,
+    ];
+  };
+
+  templateMobileMenu = (menuItems, showMobileMenu) => {
+    return (
+      <div className="navigation__mobile_wrapper">
+        <div className="navigation__mobile">
+          <div
+            className={`mobile-menu__list mobile-menu__list${
+              showMobileMenu ? '' : '_hide'
+            }`}
+          >
+            {menuItems}
+          </div>
+        </div>
+        <div
+          className={`mobile-menu__list__background${
+            showMobileMenu ? '' : '_hide'
+          }`}
+          onClick={this.onClickMobileMenu}
+        />
+      </div>
+    );
+  };
 
   onClickMobileMenu = (e) => {
     console.log('mobile menu clicked');
