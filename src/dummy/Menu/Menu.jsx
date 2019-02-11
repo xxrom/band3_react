@@ -35,7 +35,7 @@ class Menu extends Component {
     this.state = {
       menuItems,
       menuStatic: false,
-      showMobileMenu: true, // default - false
+      showMobileMenu: false,
       activateMenuStatic: -40,
     };
 

@@ -239,3 +239,13 @@ $content-padding-desktop: 4rem; /* width */
     font-size: 1.1rem;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .menu-wrapper {
+    padding: $menu-top-margin 0 0 0;
+
+    .navigation__item {
+      padding: calc(0.5 * $menu-height-padding) 0;
+    }
+  }
+}
