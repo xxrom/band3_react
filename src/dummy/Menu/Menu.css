@@ -112,7 +112,6 @@ $content-padding-desktop: 4rem; /* width */
     }
 
     .navigation__mobile_arrow {
-      /* position: relative; */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -123,6 +122,9 @@ $content-padding-desktop: 4rem; /* width */
       padding: 2rem;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+
+      /* Убираем подсветку по тапу на стрелку */
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 
     .arrow-up {
@@ -132,22 +134,6 @@ $content-padding-desktop: 4rem; /* width */
     .arrow-down {
       transform: rotateZ(270deg);
     }
-
-    /* &_static {
-      position: sticky;
-      top: -40px;
-
-      .navigation__item,
-      .logo {
-        padding-top: 3.8rem;
-        padding-bottom: 1.2rem;
-      } */
-
-      /* хардкод отступа для стрелки ... */
-      /* .navigation__mobile_arrow {
-        margin-top: 2.5rem;
-      }
-    } */
   }
 
   .navigation__mobile_wrapper {
@@ -200,7 +186,7 @@ $content-padding-desktop: 4rem; /* width */
 
         &_hide {
           transform: translateY(-150%);
-          opacity: 1;
+          opacity: 0;
         }
       }
     }
@@ -232,7 +218,7 @@ $content-padding-desktop: 4rem; /* width */
     align-items: center;
     justify-content: center;
 
-    padding: calc(0.8 * $menu-height-padding) $menu_navigation-items-padding;
+    padding: $menu-height-padding $menu_navigation-items-padding;
 
     box-sizing: border-box;
 
@@ -245,7 +231,15 @@ $content-padding-desktop: 4rem; /* width */
     padding: $menu-top-margin 0 0 0;
 
     .navigation__item {
-      padding: calc(0.5 * $menu-height-padding) 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .logo {
+      padding-left: 0.5rem;
+      padding-right: 0;
+
+      font-size: 1.1rem;
     }
   }
 }

@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { changeSlider } from './redux/actions';
 import './ImageSlider.css';
 
-import { ImageBigAtCenter } from '../../dummy/ImageBigAtCenter';
 import { ImagesInRow } from '../../dummy/ImagesInRow';
 import { Price } from '../../dummy/Price';
 import { Buy } from '../../dummy/Buy';

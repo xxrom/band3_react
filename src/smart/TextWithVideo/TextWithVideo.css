@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: center;
 
-  height: 50vw;
+  height: 30vw;
   width: 100vw;
   min-height: 400px;
-  max-height: 800px;
+  max-height: 900px;
   object-fit: cover;
 
   border: 1px solid red;
@@ -47,5 +47,9 @@
     &__text {
       font-size: var(--fontSize_info-main-intro);
     }
+  }
+
+  @media screen and (max-width: 450px) {
+    min-height: 250px;
   }
 }

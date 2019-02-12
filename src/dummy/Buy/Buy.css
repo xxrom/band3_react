@@ -35,3 +35,12 @@ $buy-btn_dark: var(--main-color_dark);
 .buy-btn:active {
   background: linear-gradient($buy-btn_dark, $buy-btn_dark);
 }
+
+@media screen and (max-width: 450px) {
+  .buy-btn {
+    width: 8rem;
+    margin: 0 .2rem;
+
+    border-radius: 0.5rem;
+  }
+}
