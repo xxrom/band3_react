@@ -20,14 +20,15 @@ class PlusElement extends Component {
     }
   }
   render() {
-    const { style, text } = this.props;
+    const { style, text, popUpStyle } = this.props;
     const { active, activeClassName } = this.state;
 
     const showPopUp = active ? activeClassName : '';
+    const popUpStyleActivate = showPopUp ? popUpStyle : {};
 
     return (
       <div className={`plus ${showPopUp}`} onClick={this.onClick} style={style}>
-        <div className="plus__line plus__line--v">
+        <div style={popUpStyleActivate} className="plus__line plus__line--v">
           <div href="#" className="plus__link">
             {text}
           </div>

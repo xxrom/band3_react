@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial", "sans-serif";
+  overflow-x: hidden;
 }
 
 :root {
@@ -16,7 +17,7 @@ body {
   --fontSize_info-header: calc(24px + (54 - 20) * (100vw - 320px) / (1600 - 320));
   --fontSize_info-main-intro: calc(20px + (30 - 20) * (100vw - 320px) / (1600 - 320));
   --fontSize_info-plus-intro: calc(20px + (25 - 20) * (100vw - 320px) / (1600 - 320));
-  --fontSize_info-plus-item: calc(14px + (22 - 14) * (100vw - 320px) / (1600 - 320));
+  --fontSize_info-plus-item: calc(16px + (22 - 16) * (100vw - 320px) / (1600 - 320));
 }
 /* font-family: 'Oswald', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 /* apple site "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; */

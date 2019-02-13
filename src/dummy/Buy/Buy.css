@@ -37,10 +37,8 @@ $buy-btn_dark: var(--main-color_dark);
 }
 
 @media screen and (max-width: 450px) {
-  .buy-btn {
+  .buy-btn_mini {
     width: 8rem;
-    margin: 0 .2rem;
-
-    border-radius: 0.5rem;
+    margin: 0 .5rem;
   }
 }

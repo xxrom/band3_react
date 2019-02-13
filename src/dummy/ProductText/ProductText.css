@@ -33,9 +33,9 @@
     }
 
     &_item {
+      padding: 0.2rem 0;
       padding-left: 0.5rem;
       font-size: var(--fontSize_info-plus-item);
-      /* border: 1px solid red; */
     }
   }
 }

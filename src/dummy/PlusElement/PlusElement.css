@@ -46,7 +46,7 @@ $activeFontSize: var(--fontSize_info-plus-item);
       align-items: center;
       justify-content: space-around;
       overflow: hidden;
-      transition: all .4s ease 0s;
+      transition: all .3s ease 0s;
     }
   }
 
@@ -70,7 +70,7 @@ $activeFontSize: var(--fontSize_info-plus-item);
       width: 220px;
       /* width: auto; */
 
-      /* white-space: nowrap; */
+      white-space: nowrap;
 
       border-radius: 60px;
       border: 1px solid $important;
@@ -81,7 +81,7 @@ $activeFontSize: var(--fontSize_info-plus-item);
       opacity: 1;
       visibility: visible;
       transform: scale(1);
-      transition-delay: .1s;
+      transition-delay: .15s;
     }
   }
 }
