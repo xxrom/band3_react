@@ -14,7 +14,8 @@ class TextWithVideo extends Component {
   }
 
   componentDidMount() {
-    this.loadVideos(); // TODO: включить подгрузку видео
+    // TODO: включить подзагрузку видео
+    // this.loadVideos();
   }
 
   loadVideos = () => {

@@ -20,7 +20,7 @@ class Buy extends Component {
 
   onClick = async () => {
     console.log('click');
-    const body = { test: 'test Nikita' };
+    const body = { test: 'test Nikita', number: '+79636830488', name: 'Никита' };
 
     const ans = await fetchData({
       url: '',
