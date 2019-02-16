@@ -23,7 +23,7 @@ $buy-btn_dark: var(--main-color_dark);
 
   &_mini {
     height: 2rem;
-    width: 8rem;
+    /* width: 8rem; */
 
     font-size: 1.2rem;
   }
@@ -38,7 +38,7 @@ $buy-btn_dark: var(--main-color_dark);
 
 @media screen and (max-width: 450px) {
   .buy-btn_mini {
-    width: 8rem;
+    /* width: 8rem; */
     margin: 0 .5rem;
   }
 }

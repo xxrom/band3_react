@@ -1,0 +1,49 @@
+.wrapper {
+    position: fixed;
+    display: flex;
+
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.221);
+    border: 1px solid black;
+
+    z-index: 100;
+
+    &__dialog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        height: 50vh;
+        min-height: 300px;
+        width: 50vw;
+        min-width: 300px;
+
+        padding: 2rem;
+
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.8);
+
+        .dialog__text {
+            font-size: var(--fontSize_info-main-intro);
+        }
+
+        .dialog__input {
+            margin: 2rem 0;
+            padding: 0.5rem;
+
+            border: 1px solid red;
+            border-radius: 0.5rem;
+
+            font-size: var(--fontSize_info-main-intro);
+        }
+    }
+}

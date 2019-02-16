@@ -1,5 +1,5 @@
 function fetchData({
-  url,
+  url = '',
   id = '',
   fetchOptionsMethod = 'GET',
   fetchOptionsHeader = {
@@ -8,7 +8,8 @@ function fetchData({
   body = null,
   thenFunction = ({ data }) => data,
 }) {
-  let web = `http://localhost:3334/`;
+  // let web = `http://localhost:3334/`;
+  let web = `https://band3-koa2.herokuapp.com/`;
 
   //   if (process.env.NODE_ENV !== 'development') {
   //     web = `https://my-diamond-postgresql.herokuapp.com/api/`;

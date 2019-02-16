@@ -11,25 +11,32 @@ class Buy extends Component {
     };
   }
   render() {
+    const { label } = this.props;
     return (
       <button onClick={this.onClick} className={`buy-btn ${this.state.mini}`}>
-        Купить
+        {label ? label : 'Купить'}
       </button>
     );
   }
 
   onClick = async () => {
     console.log('click');
-    const body = { test: 'test Nikita', number: '+79636830488', name: 'Никита' };
+    const body = {
+      test: 'test Nikita',
+      number: '+79636830488',
+      name: 'Никита',
+    };
 
-    const ans = await fetchData({
-      url: '',
-      fetchOptionsMethod: 'POST',
-      fetchOptionsHeader: {
-        'Content-type': 'application/json',
-      },
-      body,
-    });
+    console.time('post');
+    // TODO: uncomment
+    // const ans = await fetchData({
+    //   fetchOptionsMethod: 'POST',
+    //   fetchOptionsHeader: {
+    //     'Content-type': 'application/json',
+    //   },
+    //   body,
+    // });
+    console.timeEnd('post');
 
     console.log('ans', ans);
   };
