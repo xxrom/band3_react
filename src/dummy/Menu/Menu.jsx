@@ -68,15 +68,10 @@ class Menu extends Component {
   render() {
     const { showMobileMenu, menuItems, menuStatic } = this.state;
 
-    console.log('showMobileMenu', showMobileMenu);
-    console.log('menuItems', menuItems);
-    console.log('menuStatic', menuStatic);
-
     return (
       <div
         className={`menu-wrapper ${menuStatic ? 'menu-wrapper_static' : ''}`}
         ref={(el) => (this.menuWrapper = el)}
-        onScroll={() => console.log('scroll')}
       >
         {this.templateMenu(menuItems, showMobileMenu)}
         {this.templateMobileMenu(menuItems, showMobileMenu)}
@@ -85,24 +80,28 @@ class Menu extends Component {
   }
 
   templateMenu = (menuItems, showMobileMenu) => {
-    return [
-      <div className="background" />,
-      <div className="logo" ref={(el) => (this.logo = el)}>
-        {this.props.siteName}
-      </div>,
-      <div className="navigation">{menuItems}</div>,
-      <div
-        className={`navigation__mobile_arrow arrow-${
-          showMobileMenu ? 'down' : 'up'
-        }`}
-        onClick={this.onClickMobileMenu}
-      >
+    return (
+      <>
+        <div className="background" />
+        <div className="logo" ref={(el) => (this.logo = el)}>
+          {this.props.siteName}
+        </div>
+        <div className="navigation">{menuItems}</div>
+
+        <div
+          className={`navigation__mobile_arrow arrow-${
+            showMobileMenu ? 'down' : 'up'
+          }`}
+          onClick={this.onClickMobileMenu}
         >
-      </div>,
-      <div className="navigation__item">
-        <Buy mini />
-      </div>,
-    ];
+          >
+        </div>
+
+        <div className="navigation__item">
+          <Buy mini style={{ width: '8rem' }} />
+        </div>
+      </>
+    );
   };
 
   templateMobileMenu = (menuItems, showMobileMenu) => {

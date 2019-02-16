@@ -1,3 +1,6 @@
+$btnSize: 2.2rem;
+$closeBtnR: calc(-$btnSize / 2);
+
 .wrapper {
     position: fixed;
     display: flex;
@@ -14,8 +17,10 @@
     border: 1px solid black;
 
     z-index: 100;
+    overflow: hidden;
 
     &__dialog {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -44,6 +49,55 @@
             border-radius: 0.5rem;
 
             font-size: var(--fontSize_info-main-intro);
+        }
+
+        .dialog__close-btn {
+            position: absolute;
+            /* top: calc(-$btnSize + 1rem);
+            right: calc(-$btnSize + 1rem); */
+            top: 0;
+            right: 0;
+
+            width: $btnSize;
+            min-width: $btnSize;
+            height: $btnSize;
+
+            border-radius: 0rem 0.5rem 0rem 0.5rem;
+
+            background-color: #fff;
+
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+
+            cursor: pointer;
+
+            &:before,
+            &:after {
+                position: absolute;
+                /* 2px */
+                height: calc(0.08 * $btnSize);
+                /* 16px */
+                width: calc(0.67 * $btnSize);
+
+                /* 4px */
+                left: calc(0.17 * $btnSize);
+                /* 11px */
+                top: calc(0.45 * $btnSize);
+                content: '';
+
+                background-color: #000;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.08);
+            }
         }
     }
 }
