@@ -1,5 +1,6 @@
 $buy-btn_light: var(--main-color_light);
 $buy-btn_dark: var(--main-color_dark);
+$buy-btn_disable: #b5555291;
 
 .buy-btn {
   height: 3rem;
@@ -26,6 +27,13 @@ $buy-btn_dark: var(--main-color_dark);
     /* width: 8rem; */
 
     font-size: 1.2rem;
+  }
+
+  &_disable {
+    border: 2px solid $buy-btn_disable;
+
+    background-color: $buy-btn_disable;
+    background: $buy-btn_disable;
   }
 }
 

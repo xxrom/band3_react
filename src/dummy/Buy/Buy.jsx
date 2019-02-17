@@ -11,11 +11,14 @@ class Buy extends Component {
     };
   }
   render() {
-    const { label, style } = this.props;
+    const { label, style, disable } = this.props;
+
     return (
       <button
         onClick={this.onClick}
-        className={`buy-btn ${this.state.mini}`}
+        className={`buy-btn ${this.state.mini} ${
+          disable ? 'buy-btn_disable' : ''
+        }`}
         style={style}
       >
         {label ? label : 'Купить'}
