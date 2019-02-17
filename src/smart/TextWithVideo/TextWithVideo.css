@@ -10,7 +10,7 @@
   max-height: 900px;
   object-fit: cover;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   &__wrapper {
     position: relative;

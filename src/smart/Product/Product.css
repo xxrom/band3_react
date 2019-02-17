@@ -11,7 +11,7 @@
 
     padding: 3rem 0;
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
   }
 
   &__text {
@@ -20,7 +20,7 @@
 
     padding-left: 4rem;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   &__image {
@@ -35,7 +35,7 @@
     min-height: 200px;
     max-height: 600px;
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
   }
 
   &__right {
@@ -49,7 +49,7 @@
     flex-direction: column;
     align-self: flex-end;
 
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
   }
 
   @media screen and (max-width: 1200px) and (min-width: 1000px) {

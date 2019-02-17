@@ -42,6 +42,8 @@ $validateSize: 1.5rem;
 
         .dialog__text {
             font-size: var(--fontSize_info-main-intro);
+
+            max-width: 400px;
         }
 
         .dialog__input {

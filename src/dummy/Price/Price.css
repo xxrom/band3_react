@@ -14,10 +14,6 @@ $important: var(--important);
 
   white-space: nowrap; /* не переносить слова */
 
-  /* border: 1px solid red; */
-
-  /* z-index: 1; */
-
   &-old__wrapper {
     display: flex;
     flex-direction: row;

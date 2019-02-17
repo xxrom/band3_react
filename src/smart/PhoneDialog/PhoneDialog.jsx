@@ -44,9 +44,7 @@ class PhoneDialog extends Component {
         onClick={this.onClickWrapper}
       >
         <div className="wrapper__dialog">
-          <div className="dialog__text">
-            Пожалуйста, введите Ваш номер телефона.
-          </div>
+          <div className="dialog__text">Введите Ваш номер телефона.</div>
           <div className="dialog__input">
             <InputMask
               className="input"
