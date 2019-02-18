@@ -12,7 +12,7 @@ body {
   --main-color_dark: #b55552;
 
   /* минимальная ширина блоков, для Product */
-  --block_min-width: 430px;
+  --block_min-width: 380px;
 
   --fontSize_info-header: calc(24px + (54 - 20) * (100vw - 320px) / (1600 - 320));
   --fontSize_info-main-intro: calc(20px + (30 - 20) * (100vw - 320px) / (1600 - 320));

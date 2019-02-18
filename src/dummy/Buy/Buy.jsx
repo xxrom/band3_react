@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { fetchData } from './fetch-api';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { togglePhoneDialog } from '../../smart/PhoneDialog/redux/reducer';
 
 import './Buy.css';
 
-class Buy extends Component {
+class BuyComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,27 +28,26 @@ class Buy extends Component {
     );
   }
 
-  onClick = async () => {
-    console.log('click');
-    // const body = {
-    //   test: 'test Nikita',
-    //   number: '+79636830488',
-    //   name: 'Никита',
-    // };
+  onClick = () => {
+    if (this.props.disable) {
+      return;
+    }
 
-    // console.time('post');
-    // TODO: uncomment
-    // const ans = await fetchData({
-    //   fetchOptionsMethod: 'POST',
-    //   fetchOptionsHeader: {
-    //     'Content-type': 'application/json',
-    //   },
-    //   body,
-    // });
-    // console.timeEnd('post');
+    if (this.props.onClick) {
+      return this.props.onClick();
+    }
 
-    // console.log('ans', ans);
+    this.props.onClickDefault();
   };
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  onClickDefault: bindActionCreators(togglePhoneDialog, dispatch),
+});
+
+const Buy = connect(
+  null,
+  mapDispatchToProps
+)(BuyComponent);
 
 export { Buy };

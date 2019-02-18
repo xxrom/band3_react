@@ -19,7 +19,7 @@ function changePhone({ target: { value } }) {
 
 const initState = {
   phone: '+7 (___) ___-__-__',
-  showPhoneDialog: true,
+  showPhoneDialog: false,
 };
 
 const phoneDialog = (state = initState, action) => {

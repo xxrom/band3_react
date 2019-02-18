@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+import { fetchData } from '../../libs/fetch-api';
 import { Buy } from '../../dummy/Buy';
 
 import './PhoneDialog.css';
@@ -34,17 +36,15 @@ class PhoneDialog extends Component {
     const { phone } = this.props;
     const valid = this.phoneMask.test(phone);
 
-    console.log(`validate ${phone} ${valid}`);
-    console.log(`|${phone}|`);
-
     return (
       <div
-        className="wrapper"
-        style={!this.props.showPhoneDialog ? { display: 'none' } : {}}
+        className={`wrapper wrapper-${
+          !this.props.showPhoneDialog ? 'hide' : 'show'
+        }`}
         onClick={this.onClickWrapper}
       >
         <div className="wrapper__dialog">
-          <div className="dialog__text">Введите Ваш номер телефона.</div>
+          <div className="dialog__text">Введите Ваш номер телефона</div>
           <div className="dialog__input">
             <InputMask
               className="input"
@@ -60,7 +60,12 @@ class PhoneDialog extends Component {
             />
           </div>
 
-          <Buy mini label={this.btnLabel} disable={!valid} />
+          <Buy
+            mini
+            label={this.btnLabel}
+            disable={!valid}
+            onClick={this.onClickCall}
+          />
           <div className="dialog__close-btn" onClick={this.onClickWrapper} />
         </div>
       </div>
@@ -70,17 +75,34 @@ class PhoneDialog extends Component {
   onClickWrapper = (e) => {
     // OnClick check click area
     if (e.currentTarget === e.target) {
-      console.log('onClick wrapper');
-
       this.props.togglePhoneDialog(this.props.showPhoneDialog);
     }
     e.preventDefault();
+  };
+
+  onClickCall = async () => {
+    const { phone } = this.props;
+    const body = {
+      test: 'test Nikita',
+      number: phone,
+      name: 'Никита',
+    };
+    console.time('post');
+
+    const ans = await fetchData({
+      fetchOptionsMethod: 'POST',
+      fetchOptionsHeader: {
+        'Content-type': 'application/json',
+      },
+      body,
+    });
+    console.timeEnd('post');
+    console.log('ans', ans);
   };
 }
 
 const mapStateToProps = (state) => {
   const { showPhoneDialog, phone } = state.phoneDialog;
-  console.log('map STATE', state.phoneDialog);
   return {
     showPhoneDialog,
     phone,

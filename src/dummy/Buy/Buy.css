@@ -29,6 +29,7 @@ $buy-btn_disable: #b5555291;
     font-size: 1.2rem;
   }
 
+
   &_disable {
     border: 2px solid $buy-btn_disable;
 
@@ -37,10 +38,10 @@ $buy-btn_disable: #b5555291;
   }
 }
 
-.buy-btn:hover {
+.buy-btn:hover:not(.buy-btn_disable) {
   background: linear-gradient($buy-btn_light, $buy-btn_light);
 }
-.buy-btn:active {
+.buy-btn:active:not(.buy-btn_disable) {
   background: linear-gradient($buy-btn_dark, $buy-btn_dark);
 }
 

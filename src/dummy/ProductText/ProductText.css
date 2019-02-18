@@ -4,7 +4,7 @@
     flex: 1 1;
     flex-direction: column;
 
-    padding:0 1rem;
+    padding:0 2rem;
 
     min-width: var(--block_min-width);
   }

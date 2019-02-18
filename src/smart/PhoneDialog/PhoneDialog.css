@@ -21,6 +21,20 @@ $validateSize: 1.5rem;
     z-index: 100;
     overflow: hidden;
 
+    &-hide {
+        opacity: 0;
+        transform: translateX(-100%);
+
+        transition: opacity 0.3s ease-in, transform 1s ease-in;
+    }
+
+    &-show {
+        opacity: 1;
+        transform: translateX(0%);
+
+        transition: opacity 0.3s ease-out;
+    }
+
     &__dialog {
         position: relative;
         display: flex;
@@ -43,7 +57,9 @@ $validateSize: 1.5rem;
         .dialog__text {
             font-size: var(--fontSize_info-main-intro);
 
-            max-width: 400px;
+            max-width: 500px;
+
+            text-align: center;
         }
 
         .dialog__input {
@@ -66,6 +82,7 @@ $validateSize: 1.5rem;
             .input {
                 border: 0;
                 width: 100%;
+                max-width: calc(var(--fontSize_info-main-intro) * 9);
 
                 font-size: var(--fontSize_info-main-intro);
                 font-family: sans-serif;

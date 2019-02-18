@@ -20,7 +20,7 @@
 
     padding-left: 4rem;
 
-    /* border: 1px solid red; */
+    border: 1px solid red;
   }
 
   &__image {
@@ -28,7 +28,7 @@
     align-items: center;
 
     width: 70vh;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 600px;
 
     height: 100%;
