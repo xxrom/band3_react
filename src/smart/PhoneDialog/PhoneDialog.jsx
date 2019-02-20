@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import { fetchData } from '../../libs/fetch-api';
 import { Buy } from '../../dummy/Buy';
+import { Mountain } from './templates';
 
 import './PhoneDialog.css';
 import { togglePhoneDialog, changePhone } from './redux/reducer';
@@ -68,6 +69,7 @@ class PhoneDialog extends Component {
           />
           <div className="dialog__close-btn" onClick={this.onClickWrapper} />
         </div>
+        <Mountain />
       </div>
     );
   }
