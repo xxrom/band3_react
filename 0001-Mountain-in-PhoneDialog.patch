@@ -1,0 +1,299 @@
+From 01ca50b276d5ad1be6d6ab52180149d5e392e9c7 Mon Sep 17 00:00:00 2001
+From: nikita nikita <nikita@nikitas-MacBook-Pro.local>
+Date: Wed, 20 Feb 2019 20:32:34 +0300
+Subject: [PATCH] Mountain in PhoneDialog
+
+---
+ src/smart/PhoneDialog/PhoneDialog.jsx         |   2 +
+ .../templates/Mountain/Mountain.css           | 123 ++++++++++++++++++
+ .../templates/Mountain/Mountain.jsx           |  36 +++++
+ .../PhoneDialog/templates/Mountain/index.jsx  |   1 +
+ src/smart/PhoneDialog/templates/index.jsx     |   1 +
+ yarn.lock                                     |  33 ++++-
+ 6 files changed, 194 insertions(+), 2 deletions(-)
+ create mode 100644 src/smart/PhoneDialog/templates/Mountain/Mountain.css
+ create mode 100644 src/smart/PhoneDialog/templates/Mountain/Mountain.jsx
+ create mode 100644 src/smart/PhoneDialog/templates/Mountain/index.jsx
+ create mode 100644 src/smart/PhoneDialog/templates/index.jsx
+
+diff --git a/src/smart/PhoneDialog/PhoneDialog.jsx b/src/smart/PhoneDialog/PhoneDialog.jsx
+index 87c4a6e..47eadf0 100644
+--- a/src/smart/PhoneDialog/PhoneDialog.jsx
++++ b/src/smart/PhoneDialog/PhoneDialog.jsx
+@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
+ 
+ import { fetchData } from '../../libs/fetch-api';
+ import { Buy } from '../../dummy/Buy';
++import { Mountain } from './templates';
+ 
+ import './PhoneDialog.css';
+ import { togglePhoneDialog, changePhone } from './redux/reducer';
+@@ -68,6 +69,7 @@ class PhoneDialog extends Component {
+           />
+           <div className="dialog__close-btn" onClick={this.onClickWrapper} />
+         </div>
++        <Mountain />
+       </div>
+     );
+   }
+diff --git a/src/smart/PhoneDialog/templates/Mountain/Mountain.css b/src/smart/PhoneDialog/templates/Mountain/Mountain.css
+new file mode 100644
+index 0000000..458e80f
+--- /dev/null
++++ b/src/smart/PhoneDialog/templates/Mountain/Mountain.css
+@@ -0,0 +1,123 @@
++.mountains__background {
++    position: absolute;
++    left: 80px;
++    bottom: 0;
++
++    height: 300px;
++    width: 600px;
++
++    /* border: 1px solid red; */
++
++    /* background: gray; */
++    /* transform: scale(0.5); */
++
++    z-index: 0;
++
++    .mountain {
++      position: absolute;
++
++      bottom: 0;
++      right: 50%;
++
++
++      border-left: 80px solid transparent;
++      border-bottom: 120px solid #6699ff;
++      border-right: 80px solid transparent;
++
++      &__top {
++        border-left: 40px solid transparent;
++        border-bottom: 60px solid white;
++        border-right: 40px solid transparent;
++
++        &-1 {
++          position: absolute;
++          bottom: -30px;
++          left: 54px;
++
++          border-left: 10px solid transparent;
++          border-top: 31px solid white;
++          border-right: 15px solid transparent;
++        }
++        &-2 {
++          position: absolute;
++          bottom: -40px;
++          left: 0px;
++
++          border-left: 10px solid transparent;
++          border-top: 41px solid white;
++          border-right: 15px solid transparent;
++        }
++        &-3 {
++          position: absolute;
++          bottom: -20px;
++          left: 20px;
++
++          border-left: 10px solid transparent;
++          border-top: 21px solid white;
++          border-right: 15px solid transparent;
++        }
++        &-4 {
++          position: absolute;
++          bottom: -70px;
++          left: 35px;
++
++          border-left: 10px solid transparent;
++          border-top: 71px solid white;
++          border-right: 15px solid transparent;
++        }
++      }
++    }
++
++    .mountain-1 {
++      border-bottom: 130px solid #6699ff;
++
++      z-index: 2;
++
++      .mountain__top {
++        border-bottom: 70px solid white;
++      }
++    }
++
++    .mountain-2 {
++      right: 66%;
++
++      border-left: 60px solid transparent;
++      border-bottom: 100px solid #6622ff;
++      border-right: 50px solid transparent;
++
++      opacity: .8;
++
++      .mountain__top-2 {
++          bottom: -30px;
++
++          border-top: 31px solid white;
++      }
++      .mountain__top-3 {
++          bottom: -20px;
++          left: 13px;
++
++          border-top: 21px solid white;
++      }
++    }
++
++    .mountain-3 {
++      right: 39%;
++
++      border-left: 60px solid transparent;
++      border-bottom: 100px solid #6633ff;
++      border-right: 60px solid transparent;
++
++      opacity: .8;
++
++      .mountain__top-1 {
++        bottom: -30px;
++        border-top: 31px solid white;
++      }
++      .mountain__top-4 {
++        left: 40px;
++
++        bottom: -20px;
++        border-top: 21px solid white;
++      }
++    }
++  }
+\ No newline at end of file
+diff --git a/src/smart/PhoneDialog/templates/Mountain/Mountain.jsx b/src/smart/PhoneDialog/templates/Mountain/Mountain.jsx
+new file mode 100644
+index 0000000..31830d0
+--- /dev/null
++++ b/src/smart/PhoneDialog/templates/Mountain/Mountain.jsx
+@@ -0,0 +1,36 @@
++import React from 'react';
++
++import './Mountain.css';
++
++const Mountain = () => (
++  <div class="mountains__background">
++    <div class="mountain mountain-1">
++      <div class="mountain__top">
++        <div class="mountain__top-1" />
++        <div class="mountain__top-2" />
++        <div class="mountain__top-3" />
++        <div class="mountain__top-4" />
++      </div>
++    </div>
++
++    <div class="mountain mountain-2">
++      <div class="mountain__top">
++        <div class="mountain__top-1" />
++        <div class="mountain__top-2" />
++        <div class="mountain__top-3" />
++        <div class="mountain__top-4" />
++      </div>
++    </div>
++
++    <div class="mountain mountain-3">
++      <div class="mountain__top">
++        <div class="mountain__top-1" />
++        <div class="mountain__top-2" />
++        <div class="mountain__top-3" />
++        <div class="mountain__top-4" />
++      </div>
++    </div>
++  </div>
++);
++
++export { Mountain };
+diff --git a/src/smart/PhoneDialog/templates/Mountain/index.jsx b/src/smart/PhoneDialog/templates/Mountain/index.jsx
+new file mode 100644
+index 0000000..47be976
+--- /dev/null
++++ b/src/smart/PhoneDialog/templates/Mountain/index.jsx
+@@ -0,0 +1 @@
++export { Mountain } from './Mountain';
+diff --git a/src/smart/PhoneDialog/templates/index.jsx b/src/smart/PhoneDialog/templates/index.jsx
+new file mode 100644
+index 0000000..47be976
+--- /dev/null
++++ b/src/smart/PhoneDialog/templates/index.jsx
+@@ -0,0 +1 @@
++export { Mountain } from './Mountain';
+diff --git a/yarn.lock b/yarn.lock
+index d34e12b..9e3f299 100644
+--- a/yarn.lock
++++ b/yarn.lock
+@@ -1352,7 +1352,7 @@ bytes@3.0.0:
+   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
+   integrity sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=
+ 
+-cacache@^11.0.2:
++cacache@^11.0.2, cacache@^11.2.0:
+   version "11.3.2"
+   resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.2.tgz#2d81e308e3d258ca38125b676b98b2ac9ce69bfa"
+   integrity sha512-E0zP4EPGDOaT2chM08Als91eYnf8Z+eH1awwwVsngUmgppfM5jjJ8l3z5vO5p5w/I3LsiXawb1sW0VY65pQABg==
+@@ -4916,6 +4916,14 @@ react-hot-loader@^4.6.3:
+     shallowequal "^1.0.2"
+     source-map "^0.7.3"
+ 
++react-input-mask@^2.0.4:
++  version "2.0.4"
++  resolved "https://registry.yarnpkg.com/react-input-mask/-/react-input-mask-2.0.4.tgz#9ade5cf8196f4a856dbf010820fe75a795f3eb14"
++  integrity sha512-1hwzMr/aO9tXfiroiVCx5EtKohKwLk/NT8QlJXHQ4N+yJJFyUuMT+zfTpLBwX/lK3PkuMlievIffncpMZ3HGRQ==
++  dependencies:
++    invariant "^2.2.4"
++    warning "^4.0.2"
++
+ react-is@^16.6.3, react-is@^16.7.0:
+   version "16.8.1"
+   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
+@@ -5827,7 +5835,7 @@ typedarray@^0.0.6:
+   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+ 
+-uglify-js@3.4.x:
++uglify-js@3.4.x, uglify-js@^3.0.0:
+   version "3.4.9"
+   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.9.tgz#af02f180c1207d76432e473ed24a28f4a782bae3"
+   integrity sha512-8CJsbKOtEbnJsTyv6LE6m6ZKniqMiFWmm9sRbopbkGs3gMPPfd3Fh8iIA4Ykv5MgaTbqHr4BaoGLJLZNhsrW1Q==
+@@ -5835,6 +5843,20 @@ uglify-js@3.4.x:
+     commander "~2.17.1"
+     source-map "~0.6.1"
+ 
++uglifyjs-webpack-plugin@^2.1.1:
++  version "2.1.1"
++  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-2.1.1.tgz#6937d7513a37280d4792f1fb536bef35e08e420a"
++  integrity sha512-TQEcyMNkObX/H+FfcKjiDgs5RcXX8vW2UUUrDTOfQgg3lrafztfeM5WAwXo+AzqozJK6NP9w98xNpG/dutzSsg==
++  dependencies:
++    cacache "^11.2.0"
++    find-cache-dir "^2.0.0"
++    schema-utils "^1.0.0"
++    serialize-javascript "^1.4.0"
++    source-map "^0.6.1"
++    uglify-js "^3.0.0"
++    webpack-sources "^1.1.0"
++    worker-farm "^1.5.2"
++
+ unicode-canonical-property-names-ecmascript@^1.0.4:
+   version "1.0.4"
+   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
+@@ -6026,6 +6048,13 @@ vm-browserify@0.0.4:
+   dependencies:
+     indexof "0.0.1"
+ 
++warning@^4.0.2:
++  version "4.0.3"
++  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
++  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
++  dependencies:
++    loose-envify "^1.0.0"
++
+ watchpack@^1.5.0:
+   version "1.6.0"
+   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.6.0.tgz#4bc12c2ebe8aa277a71f1d3f14d685c7b446cd00"
+-- 
+2.17.2 (Apple Git-113)
+
