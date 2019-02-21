@@ -1,10 +1,11 @@
 .image-big-at-center__wrapper {
-  position: relative;
-  display: flex;
+    position: relative;
 
-  /* Соотношение сторон  должно быть одинаковое у главной
+    display: flex;
+
+    /* Соотношение сторон  должно быть одинаковое у главной
   картинки, поэтому w = h = 70vh */
-  /* width: 70vh;
+    /* width: 70vh;
   min-width: 200px;
   max-width: 600px;
 
@@ -12,6 +13,6 @@
   min-height: 200px;
   max-height: 600px; */
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 }
