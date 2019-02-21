@@ -61,8 +61,8 @@ const tableTemplate = () => {
   ));
 
   cells.map((item, index) => {
-    console.log(`index ${index}`, item);
     row.push(item);
+
     if ((index + 1) % tableColumns === 0) {
       table.push(
         <div className="pluses-table__row" key={`pluses-table-row-${index}`}>
@@ -73,9 +73,7 @@ const tableTemplate = () => {
     }
   });
 
-  console.log('table', table);
-
-  return <div className="pluses-table masked-copy">{[...table]}</div>;
+  return <div className="pluses-table">{[...table]}</div>;
 };
 
 const PlusesTable = () => (

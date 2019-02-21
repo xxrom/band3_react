@@ -1,37 +1,38 @@
 .image-in-row__wrapper {
-  position: relative;
-  display: flex;
-  flex: 1 1;
+    position: relative;
 
-  height: 10vh;
-  width: 40vw;
-  min-height: 80px;
-
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-
-  padding: 1rem 2rem;
-
-  box-sizing: border-box;
-
-  &_image {
     display: flex;
-    flex: 1;
-    justify-content: center;
 
-    height: 100%;
-
-    min-width: 50px;
-
-    margin: 0 5px;
-
-    /* TODO: del */
-    border: 1px solid red;
-
+    flex-direction: row;
+    flex: 1 1;
 
     box-sizing: border-box;
 
-    cursor: pointer;
-  }
+    height: 10vh;
+    min-height: 80px;
+    width: 40vw;
+
+    padding: 1rem 2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &_image {
+        display: flex;
+        flex: 1;
+
+
+        box-sizing: border-box;
+
+        height: 100%;
+
+        min-width: 50px;
+
+        margin: 0 5px;
+
+        cursor: pointer;
+
+        /* TODO: del */
+        border: 1px solid red;
+        justify-content: center;
+    }
 }
