@@ -4,7 +4,8 @@ import { hot } from 'react-hot-loader/root';
 import './App.css';
 import { Menu } from './dummy/Menu';
 import { PlusesTable } from './dummy/PlusesTable';
-import ImageSlider from './smart/ImageSlider';
+import { Footer } from './dummy/Footer';
+// import ImageSlider from './smart/ImageSlider';
 import Product from './smart/Product';
 import TextWithVideo from './smart/TextWithVideo';
 import PhoneDialog from './smart/PhoneDialog';
@@ -19,6 +20,7 @@ class App extends Component {
         <TextWithVideo />
         <PhoneDialog />
         <PlusesTable />
+        <Footer />
         {/* <ImageSlider /> */}
       </div>
     );
