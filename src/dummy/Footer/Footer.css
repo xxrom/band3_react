@@ -1,0 +1,13 @@
+.footer__wrapper {
+  /* height: 4rem; */
+
+  padding: 4rem 2rem 2rem 2rem;
+
+  background: white;
+
+  .footer-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
