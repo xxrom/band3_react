@@ -1,5 +1,6 @@
 const TOGGLE_PHONE_DIALOG = 'TOGGLE_PHONE_DIALOG';
 const CHANGE_PHONE = 'CHANGE_PHONE';
+const PHONE_SANDED = 'PHONE_SANDED';
 
 function togglePhoneDialog(show) {
   console.log('togglePhoneDialog action ', show);
@@ -17,9 +18,18 @@ function changePhone({ target: { value } }) {
   };
 }
 
+function phoneSanded(sanded) {
+  console.log('phoneSanded action ', sanded);
+  return {
+    type: PHONE_SANDED,
+    payload: sanded,
+  };
+}
+
 const initState = {
   phone: '+7 (___) ___-__-__',
   showPhoneDialog: false,
+  phoneSanded: false,
 };
 
 const phoneDialog = (state = initState, action) => {
@@ -38,10 +48,17 @@ const phoneDialog = (state = initState, action) => {
         phone: action.payload,
       };
     }
+    case PHONE_SANDED: {
+      console.log(PHONE_SANDED, action.payload);
+      return {
+        ...state,
+        phoneSanded: action.payload,
+      };
+    }
 
     default:
       return state;
   }
 };
 
-export { phoneDialog, togglePhoneDialog, changePhone };
+export { phoneDialog, togglePhoneDialog, changePhone, phoneSanded };

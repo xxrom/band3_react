@@ -1,13 +1,17 @@
 .footer__wrapper {
   /* height: 4rem; */
 
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 4rem 2rem 2rem rem;
 
   background: white;
 
-  .footer-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .footer__text {
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+
+    .footer__myhref {
+      text-decoration: none;
+      font-weight: 600;
+    }
   }
 }

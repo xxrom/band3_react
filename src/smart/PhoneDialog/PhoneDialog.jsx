@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import ParticleEffectButton from 'react-particle-effect-button';
 
 import { fetchData } from '../../libs/fetch-api';
 import { Buy } from '../../dummy/Buy';
 
 import './PhoneDialog.css';
-import { togglePhoneDialog, changePhone } from './redux/reducer';
+import { togglePhoneDialog, changePhone, phoneSanded } from './redux/reducer';
 
 // TODO:
-// 2. разобраться со скролом диалога, почему он проскраливает ???
-// со скролом проблема сама решилась ...
 // 3. в диалог перенести блок с ценой, скидкой и кнопкой ?
 
 // 4. подумать как лучше переключать диалог в показ и скрытие или
@@ -30,11 +29,13 @@ class PhoneDialog extends Component {
   phoneMask = /^\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/;
   placeholder = '+7 (___) ___-__-__';
   btnLabel = 'Обратный звонок';
+  valid = false;
 
   render() {
     console.log('this.state', this.props);
-    const { phone } = this.props;
-    const valid = this.phoneMask.test(phone);
+    const { phone, phoneSanded } = this.props;
+    this.valid = this.phoneMask.test(phone);
+    console.log('this.valid', this.valid);
 
     return (
       <div
@@ -51,31 +52,49 @@ class PhoneDialog extends Component {
               placeholder={this.placeholder}
               value={phone}
               mask="+7 (999) 999-99-99"
-              onChange={this.props.changePhone}
+              onChange={this.props.actions.changePhone}
+              onKeyPress={this.onInputKeyPress}
             />
+
             <span
               className={`input-validate input-validate_${
-                valid ? 'ok' : 'error'
+                this.valid ? 'ok' : 'error'
               }`}
             />
           </div>
 
-          <Buy
-            mini
-            label={this.btnLabel}
-            disable={!valid}
-            onClick={this.onClickCall}
-          />
+          <ParticleEffectButton color="#121019" hidden={phoneSanded}>
+            <Buy
+              mini
+              label={this.btnLabel}
+              disable={!this.valid}
+              onClick={this.onClickCall}
+            />
+          </ParticleEffectButton>
+
           <div className="dialog__close-btn" onClick={this.onClickWrapper} />
         </div>
       </div>
     );
   }
 
+  // TODO:
+  // 1 убрать задержку и подольше ее сделать
+  // 2 лоадер красивый показать и потом либо вывести ошибку, либо п.3
+  // 3 показать сообщение, после анимации, что вам перезвонят в ближайшее время
+
+  onInputKeyPress = (e) => {
+    console.log(`valid = ${this.valid} / key pressed`, e.key);
+
+    if (this.valid && e.key === 'Enter') {
+      this.onClickCall();
+    }
+  };
+
   onClickWrapper = (e) => {
     // OnClick check click area
     if (e.currentTarget === e.target) {
-      this.props.togglePhoneDialog(this.props.showPhoneDialog);
+      this.props.actions.togglePhoneDialog(this.props.showPhoneDialog);
     }
     e.preventDefault();
   };
@@ -98,20 +117,25 @@ class PhoneDialog extends Component {
     });
     console.timeEnd('post');
     console.log('ans', ans);
+    this.props.actions.phoneSanded(true);
   };
 }
 
 const mapStateToProps = (state) => {
-  const { showPhoneDialog, phone } = state.phoneDialog;
+  const { showPhoneDialog, phone, phoneSanded } = state.phoneDialog;
   return {
     showPhoneDialog,
     phone,
+    phoneSanded,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  togglePhoneDialog: bindActionCreators(togglePhoneDialog, dispatch),
-  changePhone: bindActionCreators(changePhone, dispatch),
+  actions: {
+    togglePhoneDialog: bindActionCreators(togglePhoneDialog, dispatch),
+    changePhone: bindActionCreators(changePhone, dispatch),
+    phoneSanded: bindActionCreators(phoneSanded, dispatch),
+  },
 });
 
 export default connect(
