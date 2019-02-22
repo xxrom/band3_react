@@ -74,11 +74,11 @@ $activeFontSize: var(--fontSize_info-plus-item);
         .plus__line--v {
             top: calc(-3 * $lineLength);
 
-            left: calc(50% - 110px );
+            left: calc(50% - 140px);
 
             box-sizing: border-box;
             height: calc(2 * $activeFontSize);
-            width: 220px;
+            width: 280px;
             padding: 0 0.5rem;
             /* width: auto; */
 

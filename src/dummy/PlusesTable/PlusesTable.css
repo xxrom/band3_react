@@ -5,20 +5,30 @@
     flex-direction: column;
     align-items: center;
 
+    padding: 0 0 7rem 0;
+
     background: black;
 
     /* BLOCK mainText */
     .pluses-table__main-text {
-        padding: 5rem 2rem;
+        padding: 7rem 2rem 5rem 2rem;
 
         background: url('https://www.apple.com/v/iphone-xr/d/images/overview/copy_texture_1_medium.jpg');
 
+        text-align: center;
         font-size: var(--fontSize_info-header);
+        font-weight: 600;
     }
 
     /* BLOCK backgroundImg */
     .pluses-table__background-img {
-        height: 5rem;
+        height: 50vw;
+        max-height: 500px;
+
+        .background-img__img {
+            width: 80vw;
+            max-width: 800px;
+        }
     }
 
     /* BLOCK pluses-table */
@@ -30,11 +40,12 @@
         align-items: center;
         justify-content: center;
 
-        max-width: 1000px;
+        max-width: 1100px;
 
         padding: 2rem;
 
         color: white;
+        background:  url('../../assets/texture_1.jpg');
 
         &__row {
             display: flex;
@@ -42,25 +53,29 @@
             flex-wrap: wrap;
         }
 
+
         &__cell {
             display: flex;
             flex-direction: column;
 
             min-height: 10rem;
-            max-height: 20rem;
+            max-height: 30rem;
 
             width: 100%;
             min-width: 10rem;
-            max-width: 33%;
+            max-width: 33.3%;
 
-            border: 2px solid rgba(106, 106, 106, 0.9));
+            padding: 2rem 1rem;
 
-            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid #362f32;
+
             align-items: center;
             justify-content: flex-start;
 
+            border-radius: 0.5rem;
+
             .cell__text {
-                padding: 0 1rem;
+                padding: 0 1rem 1rem 1rem;
 
                 text-align: center;
 
@@ -74,11 +89,11 @@
 
             .cell__img-wrapper {
                 height: 9vw;
+                max-height: 6rem;
                 width: 9vw;
+                max-width: 6rem;
 
-                padding: 0.5rem;
-
-                border: 1px solid green;
+                margin: 0 0 2rem 0;
 
                 object-fit: cover;
 
@@ -86,8 +101,6 @@
                     height: 100%;
                     width: 100%;
                     max-width: 100%;
-
-                    border: 1px solid blue;
 
                     object-fit: cover;
                 }
@@ -107,8 +120,8 @@
             max-width: 50%;
 
             .cell__img-wrapper {
-                height: 20vw;
-                width: 20vw;
+                height: 12vw;
+                width: 12vw;
             }
         }
     }
@@ -120,8 +133,8 @@
             max-width: 100%;
 
             .cell__img-wrapper {
-                height: 30vw;
-                width: 30vw;
+                height: 15vw;
+                width: 15vw;
             }
         }
     }

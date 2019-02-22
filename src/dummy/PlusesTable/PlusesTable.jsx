@@ -1,87 +1,121 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import { Image } from '../Image';
 import './PlusesTable.css';
 
-const mainTextTemplate = () => (
-  <div className="pluses-table__main-text masked-copy">
-    Сенсорный 0.78 дюйма OLED дисплей
-  </div>
-);
+class PlusesTable extends Component {
+  constructor(props) {
+    super(props);
 
-const backgroundImgTemplate = () => (
-  <div className="pluses-table__background-img">
-    <img
-      className="background-img__img"
-      src="https://image.flaticon.com/icons/png/512/1146/1146343.png"
-      alt="img"
-    />
-  </div>
-);
+    this.backgroundImgArray = ['band3_black_1.jpg', 'band3_black_2.jpg'];
+    this.tableData = [
+      {
+        text: 'Отображение до 48 символов',
+        imgSrc: 'plus_icon_white_1.png',
+      },
+      {
+        text: 'Отображение уведомлений приложений о входящих вызовах',
+        imgSrc: 'plus_icon_white_2.png',
+      },
+      {
+        text:
+          'Просмотр огромного количества данных об активности в реальном времени',
+        imgSrc: 'plus_icon_white_3.png',
+      },
+      {
+        text: 'Автоматический мониторинг качества сна и подсчет шагов',
+        imgSrc: 'plus_icon_white_4.png',
+      },
+      {
+        // text: 'Водонепроницаемость на глубине до 50 м',
+        text: 'Защита от воды 5 ATM (до 50 м)',
+        imgSrc: 'plus_icon_white_5.png',
+      },
+      {
+        text: '20+ дней от одного заряда',
+        imgSrc: 'plus_icon_white_6.png',
+      },
+    ];
 
-const tableData = [
-  {
-    text: 'Отображение до 48 символов',
-    imgSrc: 'https://image.flaticon.com/icons/png/512/1146/1146343.png',
-  },
-  {
-    text: 'Отображение уведомлений приложений о входящих вызовах',
-    imgSrc: 'https://image.flaticon.com/icons/png/512/1146/1146343.png',
-  },
-  {
-    text:
-      'Просмотр огромного количества данных об активности в реальном времени',
-    imgSrc: 'https://image.flaticon.com/icons/png/512/1146/1146343.png',
-  },
-  {
-    text: 'Автоматический мониторинг качества сна и подсчет шагов',
-    imgSrc: 'https://image.flaticon.com/icons/png/512/1146/1146343.png',
-  },
-  {
-    text: 'Водонепроницаемость на глубине до 50 м',
-    imgSrc: 'https://image.flaticon.com/icons/png/512/1146/1146343.png',
-  },
-  {
-    text: '20+ дней от одного заряда',
-    imgSrc: 'https://image.flaticon.com/icons/png/512/1146/1146343.png',
-  },
-];
-const tableColumns = 6;
+    this.state = {
+      backgroundImgCount: 0,
+      backgroundImgInterval: 2000,
+    };
+  }
 
-const tableTemplate = () => {
-  const table = [];
-  let row = [];
+  componentDidMount() {
+    setInterval(() => {
+      const { backgroundImgCount } = this.state;
 
-  const cells = tableData.map(({ text, imgSrc }, index) => (
-    <div className="pluses-table__cell" key={`pluses-table-cell-${index}`}>
-      <div className="cell__img-wrapper">
-        <img className="cell__img" src={imgSrc} alt="img" />
+      this.setState({
+        backgroundImgCount:
+          backgroundImgCount < this.backgroundImgArray.length - 1
+            ? backgroundImgCount + 1
+            : 0,
+      });
+    }, this.state.backgroundImgInterval);
+  }
+
+  render() {
+    return (
+      <div className="pluses-table__wrapper">
+        {this.mainTextTemplate()}
+        {this.backgroundImgTemplate(
+          this.backgroundImgArray[this.state.backgroundImgCount]
+        )}
+        {this.tableTemplate(this.tableData)}
       </div>
-      <div className="cell__text">{text}</div>
+    );
+  }
+
+  mainTextTemplate = () => (
+    <div className="pluses-table__main-text masked-copy">
+      Сенсорный 0.78 дюйма OLED дисплей
     </div>
-  ));
+  );
 
-  cells.map((item, index) => {
-    row.push(item);
+  backgroundImgTemplate = (src) => {
+    return (
+      <div className="pluses-table__background-img">
+        <Image classMyName="background-img__img" src={src} />
+      </div>
+    );
+  };
 
-    if ((index + 1) % tableColumns === 0) {
-      table.push(
-        <div className="pluses-table__row" key={`pluses-table-row-${index}`}>
-          {row}
+  tableTemplate = (tableData) => {
+    const table = [];
+    let row = [];
+
+    const cells = tableData.map(({ text, imgSrc }, index) => (
+      <div className="pluses-table__cell" key={`pluses-table-cell-${index}`}>
+        <div className="cell__img-wrapper">
+          {/* <img className="cell__img" src={imgSrc} alt="img" /> */}
+          <Image classMyName="cell__img" src={imgSrc} />
         </div>
-      );
-      row = [];
-    }
-  });
+        <div className="cell__text">{text}</div>
+      </div>
+    ));
 
-  return <div className="pluses-table">{[...table]}</div>;
-};
+    cells.map((item, index) => {
+      row.push(item);
 
-const PlusesTable = () => (
-  <div className="pluses-table__wrapper  ">
-    {mainTextTemplate()}
-    {backgroundImgTemplate()}
-    {tableTemplate()}
-  </div>
-);
+      if ((index + 1) % tableData.length === 0) {
+        table.push(
+          <div className="pluses-table__row" key={`pluses-table-row-${index}`}>
+            {row}
+          </div>
+        );
+        row = [];
+      }
+    });
+
+    return (
+      <div className="pluses-table masked-copy">
+        {[...table]}
+        <div className="pluses-table__background" />
+      </div>
+    );
+  };
+}
 
 export { PlusesTable };
