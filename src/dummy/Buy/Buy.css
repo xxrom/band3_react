@@ -3,53 +3,64 @@ $buy-btn_dark: var(--main-color_dark);
 $buy-btn_disable: #b5555291;
 
 .buy-btn {
-    height: 3rem;
-    width: 12rem;
+  height: 3rem;
+  min-width: 12rem;
+  max-width: 15rem; /* +- */
 
-    margin: 0 1rem;
+  margin: 0 1rem;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    color: white;
+  color: white;
 
-    border: 2px solid $buy-btn_dark;
-    border-radius: 2rem;
+  border: 2px solid $buy-btn_dark;
+  border-radius: 2rem;
 
-    outline: none;
-    background: linear-gradient($buy-btn_light, $buy-btn_dark);
+  outline: none;
+  background: linear-gradient($buy-btn_light, $buy-btn_dark);
 
-    background-color: $buy-btn_light;
+  background-color: $buy-btn_light;
 
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 
-    font-weight: bold;
+  font-weight: bold;
 
-    &_mini {
-        height: 2rem;
-        /* width: 8rem; */
+  &_mini {
+    height: 2rem;
+    width: 8rem;
+    min-width: 8rem;
+    max-width: 8rem;
 
-        font-size: 1.2rem;
-    }
+    font-size: 1.2rem;
+  }
 
+  &_disable {
+    border: 2px solid $buy-btn_disable;
+    background: $buy-btn_disable;
 
-    &_disable {
-        border: 2px solid $buy-btn_disable;
-        background: $buy-btn_disable;
-
-        background-color: $buy-btn_disable;
-    }
+    background-color: $buy-btn_disable;
+  }
 }
 
 .buy-btn:hover:not(.buy-btn_disable) {
-    background: linear-gradient($buy-btn_light, $buy-btn_light);
+  background: linear-gradient($buy-btn_light, $buy-btn_light);
 }
 .buy-btn:active:not(.buy-btn_disable) {
-    background: linear-gradient($buy-btn_dark, $buy-btn_dark);
+  background: linear-gradient($buy-btn_dark, $buy-btn_dark);
 }
 
-@media screen and (max-width: 450px) {
-    .buy-btn_mini {
-        /* width: 8rem; */
-        margin: 0 .5rem;
-    }
+@media screen and (max-width: 500px) {
+  .buy-btn {
+    height: 2rem;
+
+    font-size: 1.3rem;
+  }
+  .buy-btn_mini {
+    height: 1.5rem;
+    min-width: 6rem;
+    max-width: 6rem;
+    margin: 0 0.5rem;
+
+    font-size: 1rem;
+  }
 }

@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 0 0 7rem 0;
+    padding: 0 0 3rem 0;
 
     background: black;
 
@@ -13,9 +13,10 @@
     .pluses-table__main-text {
         padding: 7rem 2rem 5rem 2rem;
 
+        text-align: center;
+
         background: url('https://www.apple.com/v/iphone-xr/d/images/overview/copy_texture_1_medium.jpg');
 
-        text-align: center;
         font-size: var(--fontSize_info-header);
         font-weight: 600;
     }
@@ -45,14 +46,13 @@
         padding: 2rem;
 
         color: white;
-        background:  url('../../assets/texture_1.jpg');
+        background: url('../../assets/texture_1.jpg');
 
         &__row {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
         }
-
 
         &__cell {
             display: flex;
@@ -78,6 +78,8 @@
                 padding: 0 1rem 1rem 1rem;
 
                 text-align: center;
+                letter-spacing: 0.01rem;
+                /* letter-spacing: -0.009em; */
 
                 font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue',
                     'Helvetica', 'Arial', sans-serif;

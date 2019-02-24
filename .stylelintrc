@@ -6,7 +6,7 @@
     "rules": {
         "unit-whitelist": ["rem", "%", "s", "vmin", "vmax", "px", "vh", "vw", "deg"],
 
-        "indentation": 4,
+        "indentation": 2,
         "string-quotes": "single",
         "no-eol-whitespace": [ true, {
             "ignore": "empty-lines"

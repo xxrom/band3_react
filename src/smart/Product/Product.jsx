@@ -9,9 +9,18 @@ import { Buy } from '../../dummy/Buy';
 import './Product.css';
 
 class Product extends Component {
+  constructor(props) {
+    super(props);
+    this.productRef = React.createRef();
+  }
+
+  componentDidMount() {
+    // this.props.actions.setPageRef('product', this.productRef);
+  }
+
   render() {
     return (
-      <div className="product__wrapper">
+      <div ref={this.productRef} className="product__wrapper">
         <div className="product__text">
           <ProductText />
         </div>
@@ -33,5 +42,7 @@ const mapStateToProps = (state) => {
     currentImageName: imageNames[currentImageIndex],
   };
 };
+
+// const dispatch
 
 export default connect(mapStateToProps)(Product);

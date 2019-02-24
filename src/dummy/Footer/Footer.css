@@ -1,17 +1,109 @@
 .footer__wrapper {
-  /* height: 4rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  padding: 4rem 2rem 2rem rem;
+  background: rgba(0, 0, 0, 1);
 
-  background: white;
+  .footer {
+    display: flex;
+    flex-direction: column;
 
-  .footer__text {
-    letter-spacing: 0.2rem;
-    font-weight: 300;
+    width: 100%;
 
-    .footer__myhref {
-      text-decoration: none;
-      font-weight: 600;
+    max-width: 1100px;
+    padding: 0rem 2rem 3rem 2rem;
+
+    background: inherit;
+    .footer__line {
+      padding-bottom: 5rem;
+
+      border-top: 1px solid #362f32;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row;
+
+      width: 100%;
+      padding: 0;
+
+      .footer__developer {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        text-decoration: none;
+        letter-spacing: 0.2rem;
+
+        color: white;
+        background: inherit;
+
+        font-weight: 600;
+        align-items: center;
+
+        &_text {
+          font-weight: 300;
+        }
+
+        &_by {
+          padding: 0 0.5rem;
+        }
+
+        &_me {
+        }
+      }
+
+      .footer__email {
+        display: flex;
+
+        height: 100%;
+
+        cursor: pointer;
+        text-decoration: none;
+
+        color: white;
+
+        background: inherit;
+        align-items: center;
+
+        .email-img {
+          height: 2rem;
+          width: 2rem;
+          margin: 0 1rem;
+
+          content: '';
+
+          background: url(../../assets/icons/gmail.svg);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer {
+      &__info {
+        .footer__email {
+          .email-img {
+            margin: 0;
+          }
+          .email-text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .footer {
+      &__info {
+        .footer__developer {
+          &_text {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
