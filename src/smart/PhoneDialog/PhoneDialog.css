@@ -4,249 +4,249 @@ $closeBtnR: calc(-$btnSize / 2);
 $validateSize: 1.5rem;
 
 .wrapper {
-    position: fixed;
+  position: fixed;
 
-    z-index: 100;
+  z-index: 100;
 
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  overflow: hidden;
+
+  height: 100vh;
+  width: 100vw;
+
+  border: 1px solid rgba(0, 0, 0, 0.821);
+
+  background-color: rgba(0, 0, 0, 0.821);
+
+  align-items: center;
+  justify-content: center;
+
+  &-hide {
+
+    transition: opacity 0.3s ease-in, transform 1s ease-in;
+    transform: translateX(-100%);
+
+    opacity: 0;
+  }
+
+  &-show {
+
+    transition: opacity 0.3s ease-out;
+    transform: translateX(0%);
+
+    opacity: 1;
+  }
+
+  &__dialog {
+    position: relative;
 
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
 
-    height: 100vh;
-    width: 100vw;
+    height: 50vh;
+    min-height: 300px;
+    width: 80vw;
+    min-width: 300px;
+    max-width: 900px;
 
-    border: 1px solid rgba(0, 0, 0, 0.821);
+    padding: 2rem;
 
-    background-color: rgba(0, 0, 0, 0.821);
+    border-radius: 0.5rem;
 
+    background-color: white;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.8);
     align-items: center;
     justify-content: center;
 
-    &-hide {
+    .dialog__text {
 
-        transition: opacity 0.3s ease-in, transform 1s ease-in;
-        transform: translateX(-100%);
+      max-width: 500px;
 
-        opacity: 0;
+      text-align: center;
+
+      font-size: var(--fontSize_info-main-intro);
     }
 
-    &-show {
+    .dialog__input {
+      position: relative;
 
-        transition: opacity 0.3s ease-out;
-        transform: translateX(0%);
+      display: flex;
 
-        opacity: 1;
-    }
+      margin: 2rem 0;
 
-    &__dialog {
-        position: relative;
+      padding: 0.5rem;
 
-        display: flex;
-        flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0.5rem;
+      align-items: center;
+      justify-content: space-around;
 
-        height: 50vh;
-        min-height: 300px;
-        width: 80vw;
-        min-width: 300px;
-        max-width: 900px;
+      &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.75);
+      }
 
-        padding: 2rem;
+      .input {
+        width: 100%;
+        max-width: calc(var(--fontSize_info-main-intro) * 9);
 
-        border-radius: 0.5rem;
+        border: 0;
 
-        background-color: white;
-        box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.8);
-        align-items: center;
-        justify-content: center;
+        font-family: sans-serif;
 
-        .dialog__text {
+        font-size: var(--fontSize_info-main-intro);
 
-            max-width: 500px;
-
-            text-align: center;
-
-            font-size: var(--fontSize_info-main-intro);
+        &:focus {
+          outline-width: 0;
         }
 
-        .dialog__input {
-            position: relative;
+        &-validate{
+          position: relative;
+          right: 0;
 
-            display: flex;
+          height: $validateSize;
+          min-height: $validateSize;
+          width: $validateSize;
+          min-width: $validateSize;
 
-            margin: 2rem 0;
+          margin: 0 0.4rem 0 0.5rem;
 
-            padding: 0.5rem;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          border-radius: 50%;
 
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            border-radius: 0.5rem;
-            align-items: center;
-            justify-content: space-around;
-
-            &:focus {
-                border: 1px solid rgba(0, 0, 0, 0.75);
-            }
-
-            .input {
-                width: 100%;
-                max-width: calc(var(--fontSize_info-main-intro) * 9);
-
-                border: 0;
-
-                font-family: sans-serif;
-
-                font-size: var(--fontSize_info-main-intro);
-
-                &:focus {
-                    outline-width: 0;
-                }
-
-                &-validate{
-                    position: relative;
-                    right: 0;
-
-                    height: $validateSize;
-                    min-height: $validateSize;
-                    width: $validateSize;
-                    min-width: $validateSize;
-
-                    margin: 0 0.4rem 0 0.5rem;
-
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 50%;
-
-                    &_ok {
-                        background-color: rgb(0, 187, 69);
-
-                        &:before {
-                            position: absolute;
-                            /* 11px */
-                            top: calc(0.5 * $validateSize);
-
-                            /* 4px */
-                            left: calc(0.12 * $validateSize);
-                            /* 2px */
-                            height: calc(0.08 * $validateSize);
-                            /* 16px */
-                            width: calc(0.37 * $validateSize);
-
-                            content: '';
-                            transform: rotate(45deg);
-
-                            background-color: #fff;
-                        }
-                        &:after {
-                            position: absolute;
-                            /* 11px */
-                            top: calc(0.43 * $validateSize);
-
-                            /* 4px */
-                            left: calc(0.24 * $validateSize);
-                            /* 2px */
-                            height: calc(0.08 * $validateSize);
-                            /* 16px */
-                            width: calc(0.57 * $validateSize);
-
-                            content: '';
-                            transform: rotate(-60deg);
-
-                            background-color: #fff;
-                        }
-
-                    }
-                    &_error {
-                        background-color: rgb(255, 0, 0);
-
-                        &:before {
-                            position: absolute;
-                            /* 11px */
-                            top: calc(0.39 * $validateSize);
-
-                            /* 4px */
-                            left: calc(0.15 * $validateSize);
-                            /* 2px */
-                            height: calc(0.15 * $validateSize);
-                            /* 16px */
-                            width: calc(0.7 * $validateSize);
-
-                            content: '';
-                            transform: rotate(90deg);
-
-                            background-color: #fff;
-                        }
-                        &:after {
-                            position: absolute;
-                            /* 11px */
-                            top: calc(0.43 * $validateSize);
-
-                            /* 4px */
-                            left: calc(0.4 * $validateSize);
-                            /* 2px */
-                            height: calc(0.42 * $validateSize);
-                            /* 16px */
-                            width: calc(0.13 * $validateSize);
-
-                            content: '';
-                            transform: rotate(90deg);
-
-                            background-color: rgb(255, 0, 0);
-                        }
-                    }
-                }
-            }
-        }
-
-        .dialog__close-btn {
-            position: absolute;
-            /* top: calc(-$btnSize + 1rem);
-            right: calc(-$btnSize + 1rem); */
-            top: 0;
-            right: 0;
-
-            height: $btnSize;
-
-            width: $btnSize;
-            min-width: $btnSize;
-
-            cursor: pointer;
-
-            border-bottom: 1px solid black;
-
-            border-left: 1px solid black;
-
-            border-radius: 0rem 0.5rem 0rem 0.5rem;
-
-            background-color: #fff;
-
-            &:before,
-            &:after {
-                position: absolute;
-                /* 11px */
-                top: calc(0.45 * $btnSize);
-
-                /* 4px */
-                left: calc(0.17 * $btnSize);
-                /* 2px */
-                height: calc(0.08 * $btnSize);
-                /* 16px */
-                width: calc(0.67 * $btnSize);
-
-                content: '';
-
-                background-color: #000;
-            }
+          &_ok {
+            background-color: rgb(0, 187, 69);
 
             &:before {
-                transform: rotate(45deg);
+              position: absolute;
+              /* 11px */
+              top: calc(0.5 * $validateSize);
+
+              /* 4px */
+              left: calc(0.12 * $validateSize);
+              /* 2px */
+              height: calc(0.08 * $validateSize);
+              /* 16px */
+              width: calc(0.37 * $validateSize);
+
+              content: '';
+              transform: rotate(45deg);
+
+              background-color: #fff;
             }
             &:after {
-                transform: rotate(-45deg);
+              position: absolute;
+              /* 11px */
+              top: calc(0.43 * $validateSize);
+
+              /* 4px */
+              left: calc(0.24 * $validateSize);
+              /* 2px */
+              height: calc(0.08 * $validateSize);
+              /* 16px */
+              width: calc(0.57 * $validateSize);
+
+              content: '';
+              transform: rotate(-60deg);
+
+              background-color: #fff;
             }
 
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.08);
+          }
+          &_error {
+            background-color: rgb(255, 0, 0);
+
+            &:before {
+              position: absolute;
+              /* 11px */
+              top: calc(0.39 * $validateSize);
+
+              /* 4px */
+              left: calc(0.15 * $validateSize);
+              /* 2px */
+              height: calc(0.15 * $validateSize);
+              /* 16px */
+              width: calc(0.7 * $validateSize);
+
+              content: '';
+              transform: rotate(90deg);
+
+              background-color: #fff;
             }
+            &:after {
+              position: absolute;
+              /* 11px */
+              top: calc(0.43 * $validateSize);
+
+              /* 4px */
+              left: calc(0.4 * $validateSize);
+              /* 2px */
+              height: calc(0.42 * $validateSize);
+              /* 16px */
+              width: calc(0.13 * $validateSize);
+
+              content: '';
+              transform: rotate(90deg);
+
+              background-color: rgb(255, 0, 0);
+            }
+          }
         }
+      }
     }
+
+    .dialog__close-btn {
+      position: absolute;
+      /* top: calc(-$btnSize + 1rem);
+            right: calc(-$btnSize + 1rem); */
+      top: 0;
+      right: 0;
+
+      height: $btnSize;
+
+      width: $btnSize;
+      min-width: $btnSize;
+
+      cursor: pointer;
+
+      border-bottom: 1px solid black;
+
+      border-left: 1px solid black;
+
+      border-radius: 0rem 0.5rem 0rem 0.5rem;
+
+      background-color: #fff;
+
+      &:before,
+      &:after {
+        position: absolute;
+        /* 11px */
+        top: calc(0.45 * $btnSize);
+
+        /* 4px */
+        left: calc(0.17 * $btnSize);
+        /* 2px */
+        height: calc(0.08 * $btnSize);
+        /* 16px */
+        width: calc(0.67 * $btnSize);
+
+        content: '';
+
+        background-color: #000;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
 }

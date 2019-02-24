@@ -1,61 +1,61 @@
 $important: var(--important);
 
 .price {
-    position: relative;
+  position: relative;
 
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 1rem;
+
+  white-space: nowrap; /* не переносить слова */
+
+  font-family: 'Helvetica', 'sans-serif';
+
+  font-size: 1.2rem;
+  justify-content: center;
+
+  &-old__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_old {
     display: flex;
 
-    flex-direction: column;
+    padding-right: 1rem;
 
-    padding: 1rem;
+    color: gray;
+    text-decoration-line: line-through;
+  }
 
-    white-space: nowrap; /* не переносить слова */
+  &_new {
 
-    font-family: 'Helvetica', 'sans-serif';
+    margin: 0.1rem 0;
 
-    font-size: 1.2rem;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  &_discount {
+    color: red;
+  }
+
+  &_benefit {
+    display: flex;
+
+    padding: 0 1rem;
+
+    color: $important;
+    border: 1px solid $important;
+    border-radius: 1rem;
+
+    background-color: white;
     justify-content: center;
+  }
 
-    &-old__wrapper {
-        display: flex;
-        flex-direction: row;
-    }
-
-    &_old {
-        display: flex;
-
-        padding-right: 1rem;
-
-        color: gray;
-        text-decoration-line: line-through;
-    }
-
-    &_new {
-
-        margin: 0.1rem 0;
-
-        font-size: 4rem;
-        font-weight: bold;
-    }
-
-    &_discount {
-        color: red;
-    }
-
-    &_benefit {
-        display: flex;
-
-        padding: 0 1rem;
-
-        color: $important;
-        border: 1px solid $important;
-        border-radius: 1rem;
-
-        background-color: white;
-        justify-content: center;
-    }
-
-    &_currency {
-        font-size: 2rem;
-    }
+  &_currency {
+    font-size: 2rem;
+  }
 }

@@ -11,90 +11,90 @@ $lineLength: calc($height / 2);
 $activeFontSize: var(--fontSize_info-plus-item);
 
 .plus {
-    position: relative;
+  position: relative;
 
-    display: flex;
+  display: flex;
 
-    height: $height;
-    min-height: $height;
-    width: $width;
-    min-width: $width;
+  height: $height;
+  min-height: $height;
+  width: $width;
+  min-width: $width;
 
-    cursor: pointer;
-    transition: all .3s ease 0s;
+  cursor: pointer;
+  transition: all .3s ease 0s;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: $buy-btn_light;
+  background: $buy-btn_light;
 
-    &__line {
+  &__line {
 
 
-        position: absolute;
-        top: calc(50% - ($height - $lineLength) / 2);
+    position: absolute;
+    top: calc(50% - ($height - $lineLength) / 2);
 
-        left: calc(50% - ($lineWidth / 2));
+    left: calc(50% - ($lineWidth / 2));
 
-        height: $lineLength;
-        width: $lineWidth;
+    height: $lineLength;
+    width: $lineWidth;
 
-        border-radius: $lineWidth;
-        /* background: #000; */
+    border-radius: $lineWidth;
+    /* background: #000; */
 
-        background: white;
+    background: white;
 
-        &--h {
-            transform: rotate(90deg);
-        }
-        &--v {
-            display: flex;
-            overflow: hidden;
-
-            transition: all .3s ease 0s;
-            align-items: center;
-            justify-content: space-around;
-        }
+    &--h {
+      transform: rotate(90deg);
     }
+    &--v {
+      display: flex;
+      overflow: hidden;
 
-    &__link {
-        visibility: hidden;
-
-        transition : .3s ease 0s;
-        transform: scale(.5);
-
-        opacity: 0;
-        /* color: #fff; */
-        font-size: $activeFontSize;
+      transition: all .3s ease 0s;
+      align-items: center;
+      justify-content: space-around;
     }
-    &--active {
-        height: $lineLength;
+  }
 
-        border-radius: $lineLength;
+  &__link {
+    visibility: hidden;
 
-        .plus__line--v {
-            top: calc(-3 * $lineLength);
+    transition : .3s ease 0s;
+    transform: scale(.5);
 
-            left: calc(50% - 140px);
+    opacity: 0;
+    /* color: #fff; */
+    font-size: $activeFontSize;
+  }
+  &--active {
+    height: $lineLength;
 
-            box-sizing: border-box;
-            height: calc(2 * $activeFontSize);
-            width: 280px;
-            padding: 0 0.5rem;
-            /* width: auto; */
+    border-radius: $lineLength;
 
-            white-space: nowrap;
+    .plus__line--v {
+      top: calc(-3 * $lineLength);
 
-            border: 1px solid $important;
+      left: calc(50% - 140px);
 
-            border-radius: 60px;
-        }
-        .plus__link{
-            visibility: visible;
+      box-sizing: border-box;
+      height: calc(2 * $activeFontSize);
+      width: 280px;
+      padding: 0 0.5rem;
+      /* width: auto; */
 
-            transition-delay: .15s;
-            transform: scale(1);
+      white-space: nowrap;
 
-            opacity: 1;
-        }
+      border: 1px solid $important;
+
+      border-radius: 60px;
     }
+    .plus__link{
+      visibility: visible;
+
+      transition-delay: .15s;
+      transform: scale(1);
+
+      opacity: 1;
+    }
+  }
 }

@@ -1,143 +1,143 @@
 .pluses-table__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0 0 3rem 0;
+
+  background: black;
+
+  /* BLOCK mainText */
+  .pluses-table__main-text {
+    padding: 7rem 2rem 5rem 2rem;
+
+    text-align: center;
+
+    background: url('https://www.apple.com/v/iphone-xr/d/images/overview/copy_texture_1_medium.jpg');
+
+    font-size: var(--fontSize_info-header);
+    font-weight: 600;
+  }
+
+  /* BLOCK backgroundImg */
+  .pluses-table__background-img {
+    height: 50vw;
+    max-height: 500px;
+
+    .background-img__img {
+      width: 80vw;
+      max-width: 800px;
+    }
+  }
+
+  /* BLOCK pluses-table */
+  .pluses-table {
     position: relative;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
-    padding: 0 0 3rem 0;
+    max-width: 1100px;
 
-    background: black;
+    padding: 2rem;
 
-    /* BLOCK mainText */
-    .pluses-table__main-text {
-        padding: 7rem 2rem 5rem 2rem;
+    color: white;
+    background: url('../../assets/texture_1.jpg');
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &__cell {
+      display: flex;
+      flex-direction: column;
+
+      min-height: 10rem;
+      max-height: 30rem;
+
+      width: 100%;
+      min-width: 10rem;
+      max-width: 33.3%;
+
+      padding: 2rem 1rem;
+
+      border: 1px solid #362f32;
+
+      align-items: center;
+      justify-content: flex-start;
+
+      border-radius: 0.5rem;
+
+      .cell__text {
+        padding: 0 1rem 1rem 1rem;
 
         text-align: center;
+        letter-spacing: 0.01rem;
+        /* letter-spacing: -0.009em; */
 
-        background: url('https://www.apple.com/v/iphone-xr/d/images/overview/copy_texture_1_medium.jpg');
+        font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue',
+          'Helvetica', 'Arial', sans-serif;
 
-        font-size: var(--fontSize_info-header);
-        font-weight: 600;
-    }
+        font-size: 20px;
+        font-size: var(--fontSize_info-main-intro);
+        font-weight: 800;
+      }
 
-    /* BLOCK backgroundImg */
-    .pluses-table__background-img {
-        height: 50vw;
-        max-height: 500px;
+      .cell__img-wrapper {
+        height: 9vw;
+        max-height: 6rem;
+        width: 9vw;
+        max-width: 6rem;
 
-        .background-img__img {
-            width: 80vw;
-            max-width: 800px;
+        margin: 0 0 2rem 0;
+
+        object-fit: cover;
+
+        .cell__img {
+          height: 100%;
+          width: 100%;
+          max-width: 100%;
+
+          object-fit: cover;
         }
+      }
     }
+  }
 
-    /* BLOCK pluses-table */
-    .pluses-table {
-        position: relative;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        max-width: 1100px;
-
-        padding: 2rem;
-
-        color: white;
-        background: url('../../assets/texture_1.jpg');
-
-        &__row {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-
-        &__cell {
-            display: flex;
-            flex-direction: column;
-
-            min-height: 10rem;
-            max-height: 30rem;
-
-            width: 100%;
-            min-width: 10rem;
-            max-width: 33.3%;
-
-            padding: 2rem 1rem;
-
-            border: 1px solid #362f32;
-
-            align-items: center;
-            justify-content: flex-start;
-
-            border-radius: 0.5rem;
-
-            .cell__text {
-                padding: 0 1rem 1rem 1rem;
-
-                text-align: center;
-                letter-spacing: 0.01rem;
-                /* letter-spacing: -0.009em; */
-
-                font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue',
-                    'Helvetica', 'Arial', sans-serif;
-
-                font-size: 20px;
-                font-size: var(--fontSize_info-main-intro);
-                font-weight: 800;
-            }
-
-            .cell__img-wrapper {
-                height: 9vw;
-                max-height: 6rem;
-                width: 9vw;
-                max-width: 6rem;
-
-                margin: 0 0 2rem 0;
-
-                object-fit: cover;
-
-                .cell__img {
-                    height: 100%;
-                    width: 100%;
-                    max-width: 100%;
-
-                    object-fit: cover;
-                }
-            }
-        }
-    }
-
-    .masked-copy {
-        color: transparent !important;
-        -webkit-background-clip: text;
-    }
+  .masked-copy {
+    color: transparent !important;
+    -webkit-background-clip: text;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .pluses-table__wrapper {
-        .pluses-table__cell {
-            max-width: 50%;
+  .pluses-table__wrapper {
+    .pluses-table__cell {
+      max-width: 50%;
 
-            .cell__img-wrapper {
-                height: 12vw;
-                width: 12vw;
-            }
-        }
+      .cell__img-wrapper {
+        height: 12vw;
+        width: 12vw;
+      }
     }
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .pluses-table__wrapper {
-        .pluses-table__cell {
-            max-width: 100%;
+  .pluses-table__wrapper {
+    .pluses-table__cell {
+      max-width: 100%;
 
-            .cell__img-wrapper {
-                height: 15vw;
-                width: 15vw;
-            }
-        }
+      .cell__img-wrapper {
+        height: 15vw;
+        width: 15vw;
+      }
     }
+  }
 }

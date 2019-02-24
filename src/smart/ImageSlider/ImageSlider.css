@@ -1,15 +1,15 @@
 .product-info {
+  display: flex;
+
+  flex-direction: row;
+
+  box-sizing: border-box;
+
+  height: 10vh;
+  align-items: center;
+
+  .empty-block {
     display: flex;
-
-    flex-direction: row;
-
-    box-sizing: border-box;
-
-    height: 10vh;
-    align-items: center;
-
-    .empty-block {
-        display: flex;
-        flex: 1 1;
-    }
+    flex: 1 1;
+  }
 }
