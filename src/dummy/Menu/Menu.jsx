@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { toProduct } from './redux';
 import './Menu.css';
 
 import { Buy } from '../Buy';
 
-class Menu extends Component {
+class MenuElement extends Component {
   constructor(props) {
     super(props);
+
+    console.log('this.props.actions.toProduct', this.props.actions.toProduct);
 
     const navigationItems = [
       {
         class: 'product',
         title: 'Mi Band 3',
+        onClick: this.props.actions.toProduct,
       },
       {
         class: 'about',
@@ -27,6 +33,11 @@ class Menu extends Component {
       <div
         key={`menu ${index}`}
         className={`navigation__item navigation__${item.class}`}
+        onClick={() => {
+          console.log('onClick', item);
+          item.onClick();
+          this.props.actions.toProduct();
+        }}
       >
         {item.title}
       </div>
@@ -133,5 +144,16 @@ class Menu extends Component {
     });
   };
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: {
+    toProduct: bindActionCreators(toProduct, dispatch),
+  },
+});
+
+const Menu = connect(
+  null,
+  mapDispatchToProps
+)(MenuElement);
 
 export { Menu };

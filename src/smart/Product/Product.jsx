@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { ImageBigAtCenter } from '../../dummy/ImageBigAtCenter';
 import { ProductText } from '../../dummy/ProductText';
 import { Price } from '../../dummy/Price';
 import { Buy } from '../../dummy/Buy';
+
+import { menu } from '../../reducers';
 
 import './Product.css';
 
@@ -15,6 +18,8 @@ class Product extends Component {
   }
 
   componentDidMount() {
+    console.log('Product ref', this.productRef);
+    this.props.actions.setRefProduct(this.productRef);
     // this.props.actions.setPageRef('product', this.productRef);
   }
 
@@ -43,6 +48,13 @@ const mapStateToProps = (state) => {
   };
 };
 
-// const dispatch
+const dispatchMapToProps = (dispatch) => ({
+  actions: {
+    setRefProduct: bindActionCreators(menu.setRefProduct, dispatch),
+  },
+});
 
-export default connect(mapStateToProps)(Product);
+export default connect(
+  mapStateToProps,
+  dispatchMapToProps
+)(Product);

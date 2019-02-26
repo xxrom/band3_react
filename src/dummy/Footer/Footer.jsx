@@ -19,8 +19,8 @@ class Footer extends Component {
               <div className="footer__developer_me">Chernyshov</div>
             </a>
             <a className="footer__email" href={`mailto:chernyshovnm@gmail.com`}>
-              <div class="email-img" />
-              <div class="email-text">techcatch@inbox.ru</div>
+              <div className="email-img" />
+              <div className="email-text">techcatch@inbox.ru</div>
             </a>
           </div>
         </div>
