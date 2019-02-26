@@ -18,9 +18,7 @@ class Product extends Component {
   }
 
   componentDidMount() {
-    console.log('Product ref', this.productRef);
     this.props.actions.setRefProduct(this.productRef);
-    // this.props.actions.setPageRef('product', this.productRef);
   }
 
   render() {

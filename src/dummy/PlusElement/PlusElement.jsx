@@ -11,8 +11,6 @@ class PlusElement extends Component {
       active: false,
     };
 
-    console.log('props', props);
-
     if (!props.static) {
       this.onClick = this.onClick.bind(this);
     } else {
@@ -38,12 +36,10 @@ class PlusElement extends Component {
     );
   }
 
-  onClick = (e) => {
-    console.log('onClick');
+  onClick = (e) =>
     this.setState({
       active: !this.state.active,
     });
-  };
 }
 
 export { PlusElement };

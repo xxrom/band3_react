@@ -32,10 +32,8 @@ class PhoneDialog extends Component {
   valid = false;
 
   render() {
-    console.log('this.state', this.props);
     const { phone, phoneSanded } = this.props;
     this.valid = this.phoneMask.test(phone);
-    console.log('this.valid', this.valid);
 
     return (
       <div
@@ -84,8 +82,6 @@ class PhoneDialog extends Component {
   // 3 показать сообщение, после анимации, что вам перезвонят в ближайшее время
 
   onInputKeyPress = (e) => {
-    console.log(`valid = ${this.valid} / key pressed`, e.key);
-
     if (this.valid && e.key === 'Enter') {
       this.onClickCall();
     }

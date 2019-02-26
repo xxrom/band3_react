@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { menu } from '../../reducers';
 import { Image } from '../Image';
 import './PlusesTable.css';
 
-class PlusesTable extends Component {
+class PlusesTableElement extends Component {
   constructor(props) {
     super(props);
 
+    this.aboutRef = React.createRef();
     this.backgroundImgArray = ['band3_black_1.jpg', 'band3_black_2.jpg'];
     this.tableData = [
       {
@@ -44,6 +48,8 @@ class PlusesTable extends Component {
   }
 
   componentDidMount() {
+    this.props.actions.setRefAbout(this.aboutRef);
+
     setInterval(() => {
       const { backgroundImgCount } = this.state;
 
@@ -58,7 +64,7 @@ class PlusesTable extends Component {
 
   render() {
     return (
-      <div className="pluses-table__wrapper">
+      <div ref={this.aboutRef} className="pluses-table__wrapper">
         {this.mainTextTemplate()}
         {this.backgroundImgTemplate(
           this.backgroundImgArray[this.state.backgroundImgCount]
@@ -117,5 +123,16 @@ class PlusesTable extends Component {
     );
   };
 }
+
+const dispatchMapToProps = (dispatch) => ({
+  actions: {
+    setRefAbout: bindActionCreators(menu.setRefAbout, dispatch),
+  },
+});
+
+const PlusesTable = connect(
+  null,
+  dispatchMapToProps
+)(PlusesTableElement);
 
 export { PlusesTable };

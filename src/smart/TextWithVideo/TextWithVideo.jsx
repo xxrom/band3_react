@@ -19,7 +19,6 @@ class TextWithVideo extends Component {
   }
 
   loadVideos = () => {
-    console.log('loadVideos');
     const { backgroundVideoName } = this.state;
 
     try {
@@ -28,7 +27,7 @@ class TextWithVideo extends Component {
 
       return;
     } catch (error) {
-      console.log('mp4 error', error);
+      console.error('mp4 error', error);
     }
 
     try {
@@ -36,15 +35,13 @@ class TextWithVideo extends Component {
       this.setState({ webm });
       return;
     } catch (error) {
-      console.log('webm error', error);
+      console.error('webm error', error);
     }
   };
 
   render() {
     const { text, mp4, webm } = this.state;
 
-    console.log(!!mp4);
-    console.log(!!webm);
     return (
       <div className="text-with-video__wrapper">
         <div className="text-with-video__text">{text}</div>

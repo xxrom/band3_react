@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { menu } from '../../reducers';
 import './Footer.css';
 
-class Footer extends Component {
+class FooterElement extends Component {
+  constructor(props) {
+    super(props);
+    this.footerRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.props.actions.setRefContacts(this.footerRef);
+  }
+
   render() {
     return (
-      <div className="footer__wrapper">
+      <div ref={this.footerRef} className="footer__wrapper">
         <div className="footer">
           <div className="footer__line" />
           <div className="footer__info">
@@ -28,5 +40,16 @@ class Footer extends Component {
     );
   }
 }
+
+const dispatchMapToProps = (dispatch) => ({
+  actions: {
+    setRefContacts: bindActionCreators(menu.setRefContacts, dispatch),
+  },
+});
+
+const Footer = connect(
+  null,
+  dispatchMapToProps
+)(FooterElement);
 
 export { Footer };

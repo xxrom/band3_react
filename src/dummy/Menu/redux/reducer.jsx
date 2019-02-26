@@ -16,15 +16,30 @@ export default function reducer(state = initState, action) {
         productRef: action.payload,
       };
     }
-
-    case TO_PRODUCT: {
-      if (state.productRef && state.productRef.offsetTop) {
-        window.scrollY(state.productRef.offsetTop);
-      }
-
+    case SET_REF_ABOUT: {
       return {
         ...state,
+        aboutRef: action.payload,
       };
+    }
+    case SET_REF_CONTACTS: {
+      return {
+        ...state,
+        contactsRef: action.payload,
+      };
+    }
+
+    case TO_PRODUCT: {
+      setScrollTo(state.productRef, -70);
+      return state;
+    }
+    case TO_ABOUT: {
+      setScrollTo(state.aboutRef, -70);
+      return state;
+    }
+    case TO_CONTACTS: {
+      setScrollTo(state.contactsRef);
+      return state;
     }
 
     default: {
@@ -33,10 +48,32 @@ export default function reducer(state = initState, action) {
   }
 }
 
+function setScrollTo(ref, correction = 0) {
+  if (ref && ref.current) {
+    window.scrollTo({
+      top: ref.current.offsetTop + correction,
+      behavior: 'smooth',
+    });
+  } else {
+    console.error(`error: undefined ref in action!`);
+  }
+}
+
 export function setRefProduct(ref) {
-  console.log('setRefProduct action', ref);
   return {
     type: SET_REF_PRODUCT,
+    payload: ref,
+  };
+}
+export function setRefAbout(ref) {
+  return {
+    type: SET_REF_ABOUT,
+    payload: ref,
+  };
+}
+export function setRefContacts(ref) {
+  return {
+    type: SET_REF_CONTACTS,
     payload: ref,
   };
 }
@@ -44,6 +81,18 @@ export function setRefProduct(ref) {
 export function toProduct() {
   return {
     type: TO_PRODUCT,
+    payload: true,
+  };
+}
+export function toAbout() {
+  return {
+    type: TO_ABOUT,
+    payload: true,
+  };
+}
+export function toContacts() {
+  return {
+    type: TO_CONTACTS,
     payload: true,
   };
 }

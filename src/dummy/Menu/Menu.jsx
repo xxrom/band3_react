@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { toProduct } from './redux';
+import { toProduct, toAbout, toContacts } from './redux';
 import './Menu.css';
 
 import { Buy } from '../Buy';
@@ -10,8 +10,6 @@ import { Buy } from '../Buy';
 class MenuElement extends Component {
   constructor(props) {
     super(props);
-
-    console.log('this.props.actions.toProduct', this.props.actions.toProduct);
 
     const navigationItems = [
       {
@@ -21,11 +19,13 @@ class MenuElement extends Component {
       },
       {
         class: 'about',
-        title: 'О нас',
+        title: 'Описание',
+        onClick: this.props.actions.toAbout,
       },
       {
-        class: 'contact',
+        class: 'contacts',
         title: 'Контакты',
+        onClick: this.props.actions.toContacts,
       },
     ];
 
@@ -33,11 +33,7 @@ class MenuElement extends Component {
       <div
         key={`menu ${index}`}
         className={`navigation__item navigation__${item.class}`}
-        onClick={() => {
-          console.log('onClick', item);
-          item.onClick();
-          this.props.actions.toProduct();
-        }}
+        onClick={item.onClick}
       >
         {item.title}
       </div>
@@ -50,10 +46,7 @@ class MenuElement extends Component {
       activateMenuStatic: -40,
     };
 
-    window.addEventListener('scroll', () => {
-      console.log('scroll');
-      this.calcMenuStatic();
-    });
+    window.addEventListener('scroll', this.calcMenuStatic);
   }
 
   componentDidMount() {
@@ -65,7 +58,6 @@ class MenuElement extends Component {
     const menu = this.menuWrapper.getBoundingClientRect();
 
     if (menu.top <= activateMenuStatic && !menuStatic) {
-      console.log('<-25 !!!');
       this.setState({
         menuStatic: true,
       });
@@ -137,17 +129,17 @@ class MenuElement extends Component {
     );
   };
 
-  onClickMobileMenu = (e) => {
-    console.log('mobile menu clicked');
+  onClickMobileMenu = (e) =>
     this.setState({
       showMobileMenu: !this.state.showMobileMenu,
     });
-  };
 }
 
 const mapDispatchToProps = (dispatch) => ({
   actions: {
     toProduct: bindActionCreators(toProduct, dispatch),
+    toAbout: bindActionCreators(toAbout, dispatch),
+    toContacts: bindActionCreators(toContacts, dispatch),
   },
 });
 

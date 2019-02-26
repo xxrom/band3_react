@@ -9,7 +9,6 @@ const initState = {
 const imageSlider = (state = initState, action) => {
   switch (action.type) {
     case CHANGE_SLIDE: {
-      console.log('change_slide');
       return {
         ...state,
         currentImageIndex:
