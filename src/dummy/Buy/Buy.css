@@ -35,7 +35,7 @@ $buy-btn_disable: #b5555291;
   }
 
   &_disable {
-    border: 2px solid $buy-btn_disable;
+    border: 1px solid $buy-btn_disable;
     background: $buy-btn_disable;
 
     background-color: $buy-btn_disable;

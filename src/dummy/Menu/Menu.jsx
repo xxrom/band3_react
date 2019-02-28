@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { toProduct, toAbout, toContacts } from './redux';
+import { toProduct, toAbout, toContacts, toggleMobileMenu } from './redux';
 import './Menu.css';
 
 import { Buy } from '../Buy';
@@ -42,7 +42,6 @@ class MenuElement extends Component {
     this.state = {
       menuItems,
       menuStatic: false,
-      showMobileMenu: false,
       activateMenuStatic: -40,
     };
 
@@ -69,7 +68,8 @@ class MenuElement extends Component {
   };
 
   render() {
-    const { showMobileMenu, menuItems, menuStatic } = this.state;
+    const { menuItems, menuStatic } = this.state;
+    const { showMobileMenu } = this.props.menu;
 
     return (
       <div
@@ -86,7 +86,11 @@ class MenuElement extends Component {
     return (
       <>
         <div className="background" />
-        <div className="logo" ref={(el) => (this.logo = el)}>
+        <div
+          className="logo"
+          onClick={this.props.actions.toProduct}
+          ref={(el) => (this.logo = el)}
+        >
           {this.props.siteName}
         </div>
         <div className="navigation">{menuItems}</div>
@@ -95,7 +99,7 @@ class MenuElement extends Component {
           className={`navigation__mobile_arrow arrow-${
             showMobileMenu ? 'down' : 'up'
           }`}
-          onClick={this.onClickMobileMenu}
+          onClick={this.props.actions.toggleMobileMenu}
         >
           >
         </div>
@@ -123,28 +127,30 @@ class MenuElement extends Component {
           className={`mobile-menu__list__background${
             showMobileMenu ? '' : '_hide'
           }`}
-          onClick={this.onClickMobileMenu}
+          onClick={this.props.actions.toggleMobileMenu}
         />
       </div>
     );
   };
-
-  onClickMobileMenu = (e) =>
-    this.setState({
-      showMobileMenu: !this.state.showMobileMenu,
-    });
 }
+
+const mapStateToProps = (state) => ({
+  menu: {
+    showMobileMenu: state.menu.showMobileMenu,
+  },
+});
 
 const mapDispatchToProps = (dispatch) => ({
   actions: {
     toProduct: bindActionCreators(toProduct, dispatch),
     toAbout: bindActionCreators(toAbout, dispatch),
     toContacts: bindActionCreators(toContacts, dispatch),
+    toggleMobileMenu: bindActionCreators(toggleMobileMenu, dispatch),
   },
 });
 
 const Menu = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(MenuElement);
 

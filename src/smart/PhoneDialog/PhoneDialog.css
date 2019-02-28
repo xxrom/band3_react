@@ -25,7 +25,6 @@ $validateSize: 1.5rem;
   justify-content: center;
 
   &-hide {
-
     transition: opacity 0.3s ease-in, transform 1s ease-in;
     transform: translateX(-100%);
 
@@ -33,7 +32,6 @@ $validateSize: 1.5rem;
   }
 
   &-show {
-
     transition: opacity 0.3s ease-out;
     transform: translateX(0%);
 
@@ -62,7 +60,6 @@ $validateSize: 1.5rem;
     justify-content: center;
 
     .dialog__text {
-
       max-width: 500px;
 
       text-align: center;
@@ -102,7 +99,7 @@ $validateSize: 1.5rem;
           outline-width: 0;
         }
 
-        &-validate{
+        &-validate {
           position: relative;
           right: 0;
 
@@ -153,7 +150,6 @@ $validateSize: 1.5rem;
 
               background-color: #fff;
             }
-
           }
           &_error {
             background-color: rgb(255, 0, 0);
@@ -195,6 +191,19 @@ $validateSize: 1.5rem;
           }
         }
       }
+    }
+
+    .dialog__action {
+      position: relative;
+
+      display: flex;
+      overflow: hidden;
+
+      height: 5rem;
+
+      /* border: 1px solid blue; */
+      align-items: center;
+      justify-content: center;
     }
 
     .dialog__close-btn {

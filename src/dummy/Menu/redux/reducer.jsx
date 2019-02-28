@@ -6,7 +6,11 @@ const TO_PRODUCT = 'TO_PRODUCT';
 const TO_ABOUT = 'TO_ABOUT';
 const TO_CONTACTS = 'TO_CONTACTS';
 
-const initState = {};
+const TOGGLE_MOBILE_MENU = 'TOGGLE_MOBILE_MENU';
+
+const initState = {
+  showMobileMenu: false,
+};
 
 export default function reducer(state = initState, action) {
   switch (action.type) {
@@ -31,15 +35,31 @@ export default function reducer(state = initState, action) {
 
     case TO_PRODUCT: {
       setScrollTo(state.productRef, -70);
-      return state;
+      return {
+        ...state,
+        showMobileMenu: false,
+      };
     }
     case TO_ABOUT: {
       setScrollTo(state.aboutRef, -70);
-      return state;
+      return {
+        ...state,
+        showMobileMenu: false,
+      };
     }
     case TO_CONTACTS: {
       setScrollTo(state.contactsRef);
-      return state;
+      return {
+        ...state,
+        showMobileMenu: false,
+      };
+    }
+
+    case TOGGLE_MOBILE_MENU: {
+      return {
+        ...state,
+        showMobileMenu: !state.showMobileMenu,
+      };
     }
 
     default: {
@@ -93,6 +113,13 @@ export function toAbout() {
 export function toContacts() {
   return {
     type: TO_CONTACTS,
+    payload: true,
+  };
+}
+
+export function toggleMobileMenu() {
+  return {
+    type: TOGGLE_MOBILE_MENU,
     payload: true,
   };
 }

@@ -1,0 +1,86 @@
+/* https://codepen.io/RRoberts/pen/pEXWEp?editors=1100 */
+$loader-height: 1.25rem;
+$animationTime: 1s;
+$items: 3;
+$animationTimeInterval: calc($animationTime / $items);
+
+.loader__wrapper {
+  position: absolute;
+
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  background: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+.loader__show {
+  transition: opacity 0.3s ease-out, transform 0s ease-in;
+  transform: translateY(0%);
+
+  opacity: 1;
+}
+
+.loader__hide {
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  transform: translateY(100%);
+
+  opacity: 0;
+}
+
+.loader span {
+  display: inline-block;
+
+  height: $loader-height;
+  width: $loader-height;
+  margin: 0.3rem;
+
+  opacity: 0;
+
+  border-radius: 100%;
+  background-color: var(--main-color_light);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.loader span:nth-child(1) {
+  animation: opacitychange $animationTime ease-in-out infinite;
+}
+
+.loader span:nth-child(2) {
+  animation: opacitychange $animationTime ease-in-out
+    calc($animationTimeInterval) infinite;
+}
+
+.loader span:nth-child(3) {
+  animation: opacitychange $animationTime ease-in-out
+    calc(2 * $animationTimeInterval) infinite;
+}
+
+/* .loader span:nth-child(4) {
+  animation: opacitychange $animationTime ease-in-out
+    calc(3 * $animationTimeInterval) infinite;
+} */
+
+/* .loader span:nth-child(5) {
+  animation: opacitychange $animationTime ease-in-out
+    calc(4 * $animationTimeInterval) infinite;
+} */
+
+@keyframes opacitychange {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+}
