@@ -1,6 +1,6 @@
 $buy-btn_light: var(--main-color_light);
 $buy-btn_dark: var(--main-color_dark);
-$buy-btn_disable: #b5555291;
+$buy-btn_disable: var(--main-color_disabled);
 
 .buy-btn {
   height: 3rem;

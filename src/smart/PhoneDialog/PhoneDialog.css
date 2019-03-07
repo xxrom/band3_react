@@ -1,7 +1,7 @@
 $btnSize: 2.2rem;
 $closeBtnR: calc(-$btnSize / 2);
 
-$validateSize: 1.5rem;
+$validateSize: 1.7rem;
 
 .wrapper {
   position: fixed;
@@ -139,7 +139,7 @@ $validateSize: 1.5rem;
               top: calc(0.43 * $validateSize);
 
               /* 4px */
-              left: calc(0.24 * $validateSize);
+              left: calc(0.3 * $validateSize);
               /* 2px */
               height: calc(0.08 * $validateSize);
               /* 16px */
@@ -160,7 +160,7 @@ $validateSize: 1.5rem;
               top: calc(0.39 * $validateSize);
 
               /* 4px */
-              left: calc(0.15 * $validateSize);
+              left: calc(0.12 * $validateSize);
               /* 2px */
               height: calc(0.15 * $validateSize);
               /* 16px */

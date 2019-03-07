@@ -11,6 +11,8 @@ class MenuElement extends Component {
   constructor(props) {
     super(props);
 
+    this.buyRef = React.createRef();
+
     const navigationItems = [
       {
         class: 'product',
@@ -104,11 +106,19 @@ class MenuElement extends Component {
           >
         </div>
 
-        <div className="navigation__item">
-          <Buy mini style={{ width: '8rem' }} />
+        <div className="navigation__item" onClick={this.handleBuyOnClick}>
+          <Buy
+            buyRef={(el) => (this.buyRef = el)}
+            mini
+            style={{ width: '8rem' }}
+          />
         </div>
       </>
     );
+  };
+
+  handleBuyOnClick = () => {
+    this.buyRef.click();
   };
 
   templateMobileMenu = (menuItems, showMobileMenu) => {

@@ -8,12 +8,19 @@ body {
 }
 
 :root {
-  /* --important: #e41d94; */
   --important: #df504d;
-  --contrast: #ffed4b;
 
-  --main-color_light: #df504d;
-  --main-color_dark: #b55552;
+  --menu-bg__begin: #ffed4bf9; /* #ffed4bf9; */
+  --menu-bg__end: #fafafaf9; /* #fafafaf9; */
+
+  --contrast-bg: #ffed4b;
+  --product-bg: #ffed4b;
+
+  /* --main-color_light: #df504d;
+  --main-color_dark: #b55552; */
+  --main-color_light: #42a1ec;
+  --main-color_dark: #0070c9;
+  --main-color_disabled: #0070c931;
 
   /* минимальная ширина блоков, для Product */
   --block_min-width: 380px;
@@ -33,9 +40,6 @@ body {
 }
 /* font-family: 'Oswald', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 /* apple site "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; */
-
-/* test BG */
-$grayBG: #ededed;
 
 .background_gradient {
   position: absolute;
@@ -64,7 +68,13 @@ $grayBG: #ededed;
   width: 100vw;
   /* right: 0; */
 
-  background: linear-gradient(40deg, rgba(1, 1, 1, 0) 60%, $grayBG 60%);
+  background: linear-gradient(
+    40deg,
+    rgba(1, 1, 1, 0) 60%,
+    var(--product-bg) 60%,
+    var(--product-bg) 80%,
+    rgba(1, 1, 1, 0) 80%
+  );
 }
 
 * {
