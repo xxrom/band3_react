@@ -48,7 +48,7 @@ $validateSize: 1.7rem;
     min-height: 300px;
     width: 80vw;
     min-width: 300px;
-    max-width: 900px;
+    max-width: 600px;
 
     padding: 2rem;
 
@@ -72,7 +72,7 @@ $validateSize: 1.7rem;
 
       display: flex;
 
-      margin: 2rem 0;
+      margin: 2rem 0 1rem 0;
 
       padding: 0.5rem;
 

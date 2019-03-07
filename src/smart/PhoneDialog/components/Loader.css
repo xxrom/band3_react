@@ -1,6 +1,6 @@
 /* https://codepen.io/RRoberts/pen/pEXWEp?editors=1100 */
 $loader-height: 1.25rem;
-$animationTime: 1s;
+$animationTime: 0.9s;
 $items: 3;
 $animationTimeInterval: calc($animationTime / $items);
 
@@ -77,10 +77,10 @@ $animationTimeInterval: calc($animationTime / $items);
 @keyframes opacitychange {
   0%,
   100% {
-    opacity: 0;
+    opacity: 0.1;
   }
 
   60% {
-    opacity: 1;
+    opacity: 0.9;
   }
 }

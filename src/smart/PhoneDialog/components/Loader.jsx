@@ -4,8 +4,10 @@ import './Loader.css';
 
 const Loader = (props) => {
   return (
-    <div class={`loader__wrapper loader__${props.loading ? 'show' : 'hide'}`}>
-      <div class="loader">
+    <div
+      className={`loader__wrapper loader__${props.loading ? 'show' : 'hide'}`}
+    >
+      <div className="loader">
         <span />
         <span />
         <span />

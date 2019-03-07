@@ -13,7 +13,7 @@ class BuyComponent extends Component {
     };
   }
   render() {
-    const { label, style, disable, classAdditional = '', buyRef } = this.props;
+    const { label, style, disable, buyRef } = this.props;
 
     return (
       <button
