@@ -38,45 +38,100 @@ body {
     16px + (22 - 16) * (100vw - 320px) / (1600 - 320)
   );
 }
-/* font-family: 'Oswald', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
-/* apple site "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; */
 
 .background_gradient {
   position: absolute;
 
-  /* background:
-    linear-gradient(40deg, rgba(1,1,1,0) 60%, #ffed4b 60%),
-    linear-gradient(45deg, rgba(1,1,1,0) 65%, #fae83da3 65%),
-    linear-gradient(50deg, rgba(1,1,1,0) 70%, #fae10089 70%);
-    background-blend-mode: darken; */
-  /* background:
-    linear-gradient(40deg, rgba(1,1,1,0) 60%, #ffed4b 60%),
-    linear-gradient(45deg, rgba(1,1,1,0) 60%, #fae83da3 60%),
-    linear-gradient(50deg, rgba(1,1,1,0) 60%, #fae10089 60%);
-    background-blend-mode: darken; */
-  /* background:
-    linear-gradient(40deg, rgba(1,1,1,0) 64%, #ffed4b 64%),
-    linear-gradient(40deg, rgba(1,1,1,0) 62%, #fae83da3 62%),
-    linear-gradient(40deg, rgba(1,1,1,0) 60%, #fae10089 60%);
-  background-blend-mode: lighten; */
-
   z-index: -1;
-  /* right: 20vh; */
   top: -30vh;
 
   height: 200vh;
   width: 100vw;
-  /* right: 0; */
 
   background: linear-gradient(
     40deg,
-    rgba(1, 1, 1, 0) 60%,
-    var(--product-bg) 60%,
-    var(--product-bg) 80%,
-    rgba(1, 1, 1, 0) 80%
+    rgba(1, 1, 1, 0) 55%,
+    #fff 55%,
+    /* --product-bg */ #fff 65%,
+    rgba(1, 1, 1, 0) 65%
   );
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Body background animation */
+body {
+  animation: theme 62s linear infinite;
+
+  &:after,
+  &:before {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+
+    display: block;
+
+    height: 100vmax;
+    height: 100vh;
+    width: 100vw;
+    width: 100vmax;
+
+    content: '';
+    animation: background 190s linear infinite;
+
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  &:after {
+    left: 15vw;
+  }
+
+  &:before {
+    right: 15vw;
+
+    animation-delay: -30s;
+    animation-direction: reverse;
+  }
+}
+
+@keyframes theme {
+  0% {
+    background: #74c390;
+  }
+
+  16% {
+    background: #5dbdb6;
+  }
+
+  33% {
+    background: #59d4e1;
+  }
+
+  50% {
+    background: #ffff70;
+  }
+
+  66% {
+    background: #53c8fa;
+  }
+
+  83% {
+    background: #93e1ff;
+  }
+
+  100% {
+    background: #90d5a8;
+  }
+}
+
+@keyframes background {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

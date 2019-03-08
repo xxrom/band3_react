@@ -44,7 +44,7 @@ class MenuElement extends Component {
     this.state = {
       menuItems,
       menuStatic: false,
-      activateMenuStatic: -40,
+      activateMenuStatic: -20,
     };
 
     window.addEventListener('scroll', this.calcMenuStatic);
@@ -75,7 +75,7 @@ class MenuElement extends Component {
 
     return (
       <div
-        className={`menu-wrapper ${menuStatic ? 'menu-wrapper_static' : ''}`}
+        className={`menu-wrapper  ${menuStatic ? 'menu-wrapper_static' : ''}`}
         ref={(el) => (this.menuWrapper = el)}
       >
         {this.templateMenu(menuItems, showMobileMenu)}
