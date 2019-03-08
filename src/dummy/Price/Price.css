@@ -26,12 +26,11 @@ $important: var(--important);
 
     padding-right: 1rem;
 
-    color: gray;
+    color: rgba(4, 4, 4, 0.632);
     text-decoration-line: line-through;
   }
 
   &_new {
-
     margin: 0.1rem 0;
 
     font-size: 4rem;

@@ -23,6 +23,7 @@ $activeFontSize: var(--fontSize_info-plus-item);
   cursor: pointer;
   transition: all 0.3s ease 0s;
 
+  border: 1px solid white;
   border-radius: 50%;
 
   background: $buy-btn_light;

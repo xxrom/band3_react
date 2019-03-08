@@ -4,9 +4,11 @@
 
     display: flex;
 
+    min-height: calc(100vh - 7rem);
+
     width: 100vw;
 
-    padding: 3rem 0;
+    padding: 3rem 0 7rem 0;
     flex-flow: row;
     flex-wrap: nowrap;
 
@@ -44,7 +46,7 @@
     flex-direction: column;
     flex: 1 1;
 
-    padding: 0 2rem 0 0;
+    padding: 2rem 2rem 2rem 0;
     order: 3;
     align-self: flex-end;
   }
