@@ -23,7 +23,7 @@ class Price extends Component {
             {priceOld} &#8381; <span className="price_old_line" />
           </div>
 
-          <div className="price_benefit">Выгода {benefit} &#8381;</div>
+          <div className="price_benefit">Скидка {benefit} &#8381;</div>
         </div>
         <div className="price_new">
           {priceNew}

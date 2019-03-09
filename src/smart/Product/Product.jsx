@@ -32,7 +32,7 @@ class Product extends Component {
         </div>
         <div className="product__right">
           <Price />
-          <Buy />
+          <Buy label="Быстрый заказ" />
         </div>
       </div>
     );

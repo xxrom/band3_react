@@ -95,7 +95,6 @@ class PlusesTableElement extends Component {
     const cells = tableData.map(({ text, imgSrc }, index) => (
       <div className="pluses-table__cell" key={`pluses-table-cell-${index}`}>
         <div className="cell__img-wrapper">
-          {/* <img className="cell__img" src={imgSrc} alt="img" /> */}
           <Image classMyName="cell__img" src={imgSrc} />
         </div>
         <div className="cell__text">{text}</div>

@@ -10,12 +10,6 @@ class PlusElement extends Component {
       activeClassName: 'plus--active',
       active: false,
     };
-
-    if (!props.static) {
-      this.onClick = this.onClick.bind(this);
-    } else {
-      this.onClick = () => {};
-    }
   }
   render() {
     const { style, text, popUpStyle } = this.props;
@@ -24,22 +18,43 @@ class PlusElement extends Component {
     const showPopUp = active ? activeClassName : '';
     const popUpStyleActivate = showPopUp ? popUpStyle : {};
 
-    return (
-      <div className={`plus ${showPopUp}`} onClick={this.onClick} style={style}>
+    let activeCursor = '';
+    let content = (
+      <div className="bullet_wrapper">
+        <div className="bullet" />
+      </div>
+    );
+    if (!this.props.static) {
+      activeCursor = 'active';
+      content = [
         <div style={popUpStyleActivate} className="plus__line plus__line--v">
           <div href="#" className="plus__link">
             {text}
           </div>
-        </div>
-        <div className="plus__line plus__line--h" />
+        </div>,
+        <div className="plus__line plus__line--h" />,
+      ];
+    }
+
+    return (
+      <div
+        className={`plus ${showPopUp} ${activeCursor}`}
+        onClick={this.onClick}
+        style={style}
+      >
+        {content}
       </div>
     );
   }
 
-  onClick = (e) =>
+  onClick = () => {
+    if (this.props.static) {
+      return;
+    }
     this.setState({
       active: !this.state.active,
     });
+  };
 }
 
 export { PlusElement };

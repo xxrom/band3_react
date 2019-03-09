@@ -51,16 +51,16 @@ body {
   z-index: -1;
   top: -30%;
 
-  height: 220%;
+  height: 320%;
   width: 100vw;
 
-  background: linear-gradient(180deg, #fff 0%, #fff 15%, #f0000000 15%),
+  background: linear-gradient(180deg, #fff 0%, #fff 9.5%, #f0000000 13%),
     linear-gradient(
-      40deg,
-      rgba(1, 1, 1, 0) 0%,
-      #fff 0%,
-      #ffffff66 60%,
-      rgba(1, 1, 1, 0) 60%
+      220deg,
+      #f0000000 25%,
+      #ffffff66 25%,
+      #ffffff66 50%,
+      rgb(255, 255, 255) 80%
     );
 }
 
