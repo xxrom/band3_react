@@ -22,23 +22,39 @@ $important: var(--important);
   }
 
   &_old {
+    position: relative;
+
     display: flex;
 
     padding-right: 1rem;
 
-    color: rgba(4, 4, 4, 0.632);
-    text-decoration-line: line-through;
+    color: rgba(4, 4, 4, 0.732);
+    /* text-decoration-line: line-through; */
+
+    &_line {
+      position: absolute;
+      top: 40%;
+      left: -0.2rem;
+
+      display: flex;
+
+      height: 25%;
+      width: 90%;
+
+      transform: rotate(-10deg);
+
+      background: rgba(255, 0, 0, 0.6);
+    }
   }
 
   &_new {
     margin: 0.1rem 0;
 
+    /* from beru ru */
+    /* color: #f73d34; */
+
     font-size: 4rem;
     font-weight: bold;
-  }
-
-  &_discount {
-    color: red;
   }
 
   &_benefit {

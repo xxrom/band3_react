@@ -19,14 +19,16 @@ class Price extends Component {
     return (
       <div className="price">
         <div className="price-old__wrapper">
-          <div className="price_old">{priceOld} &#8381;</div>
+          <div className="price_old">
+            {priceOld} &#8381; <span className="price_old_line" />
+          </div>
+
           <div className="price_benefit">Выгода {benefit} &#8381;</div>
         </div>
         <div className="price_new">
           {priceNew}
           <span className="price_currency"> &#8381;</span>
         </div>
-        {/* <div className="price_discount">Скидка {discount}%</div> */}
       </div>
     );
   }
