@@ -13,16 +13,16 @@ import PhoneDialog from './smart/PhoneDialog';
 class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <div className="background_gradient" />
-        <Menu siteName="techcatch." />
+        <Menu siteName="techcatch" />
         <Product />
         <TextWithVideo />
         <PhoneDialog />
         <PlusesTable />
         <Footer />
         {/* <ImageSlider /> */}
-      </div>
+      </>
     );
   }
 }

@@ -1,6 +1,6 @@
 $menu-height-padding: 2.5rem;
 $menu-top-margin: 0rem;
-$menu_navigation-items-padding: 1.2rem;
+$menu_navigation-items-padding: 1rem;
 $content-padding-desktop: 4rem; /* width */
 
 .menu-wrapper {
@@ -12,7 +12,7 @@ $content-padding-desktop: 4rem; /* width */
 
   box-sizing: border-box;
   padding: $menu-top-margin $content-padding-desktop 0 $content-padding-desktop;
-  /* border: 1px solid red; */
+
   border-bottom: 1px solid #00000009;
 
   font-family: 'Courier New';
@@ -105,7 +105,7 @@ $content-padding-desktop: 4rem; /* width */
     &__item {
       padding: $menu-height-padding calc($menu_navigation-items-padding * 0.7);
 
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
   }
 }

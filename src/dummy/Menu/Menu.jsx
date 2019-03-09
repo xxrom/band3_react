@@ -6,6 +6,7 @@ import { toProduct, toAbout, toContacts, toggleMobileMenu } from './redux';
 import './Menu.css';
 
 import { Buy } from '../Buy';
+import { Image } from '../Image';
 
 class MenuElement extends Component {
   constructor(props) {
@@ -93,6 +94,10 @@ class MenuElement extends Component {
           onClick={this.props.actions.toProduct}
           ref={(el) => (this.logo = el)}
         >
+          <Image
+            style={{ width: '1.8rem', hight: '1rem', marginRight: '.5rem' }}
+            src="icons/eagle_0.png"
+          />
           {this.props.siteName}
         </div>
         <div className="navigation">{menuItems}</div>

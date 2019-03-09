@@ -68,7 +68,8 @@
     }
 
     &__text {
-      padding-right: 3rem;
+      padding-right: 0;
+      padding-left: 0;
     }
 
     &__image {
@@ -78,7 +79,14 @@
     }
 
     &__right {
-      padding: 0 4rem 0 0;
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__text {
+      width: 100vw;
+      padding: 0 2rem;
     }
   }
 
@@ -92,7 +100,7 @@
     }
 
     &__image {
-      width: 50vh;
+      width: 40vh;
       min-width: 300px;
     }
 

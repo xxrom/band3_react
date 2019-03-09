@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   overflow-x: hidden;
 
@@ -23,7 +29,7 @@ body {
   --main-color_disabled: #0070c931;
 
   /* минимальная ширина блоков, для Product */
-  --block_min-width: 380px;
+  --block_min-width: 330px;
 
   --fontSize_info-header: calc(
     24px + (54 - 24) * (100vw - 320px) / (1600 - 320)
@@ -43,9 +49,9 @@ body {
   position: absolute;
 
   z-index: -1;
-  top: -30vh;
+  top: -30%;
 
-  height: 200vh;
+  height: 220%;
   width: 100vw;
 
   background: linear-gradient(180deg, #fff 0%, #fff 15%, #f0000000 15%),
@@ -58,18 +64,8 @@ body {
     );
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Body background animation */
 body {
-
-  z-index: 100;
-
-  animation: theme 30s linear infinite;
-
-  background: linear-gradient(180deg, #f0000000 50%, #fff 52%, #f00000 60%);
+  animation: theme 70s linear infinite;
 
   &:after,
   &:before {
@@ -85,7 +81,7 @@ body {
     width: 100vmax;
 
     content: '';
-    animation: background 100s linear infinite;
+    animation: background 300s linear infinite;
 
     background: rgba(0, 0, 0, 0.05);
   }
