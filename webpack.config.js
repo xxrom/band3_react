@@ -9,11 +9,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
-    // publicPath: '/dist/',
   },
 
   devtool: 'eval',
-  // devtool: 'hidden-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
@@ -27,10 +25,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.worker\.js$/,
-        use: { loader: 'worker-loader' },
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
