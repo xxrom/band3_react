@@ -80,7 +80,7 @@ $content-padding-desktop: 4rem; /* width */
   }
 }
 
-.menu-wrapper_static {
+.menu-wrapper.menu-wrapper_static {
   position: sticky;
   top: -40px;
 
@@ -96,14 +96,24 @@ $content-padding-desktop: 4rem; /* width */
   }
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .menu-wrapper .navigation {
+    &__item {
+      padding: $menu-height-padding calc($menu_navigation-items-padding * 0.7);
+
+      font-size: 1rem;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .menu-wrapper {
     padding: $menu-top-margin 1rem 0 1rem;
   }
 
-  .navigation {
+  .menu-wrapper .navigation {
     &__item {
-      padding: $menu-height-padding calc($menu_navigation-items-padding * 0.7);
+      padding: $menu-height-padding calc($menu_navigation-items-padding * 0.3);
 
       font-size: 0.8rem;
     }
@@ -119,11 +129,9 @@ $content-padding-desktop: 4rem; /* width */
     .navigation__mobile_arrow {
       display: flex;
 
-      height: 1.5rem;
-
-      width: 1.5rem;
-
-      padding: 2rem;
+      height: 0.5rem;
+      width: 0.5rem;
+      padding: 2rem 0.5rem;
 
       cursor: pointer;
       transition: all 0.3s ease-in-out;
@@ -181,8 +189,6 @@ $content-padding-desktop: 4rem; /* width */
         display: flex;
         flex-direction: column;
 
-        /* border: 5px solid blueviolet; */
-
         transition: all 0.3s ease-in-out;
         transform: translateY(0);
 
@@ -191,7 +197,7 @@ $content-padding-desktop: 4rem; /* width */
 
         /* Не смещаем элементы мобильного меню вниз */
         .navigation__item {
-          padding: $menu-height-padding $menu_navigation-items-padding;
+          padding: 6vh $menu_navigation-items-padding;
 
           border: 1px solid #0000000f;
         }
@@ -228,7 +234,7 @@ $content-padding-desktop: 4rem; /* width */
     }
   }
 
-  .navigation__item {
+  .menu-wrapper .navigation__item {
     display: flex;
 
     box-sizing: border-box;
@@ -245,7 +251,7 @@ $content-padding-desktop: 4rem; /* width */
   .menu-wrapper {
     padding: $menu-top-margin 0 0 0;
 
-    .navigation__item {
+    .menu-wrapper .navigation__item {
       padding-right: 0;
       padding-left: 0;
     }

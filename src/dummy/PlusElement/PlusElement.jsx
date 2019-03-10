@@ -26,14 +26,16 @@ class PlusElement extends Component {
     );
     if (!this.props.static) {
       activeCursor = 'active';
-      content = [
-        <div style={popUpStyleActivate} className="plus__line plus__line--v">
-          <div href="#" className="plus__link">
-            {text}
+      content = (
+        <>
+          <div style={popUpStyleActivate} className="plus__line plus__line--v">
+            <div href="#" className="plus__link">
+              {text}
+            </div>
           </div>
-        </div>,
-        <div className="plus__line plus__line--h" />,
-      ];
+          <div className="plus__line plus__line--h" />
+        </>
+      );
     }
 
     return (

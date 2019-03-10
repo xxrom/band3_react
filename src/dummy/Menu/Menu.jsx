@@ -26,6 +26,17 @@ class MenuElement extends Component {
         onClick: this.props.actions.toAbout,
       },
       {
+        class: 'delivery',
+        title: 'Доставка',
+        onClick: this.props.actions.toContacts,
+      },
+
+      {
+        class: 'warranty',
+        title: 'Гарантии',
+        onClick: this.props.actions.toContacts,
+      },
+      {
         class: 'contacts',
         title: 'Контакты',
         onClick: this.props.actions.toContacts,
@@ -114,6 +125,7 @@ class MenuElement extends Component {
         <div className="navigation__item" onClick={this.handleBuyOnClick}>
           <Buy
             buyRef={(el) => (this.buyRef = el)}
+            label="Скидка!"
             mini
             style={{ width: '8rem' }}
           />

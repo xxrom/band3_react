@@ -80,13 +80,11 @@ class PlusesTableElement extends Component {
     </div>
   );
 
-  backgroundImgTemplate = (src) => {
-    return (
-      <div className="pluses-table__background-img">
-        <Image classMyName="background-img__img" src={src} />
-      </div>
-    );
-  };
+  backgroundImgTemplate = (src) => (
+    <div className="pluses-table__background-img">
+      <Image classMyName="background-img__img" src={src} />
+    </div>
+  );
 
   tableTemplate = (tableData) => {
     const table = [];

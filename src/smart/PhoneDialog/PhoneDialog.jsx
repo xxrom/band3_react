@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import ParticleEffectButton from 'react-particle-effect-button';
 import { Loader } from './components/';
 
 import { fetchData } from '../../libs/fetch-api';
@@ -19,7 +18,7 @@ import {
 class PhoneDialog extends Component {
   phoneMask = /^\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/;
   placeholder = '+7 (___) ___-__-__';
-  btnLabel = 'Обратный звонок';
+  btnLabel = 'Обратный звонок ';
   valid = false;
 
   render() {
@@ -38,7 +37,7 @@ class PhoneDialog extends Component {
         onClick={this.onClickWrapper}
       >
         <div className="wrapper__dialog">
-          <div className="dialog__text">Введите Ваш номер телефона</div>
+          <div className="dialog__text">Пожалуйста, введите номер телефона</div>
           <div className="dialog__input">
             <InputMask
               className="input"
@@ -69,10 +68,11 @@ class PhoneDialog extends Component {
       <div className="dialog__action">
         <Loader loading={loading} />
         {phoneSanded ? (
-          <div>Пожалуйста, ожидайте звонка</div>
+          <div className="dialog__text">Ожидайте звонка оператора</div>
         ) : (
           <Buy
             mini
+            style={{ maxWidth: '14rem', width: 'auto' }}
             label={this.btnLabel}
             disable={!this.valid}
             onClick={this.onClickCall}

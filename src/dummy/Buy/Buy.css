@@ -52,7 +52,7 @@ $buy-btn_disable: var(--main-color_disabled);
 
 @media screen and (max-width: 500px) {
   .buy-btn {
-    height: 2rem;
+    height: 2.5rem;
 
     font-size: 1.3rem;
   }
