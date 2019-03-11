@@ -5,8 +5,9 @@ import './App.css';
 import { Menu } from './dummy/Menu';
 import { PlusesTable } from './dummy/PlusesTable';
 import { Footer } from './dummy/Footer';
+import { Warranty } from './dummy/Warranty';
+import { TextWithVideo } from './dummy/TextWithVideo';
 import Product from './smart/Product';
-import TextWithVideo from './smart/TextWithVideo';
 import PhoneDialog from './smart/PhoneDialog';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         <TextWithVideo />
         <PhoneDialog />
         <PlusesTable />
+        <Warranty />
         <Footer />
       </>
     );

@@ -39,14 +39,14 @@
 
     color: white;
 
-    background-color: rgba(0,0,0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 
-    font-size: 3rem;
+    font-size: var(--fontSize_info-header);
     justify-content: center;
     align-items: center;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 450px) {
     &__text {
       font-size: var(--fontSize_info-main-intro);
     }

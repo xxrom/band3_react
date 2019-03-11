@@ -30,6 +30,7 @@ body {
 
   /* минимальная ширина блоков, для Product */
   --block_min-width: 330px;
+  --max-width: 900px;
 
   --fontSize_info-header: calc(
     24px + (54 - 24) * (100vw - 320px) / (1600 - 320)
@@ -100,35 +101,35 @@ body {
 
 @keyframes theme {
   0% {
-    background: #74c390;
-  }
-
-  8% {
-    background: #4fd6b7;
-  }
-
-  16% {
-    background: #53c8fa;
-  }
-
-  33% {
     background: hsl(275, 88%, 63%);
   }
 
-  50% {
+  8% {
     background: hsl(275, 68%, 38%);
   }
 
-  66% {
+  16% {
     background: hsl(211, 91%, 58%);
   }
 
-  83% {
+  33% {
     background: hsl(184, 84%, 63%);
   }
 
-  100% {
+  50% {
     background: #74c390;
+  }
+
+  66% {
+    background: #4fd6b7;
+  }
+
+  83% {
+    background: #53c8fa;
+  }
+
+  100% {
+    background: hsl(275, 88%, 63%);
   }
 }
 

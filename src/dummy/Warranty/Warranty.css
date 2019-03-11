@@ -1,0 +1,48 @@
+.warranty-wrapper {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  background: black;
+
+  .warranty {
+    display: flex;
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    max-width: var(--max-width);
+
+    padding: 2rem;
+
+    color: white;
+    border: 2px solid red;
+
+    justify-content: center;
+    align-items: center;
+
+    &-title {
+      margin: auto;
+      padding: 1rem 0;
+
+      font-size: var(--fontSize_info-main-intro);
+    }
+
+    &-text {
+      font-size: var(--fontSize_info-plus-item);
+
+      &-bold {
+        font-weight: bold;
+      }
+    }
+
+    &-return {
+      padding: 1rem 0;
+    }
+
+    &-broken {
+      padding: 1rem 0;
+    }
+  }
+}
