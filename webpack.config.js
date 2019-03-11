@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.jsx'),
@@ -103,6 +103,9 @@ module.exports = {
   },
 
   plugins: [
+    new CompressionPlugin({
+      algorithm: 'gzip',
+    }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebPackPlugin({
       template: './src/index.html',

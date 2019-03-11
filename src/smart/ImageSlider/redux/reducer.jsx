@@ -3,7 +3,7 @@ import { CHANGE_SLIDE } from './actions';
 const initState = {
   test: 'test',
   currentImageIndex: 0,
-  imageNames: ['main11_.png', 'main2.png', 'main3.png', 'main4.jpg'],
+  imageNames: ['main11_high.png', 'main2.png', 'main3.png', 'main4.jpg'],
 };
 
 const imageSlider = (state = initState, action) => {

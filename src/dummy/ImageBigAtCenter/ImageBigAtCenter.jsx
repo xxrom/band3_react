@@ -13,7 +13,7 @@ const pluses = {
 
 const ImageBigAtCenter = ({ src }) => (
   <div className="image-big-at-center__wrapper">
-    <Image src={src} />
+    <Image src={src} style={{ maxWidth: '90%' }} />
     <PlusElement
       style={styles.plusDisplay}
       popUpStyle={styles.plusDisplay.popUp}
