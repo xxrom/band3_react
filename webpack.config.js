@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.jsx'),
@@ -10,7 +11,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
   },
-
   devtool: 'eval',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
@@ -103,31 +103,24 @@ module.exports = {
   },
 
   plugins: [
-    new CompressionPlugin({
-      algorithm: 'gzip',
-    }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
     }),
-    // new ImageminPlugin({ test: /\.(png|jpg|gif)$/ }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    // new webpack.HashedModuleIdsPlugin(),
+    new CompressionPlugin({
+      // asset: '[path].gz[query]', // error, Compression Plugin Invalid Options
+      algorithm: 'gzip',
+      test: /\.(jsx|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new BrotliPlugin({
+      test: /\.(jsx|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
   ],
-
-  // cashing
-  // optimization: {
-  //   runtimeChunk: 'single',
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name: 'vendors',
-  //         chunks: 'all',
-  //       },
-  //     },
-  //   },
-  // },
 };
