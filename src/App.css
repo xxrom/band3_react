@@ -30,7 +30,7 @@ body {
 
   /* минимальная ширина блоков, для Product */
   --block_min-width: 330px;
-  --max-width: 900px;
+  --max-width: 1100px;
 
   --fontSize_info-header: calc(
     24px + (54 - 24) * (100vw - 320px) / (1600 - 320)
