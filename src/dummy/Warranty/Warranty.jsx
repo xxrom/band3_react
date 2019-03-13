@@ -6,6 +6,7 @@ const Warranty = (props) => {
   return (
     <div className="warranty-wrapper">
       <div className="warranty">
+        <div className="line" />
         <div className="warranty-title">Возврат и обмен</div>
 
         <div className="warranty-text">
@@ -22,7 +23,7 @@ const Warranty = (props) => {
             Всё просто: верните товар в его оригинальном состоянии* в течение
             срока приема возврата (14 дней, не считая дня передачи Товара).
           </div>
-          <div className="warranty-text">
+          <div style={{ paddingTop: '1rem' }} className="warranty-text">
             * Оригинальное состояние: упаковка должна быть не вскрыта, товар не
             должен был быть в употреблении, должен быть сохранен его товарный
             вид и потребительские свойства (в том числе остаточный срок
