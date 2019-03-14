@@ -9,7 +9,9 @@ function fetchData({
   thenFunction = ({ data }) => data,
 }) {
   // let web = `http://localhost:3334/`;
-  let web = `https://band3-koa2.herokuapp.com/`;
+  // let web = `https://band3-koa2.herokuapp.com/`;
+  // let web = `http://localhost:4444/`;
+  let web = `http://192.168.0.121:4444`;
 
   //   if (process.env.NODE_ENV !== 'development') {
   //     web = `https://my-diamond-postgresql.herokuapp.com/api/`;

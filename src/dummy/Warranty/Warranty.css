@@ -17,7 +17,7 @@ $info-light: #aaa;
 
     max-width: var(--max-width);
 
-    padding: 0 2rem 3rem;
+    padding: 0 2rem 4rem;
 
     color: $info-light;
     align-items: flex-start;
@@ -31,11 +31,11 @@ $info-light: #aaa;
 
     &-title {
       margin: auto;
-      padding: 1rem 0;
+      padding: 3rem 0;
 
       color: $info;
 
-      font-size: var(--fontSize_info-main-intro);
+      font-size: var(--fontSize_info-header);
     }
 
     &-text {
@@ -56,6 +56,19 @@ $info-light: #aaa;
 
     &-broken {
       padding: 1rem 0;
+    }
+
+    &-images {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      padding: 1rem 0 0 0;
+
+      &__image {
+        max-width: 15rem;
+      }
     }
   }
 }
