@@ -1,12 +1,23 @@
 import React from 'react';
 
 import './Warranty.css';
+import { Image } from '../Image';
 
 const Warranty = (props) => {
+  const srcImg = ['100_0.png', '100_3.png', '100_1.png'];
   return (
     <div className="warranty-wrapper">
       <div className="warranty">
         <div className="line" />
+
+        <div className="warranty-images">
+          {srcImg.map((src) => (
+            <div className="warranty-images__image">
+              <Image src={src} style={{ maxWidth: '90%' }} />
+            </div>
+          ))}
+        </div>
+
         <div className="warranty-title">Возврат и обмен</div>
 
         <div className="warranty-text">
@@ -37,6 +48,18 @@ const Warranty = (props) => {
           </div>
           <div className="warranty-text">
             Просто верните покупку или обменяйте товар.
+          </div>
+        </div>
+
+        <div className="warranty-broken">
+          <div className="warranty-text-bold">Гарантия на Mi Band 3:</div>
+          <div className="warranty-text">
+            Для основного изделия – 6 месяцев с даты покупки, но в пределах
+            срока службы изделия;
+          </div>
+          <div className="warranty-text">
+            Для поставляемого в комплекте ремешка 14 дней с даты покупки
+            изделия, но в пределах срока службы изделия.
           </div>
         </div>
       </div>
