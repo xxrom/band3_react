@@ -1,0 +1,15 @@
+feature: Карта вертикального слайдера c доскролом в Новостях (news-card-vertical-slider)
+
+specs:
+  Внешний вид вертикального слайдера Новостей:
+    - params:
+        foreverdata: '4118421932'
+    - do: отобразить карточку и дождаться полной загрузки (название заголовка Тестовая страница для компонента NewsCardVerticalSlider — Турбо)
+    - screenshot: внешний вид соответствует скриншоту [plain]
+
+files:
+  - platform/components/NewsCardVerticalSlider/__tests__/news-card-vertical-slider.hermione.js
+
+v-team: News
+
+manager: irrra

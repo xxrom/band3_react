@@ -4,7 +4,7 @@
     ],
 
     "rules": {
-        "unit-whitelist": ["rem", "%", "s", "vmin", "vmax", "px", "vh", "vw", "deg"],
+        "unit-whitelist": ["rem", "%", "s", "ms", "vmin", "vmax", "px", "vh", "vw", "deg"],
 
         "indentation": 2,
         "string-quotes": "single",

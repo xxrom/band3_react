@@ -1,0 +1,47 @@
+.bullet-wrapper {
+  position: relative;
+
+  display: flex;
+
+  height: 10px;
+  width: 100%;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+
+  &__bullet {
+
+    z-index: 1;
+
+    display: inline-block;
+
+    height: 5px;
+    width: 5px;
+
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: rgba(34, 34, 34, .2);
+
+    &_active {
+      background-color: #111;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+
+    height: 100%;
+
+    width: 100%;
+
+    &__left,
+    &__rigth {
+
+      height: 100%;
+      width: 50%;
+    }
+  }
+}

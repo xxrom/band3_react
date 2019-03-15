@@ -1,0 +1,68 @@
+.snippet {
+    display: flex;
+    flex-flow: row;
+    padding: 10px 10px 10px 0;
+    box-sizing: border-box;
+
+    &__image {
+        min-width: 40px;
+        max-width: 40px;
+
+        &__src {
+            margin-top: 6px;
+        }
+    }
+
+    &__info {
+        &__title {
+            display: inline;
+            font-size: 16px;
+            line-height: 1.43;
+            font-weight: bold;
+            margin: 0;
+            margin-right: 10px;
+        }
+
+        &__link {
+            color: #000;
+            cursor: pointer;
+            text-decoration: none;
+            outline: 0;
+        }
+    }
+
+    &__agency-info {
+        display: inline-flex;
+        max-width: 100%;
+        position: relative;
+        color: #999;
+        font-size: 13px;
+
+        &__agency {
+            display: inline-block;
+            min-width: 1%;
+            padding: 0 3px 0 0;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+        }
+
+        &__time {
+            display: inline-block;
+            flex-shrink: 0;
+            white-space: nowrap;
+
+            &_turbo {
+                margin-right: 24px;
+            }
+
+            &_turbo:after {
+                position: absolute;
+                content: "";
+                width: 16px;
+                height: 16px;
+                margin-left: 6px;
+                background: url("../../TurboCardSlider/assets/turbo.svg") center center no-repeat;
+            }
+        }
+    }
+}

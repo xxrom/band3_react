@@ -24,9 +24,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hot-loader/react-dom": "16.7.0",
     "css-loader": "^2.1.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react-dom": "npm:@hot-loader/react-dom",
     "react-input-mask": "^2.0.4",
     "react-particle-effect-button": "^1.0.1",
     "react-redux": "^6.0.0",
@@ -83,7 +84,12 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "react-hot-loader/babel",
+      [
+        "react-hot-loader/babel",
+        {
+          "safetyNet": false
+        }
+      ],
       [
         "@babel/plugin-proposal-decorators",
         {
