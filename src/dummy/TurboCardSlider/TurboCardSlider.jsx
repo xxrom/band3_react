@@ -314,5 +314,7 @@ export default class TurboCardSlider extends React.Component {
       // Сохраняем координаты центров всех блоков с рефами
       this.itemsCenter[i] = currentItemCenter;
     }
+
+    console.log('this.itemsWidth', this.itemsWidth);
   };
 }

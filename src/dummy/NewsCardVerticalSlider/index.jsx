@@ -1,1 +1,1 @@
-export { NewsCardVerticalSlider } from './';
+export { NewsCardVerticalSlider } from './NewsCardVerticalSlider';

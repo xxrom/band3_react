@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 // import b from '@yandex-turbo/core/cn';
-import './NewsCardTable.scss';
+import './NewsCardTable.css';
 
 const cls = 'news-card-table';
 
@@ -57,7 +57,7 @@ export default (props) => {
   });
 
   return (
-    <table className={cls()}>
+    <table className={cls}>
       <tbody>
         {tableCells.map((item, index) => wrapTableRow(item, index))}
       </tbody>
@@ -71,4 +71,4 @@ const wrapTableCell = (child, index, ref) => (
   </td>
 );
 
-const wrapTableRow = (columns, index) => <tr key={index}>{...columns}</tr>;
+const wrapTableRow = (columns, index) => <tr key={index}>{columns}</tr>;

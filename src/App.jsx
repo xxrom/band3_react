@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
+import { setConfig } from 'react-hot-loader';
+setConfig({ disableHotRenderer: true });
 
 import './App.css';
 import { Menu } from './dummy/Menu';
@@ -27,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default hot(App);
+export default hot(App, { errorBoundary: false });

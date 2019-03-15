@@ -51,7 +51,7 @@ const Bullets = (length, current, setBullet) => {
     <div className={cls}>
       <div className={`${cls}__navigation`}>
         <div className={`${cls}__navigation__left`} onClick={onLeftClick} />
-        <div className={`${cls}__navigation__rigth`} onClick={onRightClick} />
+        <div className={`${cls}__navigation__right`} onClick={onRightClick} />
       </div>
 
       {bulletsArray}
@@ -59,4 +59,4 @@ const Bullets = (length, current, setBullet) => {
   );
 };
 
-export { Bullets, IBullets, IBulletsProps };
+export { Bullets };

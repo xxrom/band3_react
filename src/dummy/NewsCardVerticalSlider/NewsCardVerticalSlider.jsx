@@ -1,8 +1,8 @@
 import React from 'react';
 
-// import TurboCardSlider from '../TurboCardSlider/TurboCardSlider';
-// import { Bullets } from '../TurboCardSlider/Bullets/Bullets';
-// import NewsCardTable from '../NewsCardTable/NewsCardTable';
+import TurboCardSlider from '../TurboCardSlider/TurboCardSlider';
+import { Bullets } from '../TurboCardSlider/Bullets/Bullets';
+import NewsCardTable from '../NewsCardTable/NewsCardTable';
 // import { Snippet } from './Snippet/Snippet';
 
 const cls = 'news-card-vertical-slider';
@@ -26,12 +26,11 @@ const cls = 'news-card-vertical-slider';
 // }
 
 export class NewsCardVerticalSlider extends React.Component {
-  // private itemRefs: Array<React.RefObject<HTMLTableDataCellElement>> = [];
+  itemRefs = [];
   // private columnNumber: number;
   // private rowNumber: number;
 
   constructor(props) {
-    console.log('NEW INIT');
     super(props);
     const { columnNumber, rowNumber, items = [] } = props;
 
@@ -58,8 +57,8 @@ export class NewsCardVerticalSlider extends React.Component {
     const { hideBullets = false, cardAlign, direction, items } = this.props;
 
     return (
-      <div className={cls}>
-        {/* <TurboCardSlider
+      <div className={cls} style={{ width: '100vw' }}>
+        <TurboCardSlider
           itemRefs={this.itemRefs}
           cardAlign={cardAlign}
           {...(hideBullets ? {} : { renderBullets: Bullets })}
@@ -71,19 +70,22 @@ export class NewsCardVerticalSlider extends React.Component {
             direction={direction}
           >
             {items.map((item, index) => (
-              <div>{`item ${index}`}</div>
+              <div
+                key={`snippets_${index}`}
+                style={{ width: '100px' }}
+              >{`item itemitemitem ${index}`}</div>
               // <Snippet
-              //     key={`snippets_${index}`}
-              //     agencyImageSrc={agencyImageSrc}
-              //     title={title}
-              //     agency={agency}
-              //     time={time}
-              //     href={href}
-              //     isTurbo={isTurbo}
+              //   key={`snippets_${index}`}
+              //   agencyImageSrc={agencyImageSrc}
+              //   title={title}
+              //   agency={agency}
+              //   time={time}
+              //   href={href}
+              //   isTurbo={isTurbo}
               // />
             ))}
           </NewsCardTable>
-        </TurboCardSlider> */}
+        </TurboCardSlider>
       </div>
     );
   }
