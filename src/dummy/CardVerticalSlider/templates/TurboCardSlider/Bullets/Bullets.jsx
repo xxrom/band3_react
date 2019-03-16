@@ -46,7 +46,9 @@ const Bullets = (length, current, setBullet) => {
       <span
         key={i}
         onClick={() => onBulletSet(i)}
-        className={`${cls}__bullet${i === current ? '_active' : ''}`}
+        className={`${cls}__bullet ${cls}__bullet${
+          i === current ? '_active' : ''
+        }`}
       />
     );
   }

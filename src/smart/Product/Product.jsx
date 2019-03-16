@@ -10,8 +10,6 @@ import { Buy } from '../../dummy/Buy';
 import { menu } from '../../reducers';
 
 import './Product.css';
-import { newsCardVerticalSliderData } from '../../dummy/NewsCardVerticalSlider/datastub';
-import { NewsCardVerticalSlider } from '../../dummy/NewsCardVerticalSlider';
 
 class Product extends Component {
   constructor(props) {
@@ -36,11 +34,6 @@ class Product extends Component {
           <Price />
           <Buy label="Быстрый заказ" />
         </div>
-        <NewsCardVerticalSlider
-          direction="vertical"
-          cardAlign="center"
-          items={newsCardVerticalSliderData}
-        />
       </div>
     );
   }

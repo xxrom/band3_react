@@ -1,22 +1,13 @@
 import React from 'react';
 
+import { Image } from '../Image';
 import { TurboCardSlider, Bullets, NewsCardTable } from './templates/';
+import './CardVerticalSlider.css';
 
 const cls = 'card-vertical-slider';
-
-/**
- * INCVSitem {
- *     agencyImageSrc: string;
- *     title: string;
- *     agency: string;
- *     time: string;
- *     href: string;
- *     isTurbo: boolean;
- */
-
 /**
  * export interface IProps {
- *     items: INCVSitem[];
+ *     items: Array<{...}>;
  *     rowNumber?: number;
  *     columnNumber?: number;
  *     direction?: 'vertical' | 'horizontal';
@@ -27,10 +18,22 @@ const cls = 'card-vertical-slider';
 
 export class CardVerticalSlider extends React.Component {
   itemRefs = [];
+  defaultItems = [];
 
   constructor(props) {
     super(props);
-    const { columnNumber, rowNumber, items = [] } = props;
+    const { columnNumber, rowNumber } = props;
+
+    const fPath = 'sliders/';
+    this.defaultItems = [
+      { src: `${fPath}1.jpg` },
+      { src: `${fPath}2.png` },
+      { src: `${fPath}3.png` },
+      { src: `${fPath}4.png` },
+      { src: `${fPath}5.jpg` },
+      { src: `${fPath}6.jpg` },
+    ];
+    const { items = this.defaultItems } = props;
 
     const itemsLength = items.length;
 
@@ -52,10 +55,15 @@ export class CardVerticalSlider extends React.Component {
   }
 
   render() {
-    const { hideBullets = false, cardAlign, direction, items } = this.props;
+    const {
+      hideBullets = false,
+      cardAlign,
+      direction,
+      items = this.defaultItems,
+    } = this.props;
 
     return (
-      <div className={cls} style={{ width: '100vw' }}>
+      <div className={cls}>
         <TurboCardSlider
           itemRefs={this.itemRefs}
           cardAlign={cardAlign}
@@ -68,10 +76,10 @@ export class CardVerticalSlider extends React.Component {
             direction={direction}
           >
             {items.map((item, index) => (
-              <div
-                key={`snippets_${index}`}
-                style={{ width: '100px' }}
-              >{`item itemitemitem ${index}`}</div>
+              <div key={`snippets_${index}`} style={{ width: '80vw' }}>
+                {`item itemitemitem ${index}`}
+                <Image src={item.src} />
+              </div>
             ))}
           </NewsCardTable>
         </TurboCardSlider>

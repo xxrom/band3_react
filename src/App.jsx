@@ -9,6 +9,7 @@ import { PlusesTable } from './dummy/PlusesTable';
 import { Footer } from './dummy/Footer';
 import { Warranty } from './dummy/Warranty';
 import { TextWithVideo } from './dummy/TextWithVideo';
+import { CardVerticalSlider } from './dummy/CardVerticalSlider';
 import Product from './smart/Product';
 import PhoneDialog from './smart/PhoneDialog';
 
@@ -20,6 +21,7 @@ class App extends Component {
         <Menu siteName="techcatch" />
         <Product />
         <TextWithVideo />
+        <CardVerticalSlider direction="vertical" cardAlign="center" />
         <PhoneDialog />
         <PlusesTable />
         <Warranty />
