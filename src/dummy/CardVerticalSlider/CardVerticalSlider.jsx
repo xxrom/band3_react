@@ -78,9 +78,14 @@ export class CardVerticalSlider extends React.Component {
             {items.map((item, index) => (
               <div
                 key={`snippets_${index}`}
-                style={{ width: '90vw', minWidth: '200px', maxWidth: '700px' }}
+                style={{
+                  width: '90vw',
+                  minWidth: '200px',
+                  maxWidth: '700px',
+                  maxHeight: '450px',
+                  overflow: 'hidden',
+                }}
               >
-                {`item itemitemitem ${index}`}
                 <Image src={item.src} />
               </div>
             ))}

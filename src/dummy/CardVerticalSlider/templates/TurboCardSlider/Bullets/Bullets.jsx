@@ -55,14 +55,28 @@ const Bullets = (length, current, setBullet) => {
 
   return (
     <div className={cls}>
-      <div className={`${cls}__navigation__left`} onClick={onLeftClick}>
-        <span className="left" />
-      </div>
-      <div className={`${cls}__navigation__right`} onClick={onRightClick}>
-        <span className="right" />
+      <div className={`${cls}__left-big`} onClick={onLeftClick}>
+        <span className={`left-big__arrow`}>
+          <div className="arrow" />
+        </span>
       </div>
 
-      <div className={`${cls}__navigation`}>{bulletsArray}</div>
+      <div className={`${cls}__right-big`} onClick={onRightClick}>
+        <span className={`right-big__arrow`}>
+          <div className="arrow" />
+        </span>
+      </div>
+
+      <div className={`${cls}__navigation`}>
+        <div className={`${cls}__navigation__left`} onClick={onLeftClick}>
+          <span className="left" />
+        </div>
+        <div className={`${cls}__navigation__right`} onClick={onRightClick}>
+          <span className="right" />
+        </div>
+
+        <div className={`${cls}__navigation__bullet`}>{bulletsArray}</div>
+      </div>
     </div>
   );
 };

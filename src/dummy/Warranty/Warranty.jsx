@@ -5,6 +5,7 @@ import { Image } from '../Image';
 
 const Warranty = (props) => {
   const srcImg = ['100_0.png', '100_3.png', '100_1.png'];
+  const tab = <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>;
   return (
     <div className="warranty-wrapper">
       <div className="warranty">
@@ -18,11 +19,23 @@ const Warranty = (props) => {
           ))}
         </div>
 
-        <div className="warranty-title">Возврат и обмен</div>
+        <div className="warranty-title">Гарантии и возврат</div>
 
         <div className="warranty-text">
-          Вы можете изменить решение о покупке и отказаться от заказанного
+          {tab}Вы можете изменить решение о покупке и отказаться от заказанного
           Товара в любое время до его получения.
+        </div>
+
+        <div className="warranty-broken">
+          <div className="warranty-text-bold">Гарантия на Mi Band 3:</div>
+          <div className="warranty-text">
+            {tab}Для основного изделия – 6 месяцев с даты покупки, но в пределах
+            срока службы изделия;
+          </div>
+          <div className="warranty-text">
+            {tab}Для поставляемого в комплекте ремешка 14 дней с даты покупки
+            изделия, но в пределах срока службы изделия.
+          </div>
         </div>
 
         <div className="warranty-return">
@@ -31,13 +44,14 @@ const Warranty = (props) => {
           </div>
 
           <div className="warranty-text">
-            Всё просто: верните товар в его оригинальном состоянии* в течение
-            срока приема возврата (14 дней, не считая дня передачи Товара).
+            {tab}Всё просто: верните товар в его оригинальном состоянии* в
+            течение срока приема возврата (14 дней, не считая дня передачи
+            Товара).
           </div>
           <div style={{ paddingTop: '1rem' }} className="warranty-text">
-            * Оригинальное состояние: упаковка должна быть не вскрыта, товар не
-            должен был быть в употреблении, должен быть сохранен его товарный
-            вид и потребительские свойства (в том числе остаточный срок
+            {tab}* Оригинальное состояние: упаковка должна быть не вскрыта,
+            товар не должен был быть в употреблении, должен быть сохранен его
+            товарный вид и потребительские свойства (в том числе остаточный срок
             годности).
           </div>
         </div>
@@ -47,19 +61,7 @@ const Warranty = (props) => {
             Обнаружили брак? Не волнуйтесь:
           </div>
           <div className="warranty-text">
-            Просто верните покупку или обменяйте товар.
-          </div>
-        </div>
-
-        <div className="warranty-broken">
-          <div className="warranty-text-bold">Гарантия на Mi Band 3:</div>
-          <div className="warranty-text">
-            Для основного изделия – 6 месяцев с даты покупки, но в пределах
-            срока службы изделия;
-          </div>
-          <div className="warranty-text">
-            Для поставляемого в комплекте ремешка 14 дней с даты покупки
-            изделия, но в пределах срока службы изделия.
+            {tab}Просто верните покупку или обменяйте товар.
           </div>
         </div>
       </div>
