@@ -55,12 +55,14 @@ const Bullets = (length, current, setBullet) => {
 
   return (
     <div className={cls}>
-      <div className={`${cls}__navigation`}>
-        <div className={`${cls}__navigation__left`} onClick={onLeftClick} />
-        <div className={`${cls}__navigation__right`} onClick={onRightClick} />
+      <div className={`${cls}__navigation__left`} onClick={onLeftClick}>
+        <span className="left" />
+      </div>
+      <div className={`${cls}__navigation__right`} onClick={onRightClick}>
+        <span className="right" />
       </div>
 
-      {bulletsArray}
+      <div className={`${cls}__navigation`}>{bulletsArray}</div>
     </div>
   );
 };
