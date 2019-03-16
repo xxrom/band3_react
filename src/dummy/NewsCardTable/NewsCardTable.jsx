@@ -1,21 +1,24 @@
 import React from 'react';
-// import b from '@yandex-turbo/core/cn';
 import './NewsCardTable.css';
 
 const cls = 'news-card-table';
 
-// export interface ITableProps {
-//     columnNumber: number;
-//     rowNumber: number;
-//     direction?: 'vertical' | 'horizontal';
-//     children: React.ReactNode;
-//     itemRefs: Array<React.RefObject<HTMLTableDataCellElement>>;
-// }
+/**
+ * ITableProps {
+ *     columnNumber: number;
+ *     rowNumber: number;
+ *     direction?: 'vertical' | 'horizontal';
+ *     children: React.ReactNode;
+ *     itemRefs: Array<React.RefObject<HTMLTableDataCellElement>>;
+ * }
+ */
 
-// export interface IChildProps {
-//     className?: string | string[];
-//     ref: React.Ref<HTMLDivElement>;
-// }
+/**
+ *  IChildProps {
+ *     className?: string | string[];
+ *     ref: React.Ref<HTMLDivElement>;
+ * }
+ */
 
 export default (props) => {
   const {

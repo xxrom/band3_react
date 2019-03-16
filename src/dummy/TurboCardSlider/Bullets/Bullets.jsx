@@ -4,17 +4,21 @@ import './Bullets.css';
 
 const cls = 'bullet-wrapper';
 
-// interface IBulletsProps {
-//     length: number;
-//     current: number;
-//     setBullet: (index: number) => void;
-// }
+/**
+ * interface IBulletsProps {
+ *     length: number;
+ *     current: number;
+ *     setBullet: (index: number) => void;
+ * }
+ */
 
-// type IBullets = (
-//     length: IBulletsProps['length'],
-//     current: IBulletsProps['current'],
-//     setBullet: IBulletsProps['setBullet']
-// ) => JSX.Element;
+/**
+ * type IBullets = (
+ *     length: IBulletsProps['length'],
+ *     current: IBulletsProps['current'],
+ *     setBullet: IBulletsProps['setBullet']
+ * ) => JSX.Element;
+ */
 
 const Bullets = (length, current, setBullet) => {
   const bulletsArray = [];

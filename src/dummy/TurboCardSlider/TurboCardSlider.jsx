@@ -1,29 +1,24 @@
 import * as React from 'react';
 import './TurboCardSlider.css';
-// import {
-//     IBullets,
-//     IBulletsProps
-// } from './Bullets/Bullets';
 const cls = 'turbo-card-slider';
 
-// export interface ITurboCardProps {
-//     children: React.ReactNode;
-//     itemRefs: Array<React.RefObject<HTMLDivElement>>;
-//     cardAlign?: 'left' | 'center';
-//     renderBullets?: IBullets;
-// }
+/**
+ * ITurboCardProps {
+ *     children: React.ReactNode;
+ *     itemRefs: Array<React.RefObject<HTMLDivElement>>;
+ *     cardAlign?: 'left' | 'center';
+ *     renderBullets?: IBullets;
+ * }
+ */
 
-// export interface ITurboCardState {
-//     bulletActiveItem: number;
-// }
-
-// type IEventTouchEvent = React.TouchEvent<HTMLDivElement> & React.MouseEvent<HTMLDivElement>;
+/**
+ * ITurboCardState {
+ *     bulletActiveItem: number;
+ * }
+ */
 
 // Логика компонента TurboCardSlider на основе компонента *swipeable-cards*.
 export default class TurboCardSlider extends React.Component {
-  // scrollRef: React.RefObject<HTMLDivElement>;
-  // wrapperRef: React.RefObject<HTMLDivElement>;
-
   activeItemIndex = 0;
   wrapperMiddle;
   itemsWidth = [];

@@ -3,32 +3,32 @@ import React from 'react';
 import TurboCardSlider from '../TurboCardSlider/TurboCardSlider';
 import { Bullets } from '../TurboCardSlider/Bullets/Bullets';
 import NewsCardTable from '../NewsCardTable/NewsCardTable';
-// import { Snippet } from './Snippet/Snippet';
 
 const cls = 'news-card-vertical-slider';
 
-// export interface INCVSitem {
-//     agencyImageSrc: string;
-//     title: string;
-//     agency: string;
-//     time: string;
-//     href: string;
-//     isTurbo: boolean;
-// }
+/**
+ * INCVSitem {
+ *     agencyImageSrc: string;
+ *     title: string;
+ *     agency: string;
+ *     time: string;
+ *     href: string;
+ *     isTurbo: boolean;
+ */
 
-// export interface IProps {
-//     items: INCVSitem[];
-//     rowNumber?: number;
-//     columnNumber?: number;
-//     direction?: 'vertical' | 'horizontal';
-//     cardAlign?: 'left' | 'center';
-//     hideBullets?: boolean;
-// }
+/**
+ * export interface IProps {
+ *     items: INCVSitem[];
+ *     rowNumber?: number;
+ *     columnNumber?: number;
+ *     direction?: 'vertical' | 'horizontal';
+ *     cardAlign?: 'left' | 'center';
+ *     hideBullets?: boolean;
+ * }
+ */
 
 export class NewsCardVerticalSlider extends React.Component {
   itemRefs = [];
-  // private columnNumber: number;
-  // private rowNumber: number;
 
   constructor(props) {
     super(props);
@@ -74,15 +74,6 @@ export class NewsCardVerticalSlider extends React.Component {
                 key={`snippets_${index}`}
                 style={{ width: '100px' }}
               >{`item itemitemitem ${index}`}</div>
-              // <Snippet
-              //   key={`snippets_${index}`}
-              //   agencyImageSrc={agencyImageSrc}
-              //   title={title}
-              //   agency={agency}
-              //   time={time}
-              //   href={href}
-              //   isTurbo={isTurbo}
-              // />
             ))}
           </NewsCardTable>
         </TurboCardSlider>
