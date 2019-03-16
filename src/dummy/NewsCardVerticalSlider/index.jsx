@@ -1,1 +1,0 @@
-export { NewsCardVerticalSlider } from './NewsCardVerticalSlider';

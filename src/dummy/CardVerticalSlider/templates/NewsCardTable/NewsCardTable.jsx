@@ -20,7 +20,7 @@ const cls = 'news-card-table';
  * }
  */
 
-export default (props) => {
+const NewsCardTable = (props) => {
   const {
     columnNumber,
     rowNumber,
@@ -75,3 +75,5 @@ const wrapTableCell = (child, index, ref) => (
 );
 
 const wrapTableRow = (columns, index) => <tr key={index}>{columns}</tr>;
+
+export { NewsCardTable };

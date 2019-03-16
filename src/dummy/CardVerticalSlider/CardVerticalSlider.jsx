@@ -1,10 +1,8 @@
 import React from 'react';
 
-import TurboCardSlider from '../TurboCardSlider/TurboCardSlider';
-import { Bullets } from '../TurboCardSlider/Bullets/Bullets';
-import NewsCardTable from '../NewsCardTable/NewsCardTable';
+import { TurboCardSlider, Bullets, NewsCardTable } from './templates/';
 
-const cls = 'news-card-vertical-slider';
+const cls = 'card-vertical-slider';
 
 /**
  * INCVSitem {
@@ -27,7 +25,7 @@ const cls = 'news-card-vertical-slider';
  * }
  */
 
-export class NewsCardVerticalSlider extends React.Component {
+export class CardVerticalSlider extends React.Component {
   itemRefs = [];
 
   constructor(props) {

@@ -18,7 +18,7 @@ const cls = 'turbo-card-slider';
  */
 
 // Логика компонента TurboCardSlider на основе компонента *swipeable-cards*.
-export default class TurboCardSlider extends React.Component {
+class TurboCardSlider extends React.Component {
   activeItemIndex = 0;
   wrapperMiddle;
   itemsWidth = [];
@@ -309,7 +309,7 @@ export default class TurboCardSlider extends React.Component {
       // Сохраняем координаты центров всех блоков с рефами
       this.itemsCenter[i] = currentItemCenter;
     }
-
-    console.log('this.itemsWidth', this.itemsWidth);
   };
 }
+
+export { TurboCardSlider };

@@ -1,4 +1,4 @@
-### **NewsCardVerticalSlider**
+### **CardVerticalSlider**
 
 Скролящийся блок-таблица с доскролом, до ближайшего столбца.
 
@@ -25,7 +25,7 @@
 ];
 ```
 
-Пример *items* можно посмотреть в фавйле *NewsCardVerticalSlider/datastub.ts*;
+Пример *items* можно посмотреть в фавйле *CardVerticalSlider/datastub.ts*;
 
 **rowNumber** - количество *строк* в таблице;
 
@@ -45,15 +45,15 @@
 Если указать **количество столбцов и количество строк одновременно**, то элемент будет **обрезать
 данные**, если их пришло **больше чем указанное количество ячеек**!
 
-Например если вызвать элемент с данными из stub { newsCardVerticalSliderData }, который содержит 10 элементов:
+Например если вызвать элемент с данными из stub { CardVerticalSliderData }, который содержит 10 элементов:
 ```
-import { newsCardVerticalSliderData } from './datastub';
+import { CardVerticalSliderData } from './datastub';
 
 ...
 
-console.log(`items.length = ${newsCardVerticalSliderData.length}`) // items.length = 10
-<NewsCardVerticalSlider
-    items={newsCardVerticalSliderData}
+console.log(`items.length = ${CardVerticalSliderData.length}`) // items.length = 10
+<CardVerticalSlider
+    items={CardVerticalSliderData}
     rowNumber={3}
     columnNumber={3}
 />
@@ -71,8 +71,8 @@ console.log(`items.length = ${newsCardVerticalSliderData.length}`) // items.leng
 
 Например:
 ```
-<NewsCardVerticalSlider
-    items={newsCardVerticalSliderData}
+<CardVerticalSlider
+    items={CardVerticalSliderData}
     rowNumber={3}
 />
 ```
@@ -80,8 +80,8 @@ console.log(`items.length = ${newsCardVerticalSliderData.length}`) // items.leng
 или
 
 ```
-<NewsCardVerticalSlider
-    items={newsCardVerticalSliderData}
+<CardVerticalSlider
+    items={CardVerticalSliderData}
     direction="vertical"
     columnNumber={3}
 />
