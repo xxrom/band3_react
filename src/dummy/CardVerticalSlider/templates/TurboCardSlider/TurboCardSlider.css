@@ -1,0 +1,13 @@
+.turbo-card-slider{
+  overflow: hidden;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  &__scroll {
+    display: flex;
+
+    transition: transform 300ms ease;
+    flex-flow: row;
+  }
+}

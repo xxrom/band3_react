@@ -1,0 +1,1 @@
+export { CardVerticalSlider } from './CardVerticalSlider';

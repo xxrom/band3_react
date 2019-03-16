@@ -11,8 +11,8 @@ const Warranty = (props) => {
         <div className="line" />
 
         <div className="warranty-images">
-          {srcImg.map((src) => (
-            <div className="warranty-images__image">
+          {srcImg.map((src, index) => (
+            <div key={index} className="warranty-images__image">
               <Image src={src} style={{ maxWidth: '90%' }} />
             </div>
           ))}

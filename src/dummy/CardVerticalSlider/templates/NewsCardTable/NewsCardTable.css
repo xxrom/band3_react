@@ -1,0 +1,11 @@
+.news-card-table {
+  border-spacing: 0;
+
+  &__td {
+    box-sizing: border-box;
+    padding: 0;
+
+    text-align: left;
+    vertical-align: top;
+  }
+}
