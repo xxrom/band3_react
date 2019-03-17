@@ -25,13 +25,14 @@ export class CardVerticalSlider extends React.Component {
     const { columnNumber, rowNumber } = props;
 
     const fPath = 'sliders/';
+    const fExt = '_700.jpg';
     this.defaultItems = [
-      { src: `${fPath}1.jpg` },
-      { src: `${fPath}2.png` },
-      { src: `${fPath}3.png` },
-      { src: `${fPath}4.png` },
-      { src: `${fPath}5.jpg` },
-      { src: `${fPath}6.jpg` },
+      { src: `${fPath}1${fExt}` },
+      { src: `${fPath}2${fExt}` },
+      { src: `${fPath}3${fExt}` },
+      { src: `${fPath}4${fExt}` },
+      { src: `${fPath}5${fExt}` },
+      { src: `${fPath}6${fExt}` },
     ];
     const { items = this.defaultItems } = props;
 

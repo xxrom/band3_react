@@ -151,8 +151,10 @@ $validateSize: 1.7rem;
               background-color: #fff;
             }
           }
+
+          $error-color: rgb(255, 158, 48);
           &_error {
-            background-color: rgb(255, 0, 0);
+            background-color: $error-color;
 
             &:before {
               position: absolute;
@@ -186,7 +188,7 @@ $validateSize: 1.7rem;
               content: '';
               transform: rotate(90deg);
 
-              background-color: rgb(255, 0, 0);
+              background-color: $error-color;
             }
           }
         }
