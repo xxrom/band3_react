@@ -46,8 +46,9 @@ class PhoneDialog extends Component {
               mask="+7 (999) 999-99-99"
               onChange={this.props.actions.changePhone}
               onKeyPress={this.onInputKeyPress}
-              type="number"
-            />
+            >
+              {(inputProps) => <input {...inputProps} type="tel" />}
+            </InputMask>
 
             <span
               className={`input-validate input-validate_${
