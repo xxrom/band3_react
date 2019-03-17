@@ -7,6 +7,7 @@ class Image extends PureComponent {
     const { src, style, classMyName, alt } = this.props;
 
     let srcImg;
+    // Check for webp files
     try {
       let localSrc = 'jpg';
       if (src.indexOf('png') !== -1) {
