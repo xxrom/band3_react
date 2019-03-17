@@ -15,7 +15,8 @@
 
     text-align: center;
 
-    background: url('https://www.apple.com/v/iphone-xr/d/images/overview/copy_texture_1_medium.jpg');
+    background-image: url('../../assets/copy_texture_1_medium.jpg');
+    background-image: url('../../assets/copy_texture_1_medium_10.webp');
 
     font-size: var(--fontSize_info-header);
     font-weight: 600;
@@ -47,6 +48,7 @@
 
     color: white;
     background: url('../../assets/texture_1.jpg');
+    background: url('../../assets/texture_1_10.webp');
 
     &__row {
       display: flex;

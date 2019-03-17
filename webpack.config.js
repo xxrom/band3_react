@@ -5,13 +5,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
 
-module.exports = {
+module.exports = (env) => ({
+  mode: env.NODE_ENV === 'development' ? 'development' : 'production',
   entry: path.resolve(__dirname, 'src/index.jsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].bundle.js',
     filename: '[name].[hash].js',
   },
-  devtool: 'eval',
+  devtool: env.NODE_ENV === 'development' ? 'eval' : 'hidden-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
@@ -105,6 +107,13 @@ module.exports = {
     ],
   },
 
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minChunks: 2,
+    },
+  },
+
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
@@ -126,4 +135,4 @@ module.exports = {
       minRatio: 0.8,
     }),
   ],
-};
+});

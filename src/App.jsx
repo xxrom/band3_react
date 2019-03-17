@@ -1,30 +1,73 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { hot } from 'react-hot-loader/root';
 import { setConfig } from 'react-hot-loader';
 setConfig({ disableHotRenderer: true });
 
 import './App.css';
 import { Menu } from './dummy/Menu';
-import { PlusesTable } from './dummy/PlusesTable';
-import { Footer } from './dummy/Footer';
-import { Warranty } from './dummy/Warranty';
-import { TextWithVideo } from './dummy/TextWithVideo';
-import { CardVerticalSlider } from './dummy/CardVerticalSlider';
 import Product from './smart/Product';
-import PhoneDialog from './smart/PhoneDialog';
+
+// import { TextWithVideo } from './dummy/TextWithVideo';
+const TextWithVideo = lazy(() =>
+  import(/* webpackChunkName: "TextWithVideo" */ './dummy/TextWithVideo').then(
+    ({ TextWithVideo }) => ({ default: TextWithVideo })
+  )
+);
+
+// import { PlusesTable } from './dummy/PlusesTable';
+const PlusesTable = lazy(() =>
+  import(/* webpackChunkName: "PlusesTable" */ './dummy/PlusesTable').then(
+    ({ PlusesTable }) => ({ default: PlusesTable })
+  )
+);
+
+import { Footer } from './dummy/Footer';
+// import { Warranty } from './dummy/Warranty';
+const Warranty = lazy(() =>
+  import(/* webpackChunkName: "Warranty" */ './dummy/Warranty').then(
+    ({ Warranty }) => ({ default: Warranty })
+  )
+);
+// import { CardVerticalSlider } from './dummy/CardVerticalSlider';
+const CardVerticalSlider = lazy(() =>
+  import(/* webpackChunkName: "CardVerticalSlider" */ './dummy/CardVerticalSlider').then(
+    ({ CardVerticalSlider }) => ({ default: CardVerticalSlider })
+  )
+);
+// import PhoneDialog from './smart/PhoneDialog';
+const PhoneDialog = lazy(() =>
+  import(/* webpackChunkName: "PhoneDialog" */ './smart/PhoneDialog')
+);
 
 class App extends Component {
   render() {
+    const loading = (
+      <div style={{ height: '100%', background: 'back', color: 'white' }}>
+        Loading…
+      </div>
+    );
+
     return (
       <>
         <div className="background_gradient" />
         <Menu siteName="techcatch" />
         <Product />
-        <TextWithVideo />
-        <CardVerticalSlider direction="vertical" cardAlign="center" />
-        <PhoneDialog />
-        <PlusesTable />
-        <Warranty />
+        <Suspense fallback={loading}>
+          <TextWithVideo />
+        </Suspense>
+        <Suspense fallback={loading}>
+          <CardVerticalSlider direction="vertical" cardAlign="center" />
+        </Suspense>
+
+        <Suspense fallback={loading}>
+          <PhoneDialog />
+        </Suspense>
+        <Suspense fallback={loading}>
+          <PlusesTable />
+        </Suspense>
+        <Suspense fallback={loading}>
+          <Warranty />
+        </Suspense>
         <Footer />
       </>
     );

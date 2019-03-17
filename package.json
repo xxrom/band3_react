@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development --display-error-details",
-    "dev": "webpack-dev-server --mode development --history-api-fallback --color",
-    "build": "webpack --mode production",
+    "start": "webpack --env.NODE_ENV=production --display-error-details",
+    "dev": "webpack-dev-server --env.NODE_ENV=development --history-api-fallback --color",
+    "build": "webpack --env.NODE_ENV=production",
     "stylelint": "stylelint './src/**/*.css' --fix --config ./.stylelintrc"
   },
   "husky": {

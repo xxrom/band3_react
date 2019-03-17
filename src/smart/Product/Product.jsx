@@ -15,6 +15,9 @@ class Product extends Component {
   constructor(props) {
     super(props);
     this.productRef = React.createRef();
+    this.state = {
+      imageSrc: 'main11_high_900.png',
+    };
   }
 
   componentDidMount() {
@@ -28,7 +31,7 @@ class Product extends Component {
           <ProductText />
         </div>
         <div className="product__image">
-          <ImageBigAtCenter src={this.props.currentImageName} />
+          <ImageBigAtCenter src={this.state.imageSrc} />
         </div>
         <div className="product__right">
           <Price />
