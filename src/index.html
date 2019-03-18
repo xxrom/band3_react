@@ -5,9 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>React and Webpack4</title>
+
+
   </head>
 
   <body>
-    <section id="app"></section>
+    <section id="app">
+        <style>
+            body {
+              animation: theme 70s linear infinite;
+              margin: 0;
+
+              &:after,
+              &:before {
+                position: fixed;
+                z-index: -10;
+                top: 0;
+
+                display: block;
+
+                height: 80vmax;
+                height: 80vh;
+                width: 100vw;
+                width: 100vmax;
+
+                content: '';
+                animation: background 300s linear infinite;
+
+                background: rgba(0, 0, 0, 0.05);
+              }
+
+              &:after {
+                left: 15vw;
+              }
+
+              &:before {
+                right: 15vw;
+
+                animation-delay: -30s;
+                animation-direction: reverse;
+              }
+            }
+
+            .background_gradient {
+              position: absolute;
+
+              z-index: -1;
+              top: 0;
+
+              height: 100vh;
+              width: 100vw;
+            }
+
+            @keyframes theme {
+              0% {
+                background: hsl(275, 88%, 63%);
+              }
+
+              8% {
+                background: hsl(275, 68%, 38%);
+              }
+
+              16% {
+                background: hsl(211, 91%, 58%);
+              }
+
+              33% {
+                background: hsl(184, 84%, 63%);
+              }
+
+              50% {
+                background: #74c390;
+              }
+
+              66% {
+                background: #4fd6b7;
+              }
+
+              83% {
+                background: #53c8fa;
+              }
+
+              100% {
+                background: hsl(275, 88%, 63%);
+              }
+            }
+
+            @keyframes background {
+              0% {
+                transform: rotate(0deg);
+              }
+
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+            .progressbar {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+
+              height: 26px;
+              width: 200px;
+              margin: -20px 0 0 -100px;
+              padding: 2px;
+
+              border-radius: 10px;
+              background: rgba(159, 159, 159, 0.5);
+
+              z-index: 1000;
+            }
+            .loading {
+              position: absolute;
+
+              display: inline-block;
+
+              height: 20px;
+              width: calc(100% - 10px);
+              margin: 3px;
+
+              transition: all 500ms ease;
+              animation: load 25s ease infinite;
+
+              border-radius: 8px;
+              background: #474747;
+            }
+            .load {
+              margin-top: -30px;
+              margin-left: 60px;
+
+              text-align: center;
+
+              font-family: Arial;
+              font-weight: bold;
+              color: black;
+            }
+
+            @keyframes load {
+              0% {
+                width: 2%;
+              }
+              10% {
+                width: 10%;
+              }
+            }
+          </style>
+        <div class="background_gradient" />
+        <div class="progressbar">
+          <span class="loading" />
+          <div class="load">Загрузка...</div>
+        </div>
+    </section>
   </body>
 </html>

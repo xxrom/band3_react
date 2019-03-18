@@ -40,7 +40,27 @@ const PhoneDialog = lazy(() =>
 );
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: true,
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      });
+    }, 1000);
+  }
+
   render() {
+    if (this.state.loading) {
+      return this.mainLoading();
+    }
+
     const loading = (
       <div style={{ height: '100%', background: 'back', color: 'white' }}>
         Loading…
@@ -72,6 +92,17 @@ class App extends Component {
       </>
     );
   }
+
+  mainLoading = () => {
+    console.log('mainLoading');
+
+    return (
+      <div className="progressbar">
+        <span className="loading" />
+        <div className="load">Загрузка...</div>
+      </div>
+    );
+  };
 }
 
 export default hot(App, { errorBoundary: false });

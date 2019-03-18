@@ -4,15 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-
-  margin: 0;
-
-  font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-    'Arial', 'sans-serif';
-}
-
 :root {
   --important: #df504d;
 
@@ -46,27 +37,15 @@ body {
   );
 }
 
-.background_gradient {
-  position: absolute;
-
-  z-index: -1;
-  top: -30%;
-
-  height: 320%;
-  width: 100vw;
-
-  background: linear-gradient(180deg, #fff 0%, #fff 9.5%, #f0000000 13%),
-    linear-gradient(
-      220deg,
-      #f0000000 25%,
-      #ffffff66 25%,
-      #ffffff66 50%,
-      rgb(255, 255, 255) 80%
-    );
-}
-
 body {
+  overflow-x: hidden;
+
+  margin: 0;
+
   animation: theme 70s linear infinite;
+
+  font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+    'Arial', 'sans-serif';
 
   &:after,
   &:before {
@@ -97,6 +76,32 @@ body {
     animation-delay: -30s;
     animation-direction: reverse;
   }
+}
+
+.background_gradient {
+  position: absolute;
+
+  z-index: -1;
+  top: -30%;
+
+  overflow-x: hidden;
+
+  height: 320%;
+  width: 100vw;
+
+  margin: 0;
+
+  background: linear-gradient(180deg, #fff 0%, #fff 9.5%, #f0000000 13%),
+    linear-gradient(
+      220deg,
+      #f0000000 25%,
+      #ffffff66 25%,
+      #ffffff66 50%,
+      rgb(255, 255, 255) 80%
+    );
+
+  font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+    'Arial', 'sans-serif';
 }
 
 @keyframes theme {
@@ -140,5 +145,56 @@ body {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* loading */
+.progressbar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  height: 26px;
+  width: 200px;
+  margin: -20px 0 0 -100px;
+  padding: 2px;
+
+  color: #333;
+
+  border-radius: 10px;
+  background: rgba(159, 159, 159, 0.5);
+}
+.loading {
+  position: absolute;
+
+  display: inline-block;
+
+  height: 20px;
+  width: calc(100% - 10px);
+  margin: 1px;
+
+  transition: all 500ms ease;
+  animation: load 25s ease infinite;
+
+  border-radius: 8px;
+  background: #474747;
+}
+.load {
+  margin: -30px 0 0 0;
+
+  text-align: center;
+
+  color: black;
+
+  font-family: Arial;
+  font-weight: bold;
+}
+
+@keyframes load {
+  0% {
+    width: 80%;
+  }
+  10% {
+    width: 90%;
   }
 }
