@@ -201,11 +201,18 @@ $validateSize: 1.7rem;
       display: flex;
       overflow: hidden;
 
-      height: 5rem;
+      min-height: 6rem;
 
       /* border: 1px solid blue; */
       align-items: center;
       justify-content: center;
+
+      &-error {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+      }
     }
 
     .dialog__close-btn {

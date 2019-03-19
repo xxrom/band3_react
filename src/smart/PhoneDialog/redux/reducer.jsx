@@ -7,6 +7,7 @@ const initState = {
   phone: '+7 (___) ___-__-__',
   showPhoneDialog: false,
   phoneSanded: false,
+  // phoneSanded: 'error',
   loading: false,
 };
 

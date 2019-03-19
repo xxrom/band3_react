@@ -1,6 +1,17 @@
+function fetchTimeout(url, options, timeout = 3000) {
+  return Promise.race([
+    fetch(url, options),
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), timeout)
+    ),
+  ]);
+}
+
 function fetchData({
+  fetchTime = 3000,
   url = '',
   id = '',
+  web = '',
   fetchOptionsMethod = 'GET',
   fetchOptionsHeader = {
     'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -8,16 +19,16 @@ function fetchData({
   body = null,
   thenFunction = ({ data }) => data,
 }) {
-  // let web = `http://localhost:3334/`;
-  // let web = `https://band3-koa2.herokuapp.com/`;
-  // let web = `http://localhost:4444/`;
-  let web = `http://192.168.0.121:4444`;
-
-  //   if (process.env.NODE_ENV !== 'development') {
-  //     web = `https://my-diamond-postgresql.herokuapp.com/api/`;
-  //   }
+  if (!web) {
+    // by default => send to heroku
+    web = `https://band3-koa2.herokuapp.com/`;
+    // let web = `http://localhost:3334/`;
+    // let web = `http://localhost:4444/`;
+    // web = `http://192.168.0.121:4444`;
+  }
 
   const fullUrl = `${web}${url}${id}`;
+  console.log(`fullUrl ${fullUrl}`);
 
   const fetchDefaultOptions = {
     method: fetchOptionsMethod,
@@ -25,11 +36,16 @@ function fetchData({
   };
   let fetchDynamicOptions = body ? { body: JSON.stringify(body) } : {};
 
-  return fetch(fullUrl, {
-    ...fetchDefaultOptions,
-    ...fetchDynamicOptions,
-  })
+  return fetchTimeout(
+    fullUrl,
+    {
+      ...fetchDefaultOptions,
+      ...fetchDynamicOptions,
+    },
+    fetchTime
+  )
     .then((res) => {
+      console.log('res', res);
       console.log(
         `${fetchOptionsMethod}: ${web}${url}${id} // res status = ${
           res.status

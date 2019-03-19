@@ -75,7 +75,7 @@ function setScrollTo(ref, correction = 0) {
       behavior: 'smooth',
     });
   } else {
-    console.error(`error: undefined ref in action!`);
+    console.error(`error: setScrollTo undefined ref in action!`);
   }
 }
 

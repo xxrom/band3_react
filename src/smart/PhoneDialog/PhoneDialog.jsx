@@ -65,21 +65,47 @@ class PhoneDialog extends Component {
     );
   }
 
+  getActiveItem = (phoneSanded) => {
+    const BuyBtn = ({ style = {}, ...props } = {}) => (
+      <Buy
+        mini
+        style={{ maxWidth: '14rem', width: 'auto', ...style }}
+        label={this.btnLabel}
+        disable={!this.valid}
+        onClick={this.onClickCall}
+        {...props}
+      />
+    );
+
+    switch (phoneSanded) {
+      case true:
+        return (
+          <div className="dialog__text">
+            Запрос отправлен. Ожидайте звонка оператора
+          </div>
+        );
+
+      case 'error':
+        return (
+          <div className="dialog__action-error">
+            <div className="dialog__text">
+              Запрос не отправлен, пожалуйста, попробуйте еще раз
+            </div>
+            {BuyBtn({ style: { marginTop: '1rem' } })}
+          </div>
+        );
+
+      case false:
+      default:
+        return BuyBtn();
+    }
+  };
+
   actionBlock = (phoneSanded, loading) => {
     return (
       <div className="dialog__action">
         <Loader loading={loading} />
-        {phoneSanded ? (
-          <div className="dialog__text">Ожидайте звонка оператора</div>
-        ) : (
-          <Buy
-            mini
-            style={{ maxWidth: '14rem', width: 'auto' }}
-            label={this.btnLabel}
-            disable={!this.valid}
-            onClick={this.onClickCall}
-          />
-        )}
+        {this.getActiveItem(phoneSanded)}
       </div>
     );
   };
@@ -110,16 +136,37 @@ class PhoneDialog extends Component {
 
     this.props.actions.setLoading(true);
 
-    const ans = await fetchData({
+    console.time('post1');
+    let ans = await fetchData({
+      web: `http://192.168.0.121:4444`,
       fetchOptionsMethod: 'POST',
       fetchOptionsHeader: {
         'Content-type': 'application/json',
       },
       body,
     });
-    console.timeEnd('post');
-    console.log('ans', ans);
-    this.props.actions.phoneSanded(true);
+    console.timeEnd('post1');
+    console.log('ans 1', ans);
+
+    if (!ans) {
+      console.time('post2');
+      ans = await fetchData({
+        // Fetch time - 1 minute
+        fetchTime: 60000,
+        fetchOptionsMethod: 'POST',
+        fetchOptionsHeader: {
+          'Content-type': 'application/json',
+        },
+        body,
+      });
+      console.timeEnd('post2');
+    }
+
+    if (!ans) {
+      this.props.actions.phoneSanded('error');
+    } else {
+      this.props.actions.phoneSanded(true);
+    }
 
     this.props.actions.setLoading(false);
   };
