@@ -91,19 +91,6 @@ module.exports = (env) => ({
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         use: 'url-loader?limit=10000&mimetype=image/svg+xml',
       },
-      // {
-      //   // нужно для преобразования изображений всех в маленькие
-      //   test: /\.(png|jpg|gif)$/,
-      //   use: {
-      //     loader: 'responsive-loader',
-      //     options: {
-      //       sizes: [100],
-      //       placeholder: true,
-      //       placeholderSize: 50,
-      //       name: 'imgs/[name]-[width].[ext]',
-      //     },
-      //   },
-      // },
     ],
   },
 

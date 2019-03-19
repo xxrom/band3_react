@@ -75,7 +75,10 @@ class PlusesTableElement extends Component {
   }
 
   mainTextTemplate = () => (
-    <div className="pluses-table__main-text masked-copy">
+    <div
+      className="pluses-table__main-text masked-copy"
+      style={{ ...styles.background }}
+    >
       Сенсорный 0.78 дюйма OLED дисплей
     </div>
   );
@@ -113,7 +116,10 @@ class PlusesTableElement extends Component {
     });
 
     return (
-      <div className="pluses-table masked-copy">
+      <div
+        className="pluses-table masked-copy"
+        style={{ ...styles.background }}
+      >
         {[...table]}
         <div className="pluses-table__background" />
       </div>
@@ -133,3 +139,10 @@ const PlusesTable = connect(
 )(PlusesTableElement);
 
 export { PlusesTable };
+
+const styles = {
+  background: {
+    backgroundImage: `url(texture_1.jpg)`,
+    backgroundImage: `url(texture_1_0.webp)`,
+  },
+};
