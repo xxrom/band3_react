@@ -93,6 +93,11 @@ $activeFontSize: var(--fontSize_info-plus-item);
     .plus__link {
       visibility: visible;
 
+      -webkit-user-select: none; /* TODO: firefox still selected... Chrome all / Safari all */
+      -moz-user-select: none; /* Firefox all */
+      -ms-user-select: none; /* IE 10+ */
+      user-select: none; /* Likely future */
+
       transition-delay: 0.15s;
       transform: scale(1);
 
