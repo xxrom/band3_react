@@ -67,6 +67,7 @@ $info-light: #aaa;
       padding: 1rem 0 0 0;
 
       &__image {
+        width: 28vw;
         max-width: 15rem;
       }
     }
