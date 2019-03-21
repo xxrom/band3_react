@@ -8,42 +8,46 @@ class Image extends PureComponent {
 
     this.state = {
       src: props.src,
+      loading: props.low ? true : false,
     };
-
-    console.log('Img', props.src);
-    if (props.src === 'main11_high_900.png') {
-      console.log('main11_high_900.png');
-      this.t = (
-        <img
-          style={props.style}
-          className={`${props.classMyName ? props.classMyName : 'image'}`}
-          // onLoad={(e) => console.log('loaded src', props.src, e)}
-          onLoad={(e) => console.log('@@@@@@@@@@@@@@@@ onLoad ', e)}
-          src={this.getSrc(props.src)}
-          alt={props.alt ? props.alt : 'img'}
-        />
-      );
-    }
   }
 
   render() {
     const { src, style, classMyName, alt } = this.props;
+    const { loading } = this.state;
+
+    const hide = {
+      display: 'none',
+    };
+
+    const SmallImg = loading ? (
+      <img
+        style={{ ...style }}
+        className={`image_big ${
+          this.props.classMyName ? this.props.classMyName : 'image'
+        }`}
+        src={this.getSrc(src, true)}
+        alt={this.props.alt ? this.props.alt : 'img'}
+      />
+    ) : null;
 
     return (
-      <div>
-        {this.t}
+      <>
+        {SmallImg}
         <img
-          style={style}
+          style={{ ...style, ...(loading ? hide : {}) }}
           className={`${classMyName ? classMyName : 'image'}`}
-          // onLoad={(e) => console.log('onLoad', e)}
           src={this.getSrc(this.state.src)}
+          onLoad={() =>
+            setTimeout(() => this.setState({ loading: false }), 5000)
+          }
           alt={alt ? alt : 'img'}
         />
-      </div>
+      </>
     );
   }
 
-  getSrc = (src) => {
+  getSrc = (src, low = false) => {
     let srcImg;
 
     try {
@@ -54,6 +58,15 @@ class Image extends PureComponent {
       srcImg = require(`../../assets/${src.replace(localSrc, 'webp')}`);
     } catch (err) {
       srcImg = require(`../../assets/${src}`);
+    }
+
+    if (low) {
+      srcImg = srcImg.split('.');
+      srcImg = srcImg.reduce((sum, item, index) =>
+        index !== srcImg.length - 1
+          ? `${sum}${index}.${item}`
+          : `${sum}_low.${item}`
+      );
     }
 
     return srcImg;

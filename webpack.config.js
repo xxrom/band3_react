@@ -67,7 +67,7 @@ module.exports = (env) => ({
           {
             loader: 'url-loader',
             options: {
-              limit: 5000,
+              limit: 10,
               name: '[name].[ext]',
               context: '',
               // useRelativePath: true,
