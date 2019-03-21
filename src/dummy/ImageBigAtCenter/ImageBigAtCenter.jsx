@@ -13,7 +13,11 @@ const pluses = {
 
 const ImageBigAtCenter = ({ src }) => (
   <div className="image-big-at-center__wrapper">
-    <Image src={src} style={{ maxWidth: '90%' }} />
+    <Image
+      src={src}
+      // style={{ maxWidth: '100%' }}
+      low
+    />
     <PlusElement
       style={styles.plusDisplay}
       popUpStyle={styles.plusDisplay.popUp}
@@ -36,24 +40,24 @@ const ImageBigAtCenter = ({ src }) => (
 const styles = {
   plusDisplay: {
     position: 'absolute',
-    right: '15%',
-    marginTop: '5%',
+    right: '9.5%',
+    marginTop: '15%',
     popUp: {
       left: 'calc(50% - 200px)',
     },
   },
   plusBattery: {
     position: 'absolute',
-    right: '75%',
-    marginTop: '-23%',
+    right: '80%',
+    marginTop: '-18%',
     popUp: {
       left: 'calc(50% - 30px)',
     },
   },
   plusTouch: {
     position: 'absolute',
-    right: '32%',
-    marginTop: '32%',
+    right: '30%',
+    marginTop: '38%',
     popUp: {
       left: 'calc(50% - 140px)',
     },
