@@ -85,7 +85,7 @@ class PlusesTableElement extends Component {
 
   backgroundImgTemplate = (src) => (
     <div className="pluses-table__background-img">
-      <Image classMyName="background-img__img" src={src} />
+      <Image classMyName="background-img__img" src={src} low />
     </div>
   );
 
@@ -96,7 +96,7 @@ class PlusesTableElement extends Component {
     const cells = tableData.map(({ text, imgSrc }, index) => (
       <div className="pluses-table__cell" key={`pluses-table-cell-${index}`}>
         <div className="cell__img-wrapper">
-          <Image classMyName="cell__img" src={imgSrc} />
+          <Image classMyName="cell__img" src={imgSrc} low />
         </div>
         <div className="cell__text">{text}</div>
       </div>

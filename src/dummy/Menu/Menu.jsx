@@ -108,6 +108,7 @@ class MenuElement extends Component {
           <Image
             style={{ width: '1.8rem', hight: '1rem', marginRight: '.5rem' }}
             src="icons/eagle_0.png"
+            low
           />
           {this.props.siteName}
         </div>

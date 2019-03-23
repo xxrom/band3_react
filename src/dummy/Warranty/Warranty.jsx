@@ -3,7 +3,7 @@ import React from 'react';
 import './Warranty.css';
 import { Image } from '../Image';
 
-const Warranty = (props) => {
+const Warranty = () => {
   const srcImg = ['100_0.png', '100_3.png', '100_1.png'];
   const tab = <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>;
   return (
@@ -14,7 +14,7 @@ const Warranty = (props) => {
         <div className="warranty-images">
           {srcImg.map((src, index) => (
             <div key={index} className="warranty-images__image">
-              <Image src={src} style={{ maxWidth: '90%' }} />
+              <Image src={src} style={{ maxWidth: '90%' }} low />
             </div>
           ))}
         </div>

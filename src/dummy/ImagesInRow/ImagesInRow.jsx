@@ -10,7 +10,7 @@ class ImagesInRow extends PureComponent {
         key={`image-in-row-${index}`}
         className="image-in-row__wrapper_image"
       >
-        <Image src={src} />
+        <Image src={src} low />
       </div>
     ));
 

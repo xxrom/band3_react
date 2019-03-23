@@ -6,6 +6,5 @@
   object-fit: cover;
 }
 .image_big {
-  min-height: var(--max-height);
-  filter: blur(3px);
+  /* filter: blur(2px); */
 }

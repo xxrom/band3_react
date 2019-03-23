@@ -26,7 +26,7 @@ class Image extends PureComponent {
         className={`image_big ${
           this.props.classMyName ? this.props.classMyName : 'image'
         }`}
-        src={this.getSrc(src, true)}
+        src={this.getSrc(src, this.props.low)}
         alt={this.props.alt ? this.props.alt : 'img'}
       />
     ) : null;
@@ -38,8 +38,9 @@ class Image extends PureComponent {
           style={{ ...style, ...(loading ? hide : {}) }}
           className={`${classMyName ? classMyName : 'image'}`}
           src={this.getSrc(this.state.src)}
-          onLoad={() =>
-            setTimeout(() => this.setState({ loading: false }), 5000)
+          onLoad={
+            () => this.setState({ loading: false })
+            // setTimeout(() => this.setState({ loading: false }), 15000)
           }
           alt={alt ? alt : 'img'}
         />
@@ -47,29 +48,54 @@ class Image extends PureComponent {
     );
   }
 
+  /*
+   * webp => png | jpg
+   * low = true:  *_low.webp => *_low.png | *_low.jpg
+   * low = _2:  *_2.webp => *_2.png | *_2.jpg
+   */
   getSrc = (src, low = false) => {
-    let srcImg;
-
-    try {
-      let localSrc = 'jpg';
-      if (src.indexOf('png') !== -1) {
-        localSrc = 'png';
-      }
-      srcImg = require(`../../assets/${src.replace(localSrc, 'webp')}`);
-    } catch (err) {
-      srcImg = require(`../../assets/${src}`);
-    }
+    const imgExtension = src.indexOf('png') !== -1 ? 'png' : 'jpg';
+    let mainSrc = src;
 
     if (low) {
-      srcImg = srcImg.split('.');
-      srcImg = srcImg.reduce((sum, item, index) =>
-        index !== srcImg.length - 1
+      const postFix = typeof low === 'string' ? low : '_low';
+
+      const lowSrcArray = src.split('.');
+      mainSrc = lowSrcArray.reduce((sum, item, index) =>
+        index !== lowSrcArray.length - 1
           ? `${sum}${index}.${item}`
-          : `${sum}_low.${item}`
+          : `${sum}${postFix}.${item}`
       );
     }
 
-    return srcImg;
+    try {
+      const webp = require(`../../assets/${mainSrc.replace(
+        imgExtension,
+        'webp'
+      )}`);
+      return webp;
+    } catch (err) {
+      console.log(`error: loading ${mainSrc.replace(imgExtension, 'webp')}`);
+    }
+
+    try {
+      const img = require(`../../assets/${mainSrc}`);
+      return img;
+    } catch (err) {
+      console.log(`error: loading ${mainSrc}`);
+    }
+
+    if (imgExtension === 'jpg') {
+      console.log(' => try load png img');
+      try {
+        const img = require(`../../assets/${mainSrc.replace('jpg', 'png')}`);
+        return img;
+      } catch (err) {
+        console.log(`error: loading ${mainSrc}`);
+      }
+    }
+
+    return src;
   };
 }
 
