@@ -20,8 +20,6 @@ class Image extends PureComponent {
       display: 'none',
     };
 
-    const lowExist = this.getSrc(src, this.props.low);
-
     const SmallImg = loading ? (
       <img
         style={{ ...style }}

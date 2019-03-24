@@ -14,7 +14,7 @@ const Warranty = () => {
         <div className="warranty-images">
           {srcImg.map((src, index) => (
             <div key={index} className="warranty-images__image">
-              <Image src={src} style={{ maxWidth: '90%' }} low />
+              <Image src={src} style={{ maxWidth: '90%' }} />
             </div>
           ))}
         </div>

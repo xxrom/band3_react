@@ -5,12 +5,14 @@ import { Image } from '../Image';
 
 class ImagesInRow extends PureComponent {
   render() {
+    const { low = false } = this.props;
+
     const imagesArray = this.props.imageNames.map((src, index) => (
       <div
         key={`image-in-row-${index}`}
         className="image-in-row__wrapper_image"
       >
-        <Image src={src} low />
+        <Image src={src} low={low} />
       </div>
     ));
 

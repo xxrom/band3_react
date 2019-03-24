@@ -87,7 +87,7 @@ export class CardVerticalSlider extends React.Component {
                   overflow: 'hidden',
                 }}
               >
-                <Image src={item.src} low />
+                <Image src={item.src} />
               </div>
             ))}
           </NewsCardTable>

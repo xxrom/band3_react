@@ -15,7 +15,7 @@ class ImageSlider extends Component {
       <div>
         <div className="product-info">
           <div className="empty-block" />
-          <ImagesInRow imageNames={this.props.imageNames} />
+          <ImagesInRow imageNames={this.props.imageNames} low />
           <div>
             <Price />
             <Buy />

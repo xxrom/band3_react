@@ -85,7 +85,7 @@ class PlusesTableElement extends Component {
 
   backgroundImgTemplate = (src) => (
     <div className="pluses-table__background-img">
-      <Image classMyName="background-img__img" src={src} low />
+      <Image classMyName="background-img__img" src={src} />
     </div>
   );
 
