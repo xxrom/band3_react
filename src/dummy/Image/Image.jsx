@@ -20,6 +20,8 @@ class Image extends PureComponent {
       display: 'none',
     };
 
+    const lowExist = this.getSrc(src, this.props.low);
+
     const SmallImg = loading ? (
       <img
         style={{ ...style }}
@@ -37,7 +39,7 @@ class Image extends PureComponent {
         <img
           style={{ ...style, ...(loading ? hide : {}) }}
           className={`${classMyName ? classMyName : 'image'}`}
-          src={this.getSrc(this.state.src)}
+          src={this.getSrc(src)}
           onLoad={
             () => this.setState({ loading: false })
             // setTimeout(() => this.setState({ loading: false }), 15000)
@@ -68,6 +70,7 @@ class Image extends PureComponent {
       );
     }
 
+    console.log(`mainSrc ${mainSrc}`);
     try {
       const webp = require(`../../assets/${mainSrc.replace(
         imgExtension,
@@ -86,7 +89,7 @@ class Image extends PureComponent {
     }
 
     if (imgExtension === 'jpg') {
-      console.log(' => try load png img');
+      console.log(' => try load png');
       try {
         const img = require(`../../assets/${mainSrc.replace('jpg', 'png')}`);
         return img;

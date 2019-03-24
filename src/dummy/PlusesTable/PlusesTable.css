@@ -47,8 +47,8 @@
     padding: 2rem;
 
     color: white;
-    /* background: url('../../assets/texture_1.jpg');
-    background: url('../../assets/texture_1_10.webp'); */
+    /* background-image: url('../../assets/texture_1_0.png'); */
+    /* background-image: url('../../assets/texture_1_0.webp'); */
 
     &__row {
       display: flex;

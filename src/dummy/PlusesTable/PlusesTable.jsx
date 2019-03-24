@@ -142,7 +142,7 @@ export { PlusesTable };
 
 const styles = {
   background: {
-    backgroundImage: `url(texture_1.jpg)`,
-    backgroundImage: `url(texture_1_0.webp)`,
+    // backgroundImage: `url(texture_1_0.webp)`,
+    backgroundImage: `url(texture_1_0_new.png)`,
   },
 };
