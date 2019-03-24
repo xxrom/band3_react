@@ -26,13 +26,13 @@ class FooterElement extends Component {
               target="_blank"
               href="https://chernyshov.netlify.com/"
             >
-              <div className="footer__developer_text">Разработано</div>
+              {/* <div className="footer__developer_text">Разработано</div> */}
               <div className="footer__developer_by">by</div>
               <div className="footer__developer_me">Chernyshov</div>
             </a>
             <a className="footer__email" href={`mailto:chernyshovnm@gmail.com`}>
-              <div className="email-img" />
               <div className="email-text">techcatch@inbox.ru</div>
+              <div className="email-img" />
             </a>
           </div>
         </div>

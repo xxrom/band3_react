@@ -70,7 +70,7 @@
         .email-img {
           height: 2rem;
           width: 2rem;
-          margin: 0 1rem;
+          margin: 0 0 0 1rem;
 
           content: '';
 
@@ -83,11 +83,8 @@
   @media screen and (max-width: 768px) {
     .footer {
       &__info {
-        .footer__email {
-          .email-img {
-            margin: 0;
-          }
-          .email-text {
+        .footer__developer {
+          &_text {
             display: none;
           }
         }
@@ -100,6 +97,9 @@
       &__info {
         .footer__developer {
           &_text {
+            display: none;
+          }
+          &_me {
             display: none;
           }
         }

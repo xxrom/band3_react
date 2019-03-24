@@ -109,19 +109,7 @@ $content-padding-desktop: 4rem; /* width */
 @media screen and (max-width: 1000px) {
   .menu-wrapper {
     padding: $menu-top-margin 1rem 0 1rem;
-  }
 
-  .menu-wrapper .navigation {
-    &__item {
-      padding: $menu-height-padding calc($menu_navigation-items-padding * 0.3);
-
-      font-size: 0.8rem;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .menu-wrapper {
     .navigation {
       display: none;
     }
@@ -197,7 +185,7 @@ $content-padding-desktop: 4rem; /* width */
 
         /* Не смещаем элементы мобильного меню вниз */
         .navigation__item {
-          padding: 6vh $menu_navigation-items-padding;
+          padding: 4vh $menu_navigation-items-padding;
 
           border: 1px solid #0000000f;
         }
@@ -239,9 +227,9 @@ $content-padding-desktop: 4rem; /* width */
 
     box-sizing: border-box;
 
-    padding: $menu-height-padding $menu_navigation-items-padding;
+    padding: $menu-height-padding calc($menu_navigation-items-padding * 0.3);
 
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     align-items: center;
     justify-content: center;
   }
@@ -258,7 +246,7 @@ $content-padding-desktop: 4rem; /* width */
 
     .logo {
       padding-right: 0;
-      padding-left: 0.5rem;
+      padding-left: 0.8rem;
 
       font-size: 1.1rem;
     }
