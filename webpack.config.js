@@ -104,6 +104,7 @@ module.exports = (env) => ({
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
+      // favicon: './src/assets/icons/favicon.png',
       template: './src/index.html',
       filename: './index.html',
     }),

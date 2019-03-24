@@ -69,7 +69,12 @@ class PhoneDialog extends Component {
     const BuyBtn = ({ style = {}, ...props } = {}) => (
       <Buy
         mini
-        style={{ maxWidth: '14rem', width: 'auto', ...style }}
+        style={{
+          maxWidth: '14rem',
+          width: 'auto',
+          height: '2.5rem',
+          ...style,
+        }}
         label={this.btnLabel}
         disable={!this.valid}
         onClick={this.onClickCall}

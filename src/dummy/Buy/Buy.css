@@ -28,7 +28,7 @@ $buy-btn_disable: var(--main-color_disabled);
 
   &_mini {
     height: 2rem;
-    width: 8rem;
+    width: 9rem;
     min-width: 8rem;
     max-width: 8rem;
 
@@ -57,9 +57,9 @@ $buy-btn_disable: var(--main-color_disabled);
     font-size: 1.3rem;
   }
   .buy-btn_mini {
-    height: 1.5rem;
+    height: 1.8rem;
     min-width: 6rem;
-    max-width: 6rem;
+    max-width: 7rem;
     margin: 0 0.5rem;
 
     font-size: 1rem;

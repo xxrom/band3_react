@@ -7,14 +7,12 @@ import './App.css';
 import { Menu } from './dummy/Menu';
 import Product from './smart/Product';
 
-// import { TextWithVideo } from './dummy/TextWithVideo';
 const TextWithVideo = lazy(() =>
   import(/* webpackChunkName: "TextWithVideo" */ './dummy/TextWithVideo').then(
     ({ TextWithVideo }) => ({ default: TextWithVideo })
   )
 );
 
-// import { PlusesTable } from './dummy/PlusesTable';
 const PlusesTable = lazy(() =>
   import(/* webpackChunkName: "PlusesTable" */ './dummy/PlusesTable').then(
     ({ PlusesTable }) => ({ default: PlusesTable })
@@ -22,19 +20,16 @@ const PlusesTable = lazy(() =>
 );
 
 import { Footer } from './dummy/Footer';
-// import { Warranty } from './dummy/Warranty';
 const Warranty = lazy(() =>
-  import(/* webpackChunkName: "Warranty" */ './dummy/Warranty').then(
+  import(/* webpackChunkName: "Warranty" */ './smart/Warranty').then(
     ({ Warranty }) => ({ default: Warranty })
   )
 );
-// import { CardVerticalSlider } from './dummy/CardVerticalSlider';
 const CardVerticalSlider = lazy(() =>
   import(/* webpackChunkName: "CardVerticalSlider" */ './dummy/CardVerticalSlider').then(
     ({ CardVerticalSlider }) => ({ default: CardVerticalSlider })
   )
 );
-// import PhoneDialog from './smart/PhoneDialog';
 const PhoneDialog = lazy(() =>
   import(/* webpackChunkName: "PhoneDialog" */ './smart/PhoneDialog')
 );

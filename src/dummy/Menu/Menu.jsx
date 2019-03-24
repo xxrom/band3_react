@@ -2,7 +2,13 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { toProduct, toAbout, toContacts, toggleMobileMenu } from './redux';
+import {
+  toProduct,
+  toAbout,
+  toContacts,
+  toggleMobileMenu,
+  toWarranty,
+} from './redux';
 import './Menu.css';
 
 import { Buy } from '../Buy';
@@ -25,16 +31,15 @@ class MenuElement extends PureComponent {
         title: 'Описание',
         onClick: this.props.actions.toAbout,
       },
-      {
-        class: 'delivery',
-        title: 'Доставка',
-        onClick: this.props.actions.toContacts,
-      },
-
+      // {
+      //   class: 'delivery',
+      //   title: 'Доставка',
+      //   onClick: this.props.actions.toContacts,
+      // },
       {
         class: 'warranty',
         title: 'Гарантии',
-        onClick: this.props.actions.toContacts,
+        onClick: this.props.actions.toWarranty,
       },
       {
         class: 'contacts',
@@ -171,6 +176,7 @@ const mapDispatchToProps = (dispatch) => ({
   actions: {
     toProduct: bindActionCreators(toProduct, dispatch),
     toAbout: bindActionCreators(toAbout, dispatch),
+    toWarranty: bindActionCreators(toWarranty, dispatch),
     toContacts: bindActionCreators(toContacts, dispatch),
     toggleMobileMenu: bindActionCreators(toggleMobileMenu, dispatch),
   },
