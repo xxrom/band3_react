@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -8,7 +8,7 @@ import './Menu.css';
 import { Buy } from '../Buy';
 import { Image } from '../Image';
 
-class MenuElement extends Component {
+class MenuElement extends PureComponent {
   constructor(props) {
     super(props);
 

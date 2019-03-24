@@ -68,7 +68,6 @@ class Image extends PureComponent {
       );
     }
 
-    console.log(`mainSrc ${mainSrc}`);
     try {
       const webp = require(`../../assets/${mainSrc.replace(
         imgExtension,
@@ -76,23 +75,23 @@ class Image extends PureComponent {
       )}`);
       return webp;
     } catch (err) {
-      console.log(`error: loading ${mainSrc.replace(imgExtension, 'webp')}`);
+      console.info(`error: loading ${mainSrc.replace(imgExtension, 'webp')}`);
     }
 
     try {
       const img = require(`../../assets/${mainSrc}`);
       return img;
     } catch (err) {
-      console.log(`error: loading ${mainSrc}`);
+      console.info(`error: loading ${mainSrc}`);
     }
 
     if (imgExtension === 'jpg') {
-      console.log(' => try load png');
+      console.info(' => try load png');
       try {
         const img = require(`../../assets/${mainSrc.replace('jpg', 'png')}`);
         return img;
       } catch (err) {
-        console.log(`error: loading ${mainSrc}`);
+        console.info(`error: loading ${mainSrc}`);
       }
     }
 

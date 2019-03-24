@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { menu } from '../../reducers';
 import { Image } from '../Image';
+import { BackgroundImage } from './';
 import './PlusesTable.css';
 
 class PlusesTableElement extends Component {
@@ -66,9 +66,10 @@ class PlusesTableElement extends Component {
     return (
       <div ref={this.aboutRef} className="pluses-table__wrapper">
         {this.mainTextTemplate()}
-        {this.backgroundImgTemplate(
-          this.backgroundImgArray[this.state.backgroundImgCount]
-        )}
+        <BackgroundImage
+          index={this.state.backgroundImgCount}
+          srcArray={this.backgroundImgArray}
+        />
         {this.tableTemplate(this.tableData)}
       </div>
     );
@@ -80,12 +81,6 @@ class PlusesTableElement extends Component {
       style={{ ...styles.background }}
     >
       Сенсорный 0.78 дюйма OLED дисплей
-    </div>
-  );
-
-  backgroundImgTemplate = (src) => (
-    <div className="pluses-table__background-img">
-      <Image classMyName="background-img__img" src={src} />
     </div>
   );
 

@@ -31,6 +31,9 @@
       width: 80vw;
       max-width: 800px;
     }
+    .background-img__img.hide {
+      display: none;
+    }
   }
 
   /* BLOCK pluses-table */
