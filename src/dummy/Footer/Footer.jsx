@@ -30,8 +30,8 @@ class FooterElement extends Component {
               <div className="footer__developer_by">by</div>
               <div className="footer__developer_me">Chernyshov</div>
             </a>
-            <a className="footer__email" href={`mailto:chernyshovnm@gmail.com`}>
-              <div className="email-text">techcatch@inbox.ru</div>
+            <a className="footer__email" href={`mailto:support@techcatch.ru`}>
+              <div className="email-text">support@techcatch.ru</div>
               <div className="email-img" />
             </a>
           </div>
